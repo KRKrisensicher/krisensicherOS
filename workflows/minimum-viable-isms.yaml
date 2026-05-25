@@ -1,0 +1,92 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: minimum-viable-isms
+version: 1.0.0
+purpose: Einen ISMS-Startmodus mit Scope, Risikologik, Control-Routinen, Evidenz und Review-Kadenz entwerfen.
+trigger:
+  - Aufbau eines ersten ISMS-Betriebsmodus
+  - ISMS-Arbeit wird zu dokumentenlastig oder zu breit
+  - Scope-, Risiko- oder Control-Logik ist unklar
+inputs:
+  required:
+    - scope_candidates
+    - risk_topics
+    - governance_roles
+  optional:
+    - existing_controls
+    - evidence_sources
+    - compliance_register_entries
+agents:
+  lead: isms-operating-model-designer
+  support:
+    - security-governance-architect
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - evidence-pack-reviewer
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - minimum-viable-isms
+  - governance-operating-model
+  - isms-risk-analysis
+templates:
+  - templates/isms-scope-canvas.md
+  - templates/rollenmatrix.md
+  - templates/risikoanalyse-fragebogen.md
+  - templates/risikoanalyse-session-state.md
+  - templates/risikoanalyse-register.md
+  - templates/soa-risk-control-map.md
+  - templates/risikoreport.md
+  - templates/evidence-pack-index.md
+steps:
+  - id: purpose_and_scope
+    agent: isms-operating-model-designer
+    action: ISMS-Zweck, Start-Scope, Nicht-Scope und Erweiterungskriterien formulieren.
+    output: isms_scope_canvas
+    human_gate: Management oder ISMS-Owner bestätigt Scope.
+  - id: risk_logic
+    agent: risk-and-obligation-prioritizer
+    action: zentrale Risiken, Auswirkungen, Behandlungsideen und offene Entscheidungen erfassen.
+    output: risk_control_candidates
+  - id: control_routines
+    skill: minimum-viable-isms
+    action: Controls als Routinen mit Owner, Trigger, Output, Evidenz und Review beschreiben.
+    output: risk_control_routine_map
+  - id: evidence_plan
+    agent: control-evidence-architect
+    action: Evidence Pack Index und Review-Kadenz vorbereiten.
+    output: evidence_and_review_plan
+  - id: workload_gate
+    agent: agent-quality-and-safety-reviewer
+    action: Dokumentationslast, Claim-Safety, Human Gates und Portabilität prüfen.
+    output: quality_review_note
+    stop_if:
+      - Vorlage erzeugt Formularfriedhof ohne Entscheidungsnutzen
+      - Zertifizierungs- oder Sicherheitsversprechen entstehen
+  - id: management_decision
+    agent: management-review-facilitator
+    action: Scope-Optionen, Top-Risiken, Ressourcenbedarf und nächste Review-Routine vorbereiten.
+    output: management_decision_brief
+    human_gate: Management entscheidet Ressourcen, Risikoakzeptanz und Prioritäten.
+outputs:
+  - isms_scope_canvas
+  - risk_control_routine_map
+  - evidence_and_review_plan
+  - minimum_viable_isms_backlog
+  - management_decision_brief
+stop_points:
+  - normative oder rechtliche Auslegung erforderlich
+  - Datenschutzbewertung erforderlich
+  - Zertifizierungszusage oder externe Prüfbehauptung geplant
+  - echte oder vertrauliche Daten würden öffentlich dokumentiert
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

@@ -1,0 +1,92 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: nis2-readiness-gap
+version: 1.0.0
+purpose: NIS2-Readiness-Gaps strukturiert erfassen, priorisieren und als Managemententscheidungen vorbereiten.
+trigger:
+  - NIS2-Readiness-Sichtung
+  - Findings aus Workshop, Review oder Audit-Vorbereitung
+  - Aufbau eines Security-Governance-Maßnahmenbacklogs
+inputs:
+  required:
+    - scope
+    - public_source_references_or_register_entries
+    - existing_routines_or_controls
+  optional:
+    - evidence_inventory
+    - risk_register
+    - management_priorities
+agents:
+  lead: nis2-readiness-analyst
+  support:
+    - nis2-scope-precheck-analyst
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - nis2-gap-assessment
+templates:
+  - templates/nis2-vorab-betroffenheitspruefung-fragebogen.md
+  - templates/nis2-gap-worksheet.md
+  - templates/nis2-incident-melde-triage.md
+  - templates/nis2-management-review-und-schulung.md
+  - templates/evidence-pack-index.md
+steps:
+  - id: scope_check
+    agent: nis2-scope-precheck-analyst
+    action: Betrachteten Scope, Nicht-Scope und Vorab-Betroffenheitsindikatoren erfassen; Anwendbarkeitsfragen als zwingende Rechtsprüfung markieren.
+    output: scope_precheck_note
+    human_gate: Rechtliche Anwendbarkeit wird nicht vom Agenten entschieden; Prüfung durch Rechtsanwalt/Legal erforderlich.
+  - id: reference_mapping
+    agent: regulatory-source-mapper
+    action: Quellen als Referenzanker und Metadaten erfassen.
+    output: reference_map
+    stop_if:
+      - Norm- oder Gesetzesvolltexte sollen kopiert werden
+      - vertrauliche Vertragsinhalte werden eingebracht
+  - id: gap_assessment
+    skill: nis2-gap-assessment
+    action: Arbeitsfelder, bestehende Routinen, Evidenz, Gaps und Maßnahmen erfassen.
+    output: nis2_gap_worksheet
+  - id: prioritization
+    agent: risk-and-obligation-prioritizer
+    action: Gaps nach Risiko, Dringlichkeit, Evidenzbedarf, Aufwand und Managementrelevanz priorisieren.
+    output: prioritized_gap_backlog
+  - id: evidence_plan
+    agent: control-evidence-architect
+    action: benötigte Nachweise und Evidence-Pack-Lücken beschreiben.
+    output: evidence_needs_list
+  - id: incident_and_management_readiness
+    agent: incident-readiness-coach
+    action: Bei möglicher Betroffenheit oder unklarem Status Melde-/Incident-Triage und Geschäftsleitungs-Schulung als Readiness-Arbeitspunkt vorbereiten.
+    output: incident_and_management_readiness_note
+    human_gate: Meldepflichten, externe Kommunikation und Schulungs-/Reviewpflichten rechtlich und durch Management prüfen.
+  - id: management_review
+    agent: management-review-facilitator
+    action: Entscheidungsfragen, Optionen, Geschäftsleitungs-Schulung und nächste Maßnahmen für Management Review vorbereiten.
+    output: management_decision_brief
+    human_gate: Management entscheidet Risikoakzeptanz, Budget, Owner und Termine.
+outputs:
+  - nis2_gap_worksheet
+  - prioritized_gap_backlog
+  - evidence_needs_list
+  - management_decision_brief
+stop_points:
+  - verbindliche Rechtsauslegung erforderlich
+  - Datenschutzbewertung erforderlich
+  - externe Aussage zur regulatorischen Erfüllung geplant
+  - Managemententscheidung soll automatisiert werden
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U4 Empowerment-Gate
+  - A5 Workflow-Gate

@@ -1,0 +1,118 @@
+<!-- kso:product-relevance
+repo-scope: product
+classification: template
+decision: keep
+review-required-on-change: true
+criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+-->
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISMS-Risikoreport</title>
+  <style>
+    :root { --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --line:#cbd5e1; --low:#16a34a; --mid:#ca8a04; --high:#ea580c; --critical:#dc2626; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:18px; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+    h1 { margin:0 0 8px; font-size: 1.8rem; }
+    h2 { margin:0 0 14px; font-size: 1.2rem; }
+    p { color:var(--muted); }
+    table { width:100%; border-collapse: collapse; font-size:.94rem; }
+    th, td { text-align:left; border-bottom:1px solid var(--line); padding:10px 8px; vertical-align:top; }
+    th { background:#f1f5f9; color:#334155; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+    .kpi { border:1px solid var(--line); border-radius:12px; padding:14px; background:#f8fafc; }
+    .kpi strong { display:block; font-size:1.6rem; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-weight:700; font-size:.82rem; color:white; }
+    .sehr-gering, .gering { background:var(--low); }
+    .mittel { background:var(--mid); }
+    .hoch { background:var(--high); }
+    .sehr-hoch { background:var(--critical); }
+    .decision { border-left:5px solid var(--critical); background:#fff7ed; padding:12px; border-radius:8px; }
+    .muted { color:var(--muted); }
+    @media print { body { background:white; } main { max-width:none; padding:0; } section, header { box-shadow:none; break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ISMS-Risikoreport</h1>
+    <p><strong>Organisation:</strong> [Name] · <strong>Scope:</strong> [ISMS-Scope] · <strong>Berichtszeitraum:</strong> [Zeitraum] · <strong>Stand:</strong> [Datum]</p>
+    <p class="muted">Arbeitsreport für Management Review, Risikoworkshop oder Maßnahmensteuerung. Keine Zertifizierungs- oder Konformitätszusage.</p>
+  </header>
+
+  <section>
+    <h2>1. Management Summary</h2>
+    <div class="grid">
+      <div class="kpi"><span class="muted">Risiken gesamt</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">Hoch / sehr hoch netto</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">Offene Entscheidungen</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">Überfällige Maßnahmen</span><strong>[n]</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Top-Risiken</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Risikoszenario</th><th>Strategie</th><th>Brutto</th><th>Netto / Restrisiko</th><th>Status</th><th>Entscheidung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R-001</td>
+          <td>Wenn [Bedrohung] die Schwachstelle [Schwachstelle] am Asset [Asset] ausnutzt, dann kann [Auswirkung] entstehen.</td>
+          <td>Minimierung</td>
+          <td><span class="badge hoch">16 hoch</span></td>
+          <td><span class="badge mittel">9 mittel</span><br><span class="muted">Planwert / bestätigt?</span></td>
+          <td>Maßnahmen geplant</td>
+          <td>Ressourcenfreigabe erforderlich</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Strategie- und Maßnahmenübersicht</h2>
+    <table>
+      <thead>
+        <tr><th>Risiko</th><th>Strategie</th><th>Maßnahme</th><th>Owner</th><th>Fällig</th><th>Control-/SoA-Bezug</th><th>Evidenz / Wirksamkeit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>R-001</td><td>Minimierung</td><td>[Maßnahme]</td><td>[Owner]</td><td>[Datum]</td><td>[Control-ID]</td><td>[Nachweis / Prüfmethode]</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Offene Managemententscheidungen</h2>
+    <div class="decision">
+      <strong>[Entscheidungstitel]</strong>
+      <p>Entscheidung zu Risiko [ID]: Akzeptanz, Vermeidung, Transfer oder Ressourcenfreigabe für Minimierung. Begründung, Optionen und Konsequenzen hier zusammenfassen.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Control-/SoA- und Evidenzlage</h2>
+    <table>
+      <thead><tr><th>Control / SoA</th><th>Status</th><th>Risiken</th><th>Evidenzqualität</th><th>Lücke / nächster Schritt</th></tr></thead>
+      <tbody><tr><td>[Control-ID]</td><td>geplant</td><td>R-001</td><td>teilweise</td><td>[Lücke]</td></tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. Änderungen seit letztem Review</h2>
+    <ul>
+      <li>[Neue Risiken]</li>
+      <li>[Veränderte Bewertungen]</li>
+      <li>[Geschlossene oder überfällige Maßnahmen]</li>
+      <li>[Neue Akzeptanzen, Transfers oder Eskalationen]</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

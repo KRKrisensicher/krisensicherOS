@@ -1,0 +1,29 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: product-quality-gate
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; product-safety; release-readiness
+
+# OpenClaw private workspace/bootstrap files — not public repo content
+.openclaw/
+.learnings/
+BOOTSTRAP.md
+SOUL.md
+USER.md
+IDENTITY.md
+TOOLS.md
+HEARTBEAT.md
+MEMORY.md
+memory/
+CONSTRAINTS.yaml
+DREAMS.md
+projects/
+
+# Local/editor noise
+.DS_Store
+*.tmp
+*.bak
+tmp_*
+
+exports/
