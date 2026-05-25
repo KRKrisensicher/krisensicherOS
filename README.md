@@ -12,13 +12,31 @@ krisensicherOS ist ein offenes, deutschsprachiges Produktrepo für **KI-unterst�
 
 Das Repo enthält öffentliche Agentenprofile, Skills, Templates, Workflows und Playbooks. Es ist für Organisationen gedacht, die KI freigegeben haben oder eine KI-Freigabe gezielt vorbereiten wollen.
 
+## Vibe Governance
+
+So wie **Vibe Coding** beschreibt, wie Menschen mit KI schneller von einer Idee zu lauffähigem Code kommen, beschreibt **Vibe Governance** den nächsten Schritt für Organisationen: Governance nicht mehr als statisches Dokumentenprojekt zu behandeln, sondern als KI-unterstützten Arbeitsfluss aus Fragen, Rollen, Evidenz, Entscheidungen und Reviews.
+
+Vibe Governance heißt bei krisensicherOS nicht: Verantwortung wegautomatisieren oder Compliance aus Prompts behaupten. Es heißt: mit KI schneller zu brauchbaren Entwürfen, besseren Prüffragen, sichtbaren Lücken und entscheidungsreifen Handoffs kommen — während Human Gates, fachliche Verantwortung und organisationsspezifische Freigaben klar erhalten bleiben.
+
+Der „Vibe“ ist nicht Beliebigkeit. Er ist die Arbeitsgeschwindigkeit und Klarheit, die entsteht, wenn Agenten die Vorarbeit leisten und Menschen Governance bewusst betreiben.
+
+## Warum es dieses Repo gibt
+
+krisensicherOS folgt einer einfachen Überzeugung: Organisationen sollten Managementsysteme sinnvoll selbst betreiben können. Gute Governance entsteht nicht dadurch, dass Berater Dokumente schreiben, die in der Organisation keinen Mehrwert erzeugen. Sie entsteht, wenn Managementsystemverantwortliche die wichtigen Themen priorisieren, mit Menschen in der Organisation sprechen, Entscheidungen vorbereiten und Routinen betreiben.
+
+Viele Softwaretools lenken dabei vom Wesentlichen ab: Management. krisensicherOS setzt deshalb nicht bei Toolmasken an, sondern bei Rollen, Gesprächen, Nachweisen, Reviews, Eskalationen und Managemententscheidungen.
+
+Gerade Managementsystemverantwortliche sollten KI produktiv nutzen: erstens, um ihre Organisation bei KI-Governance fundiert beraten zu können; zweitens, um Effizienzgewinne dort zu ermöglichen, wo Managementsysteme sonst vor allem Kosten erzeugen, aber zu wenig Output liefern.
+
 **Klarstellung:** Ohne freigegebene KI-Umgebung ist krisensicherOS kein sinnvoller Betriebsmodus. Organisationen können einzelne Vorlagen lesen oder die KI-Freigabe vorbereiten, aber der Produktnutzen entsteht durch KI-unterstützte Arbeit mit Human Gates.
 
 ## In 15 Minuten starten
 
-1. Öffne [`docs/getting-started/README.md`](docs/getting-started/README.md) und wähle einen Anwenderpfad.
-2. Für den kleinsten NIS2-Start nutze den [`5-Artefakte-Schnellstart`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
-3. Wenn du schon weißt, was du brauchst, springe direkt zu den [`Anwenderpfaden`](docs/getting-started/anwenderpfade.md) oder [`Artefaktpaketen`](docs/getting-started/artefaktpakete.md).
+1. Gib dieses Repository einer freigegebenen KI-Umgebung oder öffne es in einem freigegebenen KI-fähigen Arbeitskontext.
+2. Sage der KI, welches Managementsystem-Thema du angehen willst, z. B. NIS2, ISMS, Evidence Review, Incident Readiness oder EU-AI-Act-Readiness.
+3. Lass die KI die offenen Fragen mit dir klären: Scope, Datenklasse, KI-Freigabe, Rollen, Human Gates, vorhandene Nachweise und nächster sinnvoller Arbeitsschritt.
+4. Wenn du manuell starten willst, öffne [`docs/getting-started/README.md`](docs/getting-started/README.md) und wähle einen Anwenderpfad.
+5. Für den kleinsten NIS2-Start nutze den [`5-Artefakte-Schnellstart`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
 
 ## Fünf schnelle Anwenderpfade
 
@@ -59,14 +77,6 @@ Der Nutzen entsteht, wenn Governance im Betrieb sichtbar wird:
 - Sicherheitsroutinen dauerhaft betreiben.
 
 Agenten bereiten vor. Menschen prüfen, entscheiden und verantworten.
-
-## Vibe Governance
-
-So wie **Vibe Coding** beschreibt, wie Menschen mit KI schneller von einer Idee zu lauffähigem Code kommen, beschreibt **Vibe Governance** den nächsten Schritt für Organisationen: Governance nicht mehr als statisches Dokumentenprojekt zu behandeln, sondern als KI-unterstützten Arbeitsfluss aus Fragen, Rollen, Evidenz, Entscheidungen und Reviews.
-
-Vibe Governance heißt bei krisensicherOS nicht: Verantwortung wegautomatisieren oder Compliance aus Prompts behaupten. Es heißt: mit KI schneller zu brauchbaren Entwürfen, besseren Prüffragen, sichtbaren Lücken und entscheidungsreifen Handoffs kommen — während Human Gates, fachliche Verantwortung und organisationsspezifische Freigaben klar erhalten bleiben.
-
-Der „Vibe“ ist nicht Beliebigkeit. Er ist die Arbeitsgeschwindigkeit und Klarheit, die entsteht, wenn Agenten die Vorarbeit leisten und Menschen Governance bewusst betreiben.
 
 ## Für wen ist krisensicherOS?
 
