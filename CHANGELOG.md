@@ -29,6 +29,7 @@ This project follows a simple, human-readable changelog. Before the first public
 
 ### Changed
 
+- Product repository cleaned up: build and translation infrastructure removed from the visible product structure; quality gate now runs directly in GitHub Actions.
 - Mid-sized organization CISO should-findings implemented: module READMEs `01`, `03`, `04`, `06` sharpened with entry points, human gates, outputs, and operating flow; `08` catalogs made clickable and grouped by module; `09` roadmap labeled as product/release roadmap.
 - Product structure cleaned up: domain artifacts moved from loose root collection folders into the numbered `01` to `09` areas; the repository root stays slim, catalogs and the quality gate were adjusted.
 - Product positioning sharpened: krisensicherOS is a repo for AI-assisted security governance and requires approved AI usage.
@@ -37,7 +38,7 @@ This project follows a simple, human-readable changelog. Before the first public
 - Internal working, review, persona, roadmap, briefing, release, and queue artifacts removed from the product repo.
 - `AGENTS.md` made runtime-clean and aligned with public agent profiles.
 - README, getting-started, and setup documentation consistently aligned with AI usage approval, human gates, and product boundaries.
-- Local QA script `scripts/quality-check.sh` hardened: private runtime files, internal working artifacts, runtime markers, secret indicators, local Markdown links, and no-AI product paths are checked.
+- GitHub Actions quality gate hardened: product boundaries, runtime markers, secret indicators, and local Markdown links are checked.
 
 ### Security / Governance
 

@@ -62,7 +62,7 @@ Push, tagging, release, public activation, or external communication always requ
 Minimum command in the working state:
 
 ```bash
-./scripts/quality-check.sh
+GitHub Actions `quality-check` or local review of the relevant quality rules
 ```
 
 Also check:

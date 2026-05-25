@@ -30,7 +30,7 @@ GitHub Branch Protection or Rulesets should be active for `de/main` and `en/main
 
 Before publication or merge, at least the following must run:
 
-- `scripts/quality-check.sh`,
+- GitHub Actions workflow `krisensicherOS quality gate`,
 - `git diff --check`,
 - runtime/session marker check,
 - secret and unsafe compliance/certification claim checks.

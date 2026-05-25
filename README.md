@@ -164,8 +164,6 @@ The numbered folders are the primary product structure. Domain content, template
 08-templates-playbooks/            # cross-cutting catalogs and reusable components
 09-implementation-roadmaps/        # examples, roadmaps, and implementation walkthroughs
 .github/                           # GitHub quality gate and Dependabot
-scripts/                           # local QA and build helpers
-i18n/                              # language/glossary support
 ```
 
 ## Public agents

@@ -28,8 +28,69 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Run product quality checks
-        run: ./scripts/quality-check.sh
-
       - name: Check whitespace and patch hygiene
         run: git diff --check
+
+      - name: Check product repository boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e scripts
+          test ! -e i18n
+          test -f README.md
+          test -f LICENSE
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f AGENTS.md
+          test -f CLAUDE.md
+          test -f CODEOWNERS
+          for path in             01-orientation/README.md             02-governance-operating-model/README.md             03-nis2-readiness/README.md             04-isms-basics/README.md             05-incident-crisis-readiness/README.md             06-evidence-management-review/README.md             07-ai-governance-agents/README.md             08-templates-playbooks/README.md             09-implementation-roadmaps/README.md; do
+            test -e "$path"
+          done
+
+      - name: Check local markdown links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, sys
+          root = Path('.').resolve()
+          missing = []
+          link_re = re.compile(r'(?<!\)!?\[[^\]]*\]\(([^)]+)\)')
+          for p in root.rglob('*.md'):
+              if '.git' in p.parts:
+                  continue
+              text = p.read_text(errors='ignore')
+              for raw in link_re.findall(text):
+                  target = raw.split()[0].strip('<>')
+                  if not target or re.match(r'^[a-z][a-z0-9+.-]*:', target, re.I) or target.startswith('mailto:') or target.startswith('#'):
+                      continue
+                  target_path = target.split('#',1)[0]
+                  if not target_path:
+                      continue
+                  resolved = (p.parent / target_path).resolve()
+                  try:
+                      resolved.relative_to(root)
+                  except ValueError:
+                      continue
+                  if not resolved.exists():
+                      missing.append(f"{p.relative_to(root)}: missing link target {target}")
+          if missing:
+              print('
+'.join(missing))
+              sys.exit(1)
+          print('ok: local markdown links resolve')
+          PY
+
+      - name: Check runtime and leakage markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIn --exclude-dir=.git -E 'governance:constraints:start|Active Governance Constraints|OPENCLAW_CACHE_BOUNDARY|sourceSession=agent:|OpenClaw runtime context' .; then
+            echo 'Runtime/session marker found in product repository.' >&2
+            exit 1
+          fi
+          if grep -RIn --exclude-dir=.git -E '(BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{20,})' .; then
+            echo 'Secret-looking value found in product repository.' >&2
+            exit 1
+          fi

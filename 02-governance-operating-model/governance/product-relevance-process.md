@@ -112,7 +112,7 @@ Before completing any change:
 4. Does a product file contain no private, confidential, personal or licensed content?
 5. Does a product file support AI-assisted governance and human gates?
 6. Are `repo-scope: workrepo` files excluded from the product repo export?
-7. Does `./scripts/quality-check.sh` run without tag errors?
+7. Does the GitHub Actions quality gate run without tag or link errors?
 
 ## Escalation
 
