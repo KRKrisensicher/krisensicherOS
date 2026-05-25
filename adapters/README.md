@@ -26,6 +26,7 @@ Canonical domain logic remains in:
 - [`codex/`](codex/) — Codex CLI.
 - [`claude-cli/`](claude-cli/) — Claude Code CLI.
 - [`m365-copilot/`](m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents, and Copilot Studio.
+- [`orgavision-mcp/`](orgavision-mcp/) — Orgavision MCP as an optional distribution and knowledge-access path for approved governance artifacts.
 
 ## Adapter rule
 

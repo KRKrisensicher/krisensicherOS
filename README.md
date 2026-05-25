@@ -207,7 +207,8 @@ Tool-specific adapters are located under [`adapters/`](adapters/). They explain 
 
 - [`adapters/codex/`](adapters/codex/) — Codex CLI,
 - [`adapters/claude-cli/`](adapters/claude-cli/) — Claude Code CLI,
-- [`adapters/m365-copilot/`](adapters/m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents, and Copilot Studio.
+- [`adapters/m365-copilot/`](adapters/m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents, and Copilot Studio,
+- [`adapters/orgavision-mcp/`](adapters/orgavision-mcp/) — Orgavision MCP as an optional distribution and knowledge-access path for approved governance artifacts.
 
 ## Quick usage path
 
