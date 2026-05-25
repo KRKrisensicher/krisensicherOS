@@ -62,7 +62,7 @@ Push, Tagging, Release, Public-Schaltung oder externe Kommunikation brauchen imm
 Mindestkommando im Arbeitsstand:
 
 ```bash
-./scripts/quality-check.sh
+GitHub Actions `quality-check` oder lokales Review der relevanten Qualitätsregeln
 ```
 
 Zusätzlich prüfen:

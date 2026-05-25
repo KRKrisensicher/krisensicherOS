@@ -112,7 +112,7 @@ Vor Abschluss jeder Änderung:
 4. Enthält eine Produktdatei keine privaten, vertraulichen, personenbezogenen oder lizenzpflichtigen Inhalte?
 5. Unterstützt eine Produktdatei KI-unterstützte Governance und Human Gates?
 6. Bleiben `repo-scope: workrepo`-Dateien vom Produktrepo-Export ausgeschlossen?
-7. Läuft `./scripts/quality-check.sh` ohne Tag-Fehler?
+7. Läuft das GitHub Actions Quality Gate ohne Tag- oder Linkfehler?
 
 ## Eskalation
 

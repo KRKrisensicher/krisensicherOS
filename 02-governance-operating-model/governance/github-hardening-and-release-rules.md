@@ -30,7 +30,7 @@ Für `de/main` und `en/main` sollen GitHub Branch Protection oder Rulesets aktiv
 
 Vor Veröffentlichung oder Merge müssen mindestens laufen:
 
-- `scripts/quality-check.sh`,
+- GitHub Actions Workflow `krisensicherOS quality gate`,
 - `git diff --check`,
 - Prüfung auf Runtime-/Session-Marker,
 - Prüfung auf Secrets und unsichere Konformitäts-/Zertifizierungsclaims.

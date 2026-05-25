@@ -29,6 +29,7 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 
 ### Changed
 
+- Produktrepo bereinigt: Build- und Übersetzungsinfrastruktur aus sichtbarer Produktstruktur entfernt; Quality Gate läuft nun direkt in GitHub Actions.
 - Mittelstands-CISO-Should-Findings umgesetzt: Modul-READMEs `01`, `03`, `04`, `06` mit Einstiegen, Human Gates, Outputs und Betriebsfluss geschärft; `08`-Kataloge klickbar und nach Modulen gruppiert; `09`-Roadmap als Produkt-/Release-Roadmap gekennzeichnet.
 - Produktstruktur aufgeräumt: fachliche Artefakte aus losen Root-Sammelordnern in die nummerierten Bereiche `01` bis `09` verschoben; Root-Ebene bleibt schlank, Kataloge und Quality Gate wurden angepasst.
 - Produktpositionierung geschärft: krisensicherOS ist ein Repo für KI-unterstützte Security Governance und setzt eine freigegebene KI-Nutzung voraus.
@@ -37,7 +38,7 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 - Interne Arbeits-, Review-, Persona-, Roadmap-, Briefing-, Release- und Queue-Artefakte aus dem Produktrepo entfernt.
 - `AGENTS.md` runtime-clean gemacht und auf öffentliche Agentenprofile ausgerichtet.
 - README, Getting-Started- und Setup-Dokumentation konsistent auf KI-Freigabe, Human Gates und Produktgrenzen ausgerichtet.
-- Lokales QS-Skript `scripts/quality-check.sh` gehärtet: private Runtime-Dateien, interne Arbeitsartefakte, Runtime-Marker, Secret-Indikatoren, lokale Markdown-Links und No-KI-Produktpfade werden geprüft.
+- GitHub Actions Quality Gate gehärtet: Produktgrenzen, Runtime-Marker, Secret-Indikatoren und lokale Markdown-Links werden geprüft.
 
 ### Security / Governance
 

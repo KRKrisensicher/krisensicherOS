@@ -164,8 +164,6 @@ Die nummerierten Ordner sind die primäre Produktstruktur. Fachliche Inhalte, Vo
 08-templates-playbooks/            # Querschnittskataloge und wiederverwendbare Bausteine
 09-implementation-roadmaps/        # Beispiele, Roadmaps und Umsetzungsdurchstiche
 .github/                           # GitHub Quality Gate und Dependabot
-scripts/                           # lokale QS- und Build-Hilfen
-i18n/                              # Sprach-/Glossarunterstützung
 ```
 
 ## Öffentliche Agenten
