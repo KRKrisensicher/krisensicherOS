@@ -1,0 +1,79 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: governance-operating-model
+version: 1.0.0
+purpose: Anforderungen in Rollen, Routinen, Evidenzflüsse, Eskalationen und Managemententscheidungen übersetzen.
+trigger:
+  - neue oder geänderte Security-/Compliance-Anforderungen
+  - unklare Rollen, Routinen oder Evidence-Flows
+  - Vorbereitung eines Management Reviews
+inputs:
+  required:
+    - scope
+    - requirements_or_register_references
+    - existing_roles
+  optional:
+    - existing_routines
+    - evidence_sources
+    - risk_or_action_register
+agents:
+  lead: security-governance-architect
+  support:
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - governance-operating-model
+templates:
+  - templates/governance-operating-model-canvas.md
+  - templates/rollenmatrix.md
+steps:
+  - id: scope
+    agent: security-governance-architect
+    action: Scope, Nicht-Scope und Ziel der Governance-Routine festlegen.
+    output: scope_note
+    human_gate: Scope-Bestätigung durch verantwortliche Rolle.
+  - id: sources
+    agent: regulatory-source-mapper
+    action: Quellen und Registereinträge als Referenzanker sammeln, ohne vertrauliche oder lizenzpflichtige Volltexte zu übernehmen.
+    output: source_reference_list
+    stop_if:
+      - rechtliche Auslegung erforderlich
+      - vertraulicher oder lizenzpflichtiger Inhalt müsste reproduziert werden
+  - id: operating_model
+    skill: governance-operating-model
+    action: Rollen, Routinen, Trigger, Outputs, Evidenz und Eskalationen ableiten.
+    output: governance_operating_model_canvas
+  - id: workload_review
+    agent: agent-quality-and-safety-reviewer
+    action: Bürokratie, Claim-Safety, Public-Safety und Portabilität prüfen.
+    output: quality_notes
+  - id: decision_prep
+    agent: management-review-facilitator
+    action: offene Managemententscheidungen, Optionen und nächste Review-Routine vorbereiten.
+    output: management_decision_brief
+    human_gate: Management entscheidet Rollen, Ressourcen, Risikoakzeptanz und Prioritäten.
+outputs:
+  - governance_operating_model_canvas
+  - role_matrix
+  - evidence_flow_notes
+  - management_decision_brief
+stop_points:
+  - Rechtsberatung oder Datenschutzberatung erforderlich
+  - Konformitäts- oder Zertifizierungsaussage würde entstehen
+  - echte Kunden-, Personen- oder vertrauliche Organisationsdaten in öffentliche Artefakte geraten
+  - Managemententscheidung soll automatisiert werden
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

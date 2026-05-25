@@ -1,0 +1,41 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: compliance-register-structure
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-guidance; claim-safe
+
+# Fiktives Beispiel für ein Compliance-Register.
+# Keine echten Verträge, keine echten Normtexte, keine vertraulichen Informationen.
+
+version: "0.1"
+status: "example"
+
+sources:
+  - id: "example-iso27001-reference"
+    title: "ISO/IEC 27001 — lizenzpflichtige Normreferenz"
+    type: "standard-reference"
+    owner: "Informationssicherheitsbeauftragte Person"
+    source_location: "Interne lizenzierte Normbibliothek / offizieller Normzugang"
+    license_or_confidentiality: "Lizenzpflichtig; keine Normtexte ins Repo kopieren"
+    applicability: "ISMS-Aufbau und Managementsystem-Bezug"
+    obligations_summary: "Nur eigene Zusammenfassung und Mapping-Felder nutzen; Normtext separat lizenzkonform einsehen."
+    mapping_status: "not_started"
+    review_frequency: "jährlich oder bei Norm-/Scope-Änderung"
+    human_owner: "ISB/CISO"
+    agent_usage_allowed: "metadata_only"
+    notes: "Siehe docs/legal/iso-normen-lizenzkonform-nutzen.md"
+
+  - id: "example-customer-security-annex"
+    title: "Fiktiver Kundenvertrag — Security Annex"
+    type: "customer-contract"
+    owner: "Vertragsmanagement"
+    source_location: "Privates Vertragsrepository der Organisation"
+    license_or_confidentiality: "Vertraulich; nicht in öffentliche Repos kopieren"
+    applicability: "Kundenanforderungen an Incident-Meldung und Nachweise"
+    obligations_summary: "Fiktives Beispiel: Meldefristen, Nachweise, Ansprechpartner und Audit-Rechte prüfen."
+    mapping_status: "draft"
+    review_frequency: "bei Vertragsänderung und mindestens jährlich"
+    human_owner: "Legal / CISO / Account Owner"
+    agent_usage_allowed: "summary_only_after_human_redaction"
+    notes: "Nur redigierte Zusammenfassungen für Agenten nutzen."
