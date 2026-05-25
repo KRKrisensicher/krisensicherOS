@@ -10,32 +10,22 @@ criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-guidan
 
 Workflows verbinden Agenten, Skills, Templates, Register und menschliche Freigabepunkte zu betreibbaren Abläufen.
 
-Sie sind bewusst toolneutral. Ein Workflow beschreibt Fachlogik und Handoffs; konkrete Ausführung in Claude, Codex, OpenClaw, Hermes oder anderen Systemen erfolgt über dünne Adapter.
+## Betriebsfluss über Module
 
-## Grundregeln
+`02 Governance-Modell → 03 Gap → 04 Risiko/Controls → 06 Evidence/Review → Decision Log`
 
-- Jeder Workflow hat Scope, Trigger, Inputs, Schritte, Outputs, Stop-Punkte und Human Gates.
-- Agenten unterstützen; sie übernehmen keine Verantwortung.
-- Rechtliche Auslegung, Datenschutzbewertung, Risikoakzeptanz, Managemententscheidungen und externe Kommunikation bleiben menschliche Aufgaben.
-- Öffentliche Beispiele bleiben fiktiv und enthalten keine echten Organisations-, Kunden- oder Personendaten.
-- Lizenzpflichtige Normen und vertrauliche Vorgaben werden nur als Metadaten, Verweise oder eigene Zusammenfassungen genutzt.
+## Workflow-Grundset v1.0
 
-## Grundset v1.0
-
-- `governance-operating-model.yaml` — Anforderungen in Rollen, Routinen, Evidenz und Entscheidungen übersetzen.
-- `nis2-readiness-gap.yaml` — NIS2-Readiness-Gaps strukturiert erfassen und priorisieren.
-- `minimum-viable-isms.yaml` — ISMS-Startmodus mit Scope, Risiko, Controls, Evidenz und Review entwerfen.
-- `isms-risk-to-soa.yaml` — ISMS-Risiken nach Brutto-/Netto-Methodik bewerten, Maßnahmen ableiten und mit Control-/SoA-Einträgen mappen.
-- `evidence-management-review.yaml` — Evidence Packs prüfen und Management Review vorbereiten.
-- `audit-evidence-remediation-chain.yaml` — Anforderung, Auditfrage, Prüfprogramm, Evidence Request, Finding, Corrective Action, Wirksamkeitsreview und Management Review verbinden.
-- `eu-ai-act-readiness-precheck.yaml` — KI-Systeme inventarisieren, Risikosignale markieren und Legal-/Datenschutz-/Management-Handoffs vorbereiten.
+- [`governance-operating-model.yaml`](../../02-governance-operating-model/workflows/governance-operating-model.yaml) — Anforderungen in Rollen, Routinen, Evidenz und Entscheidungen übersetzen.
+- [`nis2-readiness-gap.yaml`](../../03-nis2-readiness/workflows/nis2-readiness-gap.yaml) — NIS2-Readiness-Gaps erfassen und priorisieren.
+- [`nis2-vorab-betroffenheitspruefung.yaml`](../../03-nis2-readiness/workflows/nis2-vorab-betroffenheitspruefung.yaml) — NIS2-Vorprüfung mit Legal-Handoff vorbereiten.
+- [`minimum-viable-isms.yaml`](../../04-isms-basics/workflows/minimum-viable-isms.yaml) — ISMS-Startmodus mit Scope, Risiko, Controls, Evidenz und Review entwerfen.
+- [`isms-risk-to-soa.yaml`](../../04-isms-basics/workflows/isms-risk-to-soa.yaml) — Risiken bewerten, Maßnahmen ableiten und mit Control-/SoA-Einträgen mappen.
+- [`nis2-incident-and-management-readiness.yaml`](../../05-incident-crisis-readiness/workflows/nis2-incident-and-management-readiness.yaml) — Incident-/Melde- und Management-Readiness verbinden.
+- [`evidence-management-review.yaml`](../../06-evidence-management-review/workflows/evidence-management-review.yaml) — Evidence Packs prüfen und Management Review vorbereiten.
+- [`audit-evidence-remediation-chain.yaml`](../../06-evidence-management-review/workflows/audit-evidence-remediation-chain.yaml) — Auditfrage, Test, Evidence Request, Finding, Corrective Action, Wirksamkeit und Review verbinden.
+- [`eu-ai-act-readiness-precheck.yaml`](../../07-ai-governance-agents/workflows/eu-ai-act-readiness-precheck.yaml) — KI-Systeme inventarisieren und Handoff-Fragen markieren.
 
 ## Workflow-Gate
 
-Vor Nutzung prüfen:
-
-- Sind Trigger, Inputs und Output klar?
-- Sind Agenten, Skills und Templates explizit verbunden?
-- Gibt es Stop-/Eskalationspunkte?
-- Sind Human Gates vor rechtlichen, datenschutzrechtlichen, Management- oder externen Aussagen sichtbar?
-- Erzeugt der Workflow Entscheidungsfähigkeit statt Bürokratie?
+Vor Nutzung prüfen: Trigger, Inputs, Outputs, Agenten/Skills/Templates, Stop-Punkte, Human Gates und Entscheidungsnutzen.

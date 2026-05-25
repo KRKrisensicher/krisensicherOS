@@ -6,9 +6,13 @@ review-required-on-change: true
 criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-guidance; claim-safe
 -->
 
-# 30-Tage-Umsetzungsplan v0.1
+# 30-Tage-Produkt- und Release-Roadmap v0.1
 
-Ziel: In 30 Tagen ein nutzbares v0.1-Repo veröffentlichen, das nicht wie eine Dokumentensammlung wirkt, sondern wie ein erstes agentisches Betriebssystem für CISO-/ISB-Arbeit.
+Dieser Plan ist **keine Nutzer-Implementierungsanleitung**. Er dokumentiert, wie krisensicherOS als offenes Produktrepo in einer frühen v0.1-Phase aufgebaut wurde. Für Nutzer-Durchstiche nutze stattdessen die Beispiele unter [`examples/`](examples/) und den Einstieg in [`01-orientation/getting-started/`](../01-orientation/getting-started/README.md).
+
+## Zweck
+
+Der Plan bleibt im Repo, damit nachvollziehbar ist, welche Produktlogik hinter der ersten Struktur stand: kein Dokumentenfriedhof, sondern ein agentisch nutzbares Betriebssystem für CISO-/ISB-Arbeit.
 
 ## Woche 1 — Fundament und Positionierung
 
@@ -39,8 +43,8 @@ Ziel: In 30 Tagen ein nutzbares v0.1-Repo veröffentlichen, das nicht wie eine D
 
 **Ziel:** Agentisches Supportteam arbeitsfähig beschreiben.
 
-- 7 Start-Agenten als Rollenprofile ausarbeiten
-- 10 Start-Skills im Mindestformat ausarbeiten
+- Start-Agenten als Rollenprofile ausarbeiten
+- Start-Skills im Mindestformat ausarbeiten
 - Human-in-the-loop-Regeln dokumentieren
 - Qualitätskriterien je Skill ergänzen
 - Beispiel-Workflows für NIS2 Gap, Evidence Review und Management Review erstellen
@@ -54,10 +58,10 @@ Ziel: In 30 Tagen ein nutzbares v0.1-Repo veröffentlichen, das nicht wie eine D
 - Incident-Eskalationsplaybook erstellen
 - Management-Review-Playbook erstellen
 - Evidence-Pack-Review-Playbook erstellen
-- ein fiktives Beispielprojekt in 09-implementation-roadmaps/examples/ anlegen
+- fiktive Beispiele unter [`examples/`](examples/) anlegen
 - Repo-Governance und Beitragsregeln ergänzen
 - Qualitätsreview gegen v0.1-Regeln durchführen
-- Release Notes v0.1 vorbereiten
+- Release Notes vorbereiten
 
 **Ergebnis:** v0.1 ist als offenes Startsystem nutzbar und anschlussfähig für Beratung, Community und Weiterentwicklung.
 

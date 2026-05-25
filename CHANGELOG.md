@@ -29,6 +29,7 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 
 ### Changed
 
+- Mittelstands-CISO-Should-Findings umgesetzt: Modul-READMEs `01`, `03`, `04`, `06` mit Einstiegen, Human Gates, Outputs und Betriebsfluss geschärft; `08`-Kataloge klickbar und nach Modulen gruppiert; `09`-Roadmap als Produkt-/Release-Roadmap gekennzeichnet.
 - Produktstruktur aufgeräumt: fachliche Artefakte aus losen Root-Sammelordnern in die nummerierten Bereiche `01` bis `09` verschoben; Root-Ebene bleibt schlank, Kataloge und Quality Gate wurden angepasst.
 - Produktpositionierung geschärft: krisensicherOS ist ein Repo für KI-unterstützte Security Governance und setzt eine freigegebene KI-Nutzung voraus.
 - Setup-Dokumentation auf freigegebene KI-Umgebungen fokussiert: ChatGPT, Microsoft 365 Copilot, Claude Code und lokale KI.
