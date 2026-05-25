@@ -17,9 +17,9 @@ Agents are not substitute accountable owners. They structure work, prepare decis
 - [`human-in-the-loop.md`](human-in-the-loop.md) — human approval points, decisions, and stop points.
 - [`agent-operating-rules.md`](agent-operating-rules.md) — operating rules for assignments, data, sources, handoffs, and reviews.
 - [`risk-and-limits.md`](risk-and-limits.md) — typical risks of agentic governance work and countermeasures.
-- [`../docs/getting-started/eu-ai-act-readiness-start.md`](../docs/getting-started/eu-ai-act-readiness-start.md) — start AI systems as an inventory, pre-check, and handoff routine.
-- [`../agents/public/role-model.md`](../agents/public/role-model.md) — public role model of the target repo agents.
-- [`../agents/manifest.yaml`](../agents/manifest.yaml) — manifest for agent families, handoffs, and adapters.
+- [`../01-orientation/getting-started/eu-ai-act-readiness-start.md`](../01-orientation/getting-started/eu-ai-act-readiness-start.md) — start AI systems as an inventory, pre-check, and handoff routine.
+- [`./agents/public/role-model.md`](./agents/public/role-model.md) — public role model of the target repo agents.
+- [`./agents/manifest.yaml`](./agents/manifest.yaml) — manifest for agent families, handoffs, and adapters.
 
 ## Recommended starting point
 

@@ -100,18 +100,18 @@ Each relevant output is checked against suitable gates:
 - empowerment,
 - workload,
 - portability,
-- artifact-specific gate from `evals/quality-gates.md`.
+- artifact-specific gate from `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`.
 
 ## 6. Working mode in tools
 
 The specialist logic remains canonical in:
 
-- `agents/public/`,
-- `skills/`,
+- `07-ai-governance-agents/agents/public/`,
+- `07-ai-governance-agents/skills/`,
 - `templates/`,
 - `playbooks/`,
 - `workflows/`,
-- `evals/`.
+- `06-evidence-management-review/evals/`.
 
 Tool adapters for Claude, Codex, OpenClaw, Hermes, or other systems should only implement this specialist logic, not change it.
 

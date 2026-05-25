@@ -55,8 +55,8 @@ Agents must not:
 
 ## Canonical agent profiles
 
-- Public user agents are located under `agents/public/`.
-- The routing and portability manifest is located in `agents/manifest.yaml`.
+- Public user agents are located under `07-ai-governance-agents/agents/public/`.
+- The routing and portability manifest is located in `07-ai-governance-agents/agents/manifest.yaml`.
 - Adapters for Claude, Codex, OpenClaw, Hermes, or other systems must not duplicate domain logic, but should derive from the canonical profiles.
 
 ## Quality gates for contributions

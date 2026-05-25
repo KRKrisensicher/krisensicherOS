@@ -29,14 +29,14 @@ The repo does not build governance for a specific organization. It provides buil
 ## Important paths
 
 - `README.md` — product positioning and orientation
-- `knowledge/` — fixed public reference sources
-- `compliance-register/` — structure for user-owned requirements
-- `agents/` — canonical agent profiles and manifest
-- `agents/public/` — public target-repo agents for user organizations
-- `skills/` — reusable AgentSkills
+- `01-orientation/knowledge-sources/` — fixed public reference sources
+- `02-governance-operating-model/compliance-register/` — structure for user-owned requirements
+- `07-ai-governance-agents/agents/` — canonical agent profiles and manifest
+- `07-ai-governance-agents/agents/public/` — public target-repo agents for user organizations
+- `07-ai-governance-agents/skills/` — reusable AgentSkills
 - `templates/` — usable work templates
 - `workflows/` — agentic workflow models
-- `evals/` — quality and safety gates
+- `06-evidence-management-review/evals/` — quality and safety gates
 - `docs/standards/` — profile, skill, and artifact standards
 
 ## Quality check before completion

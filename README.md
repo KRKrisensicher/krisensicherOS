@@ -35,8 +35,8 @@ Management system owners in particular should use AI productively: first, so the
 1. Give this repository to an approved AI environment or open it in an approved AI-enabled work context.
 2. Tell the AI which management-system topic you want to work on, such as NIS2, ISMS, evidence review, incident readiness, or EU AI Act readiness.
 3. Let the AI clarify the open questions with you: scope, data class, AI usage approval, roles, human gates, existing evidence, and the next useful work step.
-4. If you want to start manually, open [`docs/getting-started/README.md`](docs/getting-started/README.md) and choose a user path.
-5. For the smallest NIS2 start, use the [`5-artifact quick start`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
+4. If you want to start manually, open [`01-orientation/getting-started/README.md`](01-orientation/getting-started/README.md) and choose a user path.
+5. For the smallest NIS2 start, use the [`5-artifact quick start`](01-orientation/getting-started/minimaler-nis2-start-in-5-artefakten.md).
 
 ## Five quick user paths
 
@@ -46,21 +46,21 @@ Management system owners in particular should use AI productively: first, so the
 - **Practice incident/notification readiness:** Train escalation, triage, and human gates.
 - **Start EU AI Act readiness:** Inventory AI systems, flag role questions, and prepare legal/data protection/management handoffs.
 
-Details are in [`docs/getting-started/anwenderpfade.md`](docs/getting-started/anwenderpfade.md).
+Details are in [`01-orientation/getting-started/anwenderpfade.md`](01-orientation/getting-started/anwenderpfade.md).
 
 ## Minimal start sequence
 
-1. Choose a path or package from [`docs/getting-started/`](docs/getting-started/README.md).
-2. Check AI usage approval with [`templates/ki-nutzungsfreigabe-matrix.md`](templates/ki-nutzungsfreigabe-matrix.md).
-3. Choose exactly one approved AI environment from [`docs/setup/README.md`](docs/setup/README.md).
-4. Use no more than one artifact package from [`docs/getting-started/artefaktpakete.md`](docs/getting-started/artefaktpakete.md).
+1. Choose a path or package from [`01-orientation/getting-started/`](01-orientation/getting-started/README.md).
+2. Check AI usage approval with [`07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md`](./07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md).
+3. Choose exactly one approved AI environment from [`01-orientation/setup/README.md`](01-orientation/setup/README.md).
+4. Use no more than one artifact package from [`01-orientation/getting-started/artefaktpakete.md`](01-orientation/getting-started/artefaktpakete.md).
 5. Mark human gates for management, risk acceptance, legal, data protection, and external communication.
 
 ## Mission
 
 krisensicherOS helps translate compliance work into roles, routines, evidence, and management decisions.
 
-Product guardrail: krisensicherOS builds only components that increase decision readiness, evidence flow, or operating routine. Anything that only creates more documents, consultant optics, or apparent compliance stays out. See [`docs/product/was-wir-bewusst-nicht-bauen.md`](docs/product/was-wir-bewusst-nicht-bauen.md).
+Product guardrail: krisensicherOS builds only components that increase decision readiness, evidence flow, or operating routine. Anything that only creates more documents, consultant optics, or apparent compliance stays out. See [`01-orientation/product-positioning/was-wir-bewusst-nicht-bauen.md`](01-orientation/product-positioning/was-wir-bewusst-nicht-bauen.md).
 
 ## Core thesis
 
@@ -113,7 +113,7 @@ krisensicherOS works on two levels:
 1. **Hard-wired public reference sources** such as the NIS2 Directive, BSIG, EnWG, GDPR, BDSG, and BSI-KritisV.
 2. **User-owned compliance registers** for standards, customer contracts, internal policies, audit findings, and sector-specific requirements.
 
-Important: Licensed standards such as ISO/IEC 27001 are not included in the repository as standard text. The repository provides only metadata, mapping, and working structures. See [`docs/legal/iso-normen-lizenzkonform-nutzen.md`](docs/legal/iso-normen-lizenzkonform-nutzen.md).
+Important: Licensed standards such as ISO/IEC 27001 are not included in the repository as standard text. The repository provides only metadata, mapping, and working structures. See [`01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md`](01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md).
 
 Purchased ISO, DIN, EVS, BSI, or other standards documents must not be transferred into this repository, prompts, agents, RAG systems, embeddings, vector databases, or other AI systems without an appropriate license. For krisensicherOS: obtain and read standards externally in line with license terms, but maintain only your own summaries, IDs, mappings, decision fields, and public-safe working structures in the repository.
 
@@ -151,79 +151,72 @@ All results must be reviewed, adapted, and approved by professionally accountabl
 
 ## Repository structure v1.0
 
+The numbered folders are the primary product structure. Domain content, templates, playbooks, workflows, examples, and agent components live where they are used operationally. The repository root intentionally stays slim and contains only entry points, license, security/contribution rules, and technical infrastructure.
+
 ```text
-01-orientation/
-02-governance-operating-model/
-03-nis2-readiness/
-04-isms-basics/
-05-incident-crisis-readiness/
-06-evidence-management-review/
-07-ai-governance-agents/
-08-templates-playbooks/
-09-implementation-roadmaps/
-agents/public/
-skills/
-templates/
-playbooks/
-implementierungsleitfaeden/
-examples/
-docs/
-governance/
-knowledge/
-compliance-register/
-workflows/
-prompts/
+01-orientation/                    # onboarding, setup, boundaries, sources
+02-governance-operating-model/     # roles, registers, decisions, governance rules
+03-nis2-readiness/                 # NIS2 pre-check, gap, management and notification readiness
+04-isms-basics/                    # ISMS setup, risk, controls, implementation guides
+05-incident-crisis-readiness/      # incident, BCMS, escalation, exercises
+06-evidence-management-review/     # evidence, audit, remediation, management review
+07-ai-governance-agents/           # agents, skills, adapters, prompts, AI governance
+08-templates-playbooks/            # cross-cutting catalogs and reusable components
+09-implementation-roadmaps/        # examples, roadmaps, and implementation walkthroughs
+.github/                           # GitHub quality gate and Dependabot
+scripts/                           # local QA and build helpers
+i18n/                              # language/glossary support
 ```
 
 ## Public agents
 
-The public agent profiles are located under [`agents/public/`](agents/public/). They describe roles, boundaries, inputs, outputs, human gates, and handoffs for AI-assisted governance work.
+The public agent profiles are located under [`07-ai-governance-agents/agents/public/`](07-ai-governance-agents/agents/public/). They describe roles, boundaries, inputs, outputs, human gates, and handoffs for AI-assisted governance work.
 
-Do not start with all agents at the same time. First use [`agents/public/anwender-routing.md`](agents/public/anwender-routing.md) and choose exactly the role needed for the next work step.
+Do not start with all agents at the same time. First use [`07-ai-governance-agents/agents/public/anwender-routing.md`](07-ai-governance-agents/agents/public/anwender-routing.md) and choose exactly the role needed for the next work step.
 
 ## Skills, templates, workflows, and playbooks
 
-- [`skills/`](skills/) — repeatable AgentSkills with process, output, and quality criteria.
-- [`templates/`](templates/) — working templates for registers, gaps, evidence, decisions, risks, and reviews.
-- [`workflows/`](workflows/) — process models for agentic governance routines.
-- [`playbooks/`](playbooks/) — concrete operating and exercise procedures.
-- [`implementierungsleitfaeden/`](implementierungsleitfaeden/) — practical implementation aids, including for ISMS roles, routines, evidence, and reviews.
+- [`07-ai-governance-agents/skills/`](07-ai-governance-agents/skills/) — repeatable AgentSkills with process, output, and quality criteria.
+- [`08-templates-playbooks/catalogs/templates.md`](./08-templates-playbooks/catalogs/templates.md) — working templates for registers, gaps, evidence, decisions, risks, and reviews.
+- [`workflows/`](./08-templates-playbooks/catalogs/workflows.md) — process models for agentic governance routines.
+- [`playbooks/`](./08-templates-playbooks/catalogs/playbooks.md) — concrete operating and exercise procedures.
+- [`04-isms-basics/implementation-guides/`](04-isms-basics/implementation-guides/) — practical implementation aids, including for ISMS roles, routines, evidence, and reviews.
 
 ## Setup
 
 krisensicherOS requires approved AI use. The setup documents help you use a suitable environment in a controlled way:
 
-- [`docs/setup/README.md`](docs/setup/README.md) — setup selection and entry point,
-- [`docs/setup/chatgpt-lokale-ide.md`](docs/setup/chatgpt-lokale-ide.md) — ChatGPT with local IDE,
-- [`docs/setup/m365-copilot.md`](docs/setup/m365-copilot.md) — Microsoft 365 Copilot,
-- [`docs/setup/claude-code.md`](docs/setup/claude-code.md) — Claude Code App, VS Code, and CLI,
-- [`docs/setup/lokale-ki.md`](docs/setup/lokale-ki.md) — local AI without cloud.
+- [`01-orientation/setup/README.md`](01-orientation/setup/README.md) — setup selection and entry point,
+- [`01-orientation/setup/chatgpt-lokale-ide.md`](01-orientation/setup/chatgpt-lokale-ide.md) — ChatGPT with local IDE,
+- [`01-orientation/setup/m365-copilot.md`](01-orientation/setup/m365-copilot.md) — Microsoft 365 Copilot,
+- [`01-orientation/setup/claude-code.md`](01-orientation/setup/claude-code.md) — Claude Code App, VS Code, and CLI,
+- [`01-orientation/setup/lokale-ki.md`](01-orientation/setup/lokale-ki.md) — local AI without cloud.
 
-If there is no AI usage approval, use only the approval matrix as preparation: [`templates/ki-nutzungsfreigabe-matrix.md`](templates/ki-nutzungsfreigabe-matrix.md).
+If there is no AI usage approval, use only the approval matrix as preparation: [`07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md`](./07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md).
 
 ## Adapters
 
-Tool-specific adapters are located under [`adapters/`](adapters/). They explain how krisensicherOS is used in specific AI interfaces without duplicating the subject-matter source of truth:
+Tool-specific adapters are located under [`07-ai-governance-agents/adapters/`](07-ai-governance-agents/adapters/). They explain how krisensicherOS is used in specific AI interfaces without duplicating the subject-matter source of truth:
 
-- [`adapters/codex/`](adapters/codex/) — Codex CLI,
-- [`adapters/claude-cli/`](adapters/claude-cli/) — Claude Code CLI,
-- [`adapters/m365-copilot/`](adapters/m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents, and Copilot Studio,
-- [`adapters/orgavision-mcp/`](adapters/orgavision-mcp/) — Orgavision MCP as an optional distribution and knowledge-access path for approved governance artifacts.
+- [`07-ai-governance-agents/adapters/codex/`](./07-ai-governance-agents/adapters/codex) — Codex CLI,
+- [`07-ai-governance-agents/adapters/claude-cli/`](./07-ai-governance-agents/adapters/claude-cli) — Claude Code CLI,
+- [`07-ai-governance-agents/adapters/m365-copilot/`](./07-ai-governance-agents/adapters/m365-copilot) — Microsoft 365 Copilot, SharePoint Agents, and Copilot Studio,
+- [`07-ai-governance-agents/adapters/orgavision-mcp/`](./07-ai-governance-agents/adapters/orgavision-mcp) — Orgavision MCP as an optional distribution and knowledge-access path for approved governance artifacts.
 
 ## Quick usage path
 
-For the first robust walkthrough, there is a 30/60/90-minute path: [`docs/getting-started/30-60-90-minuten-nutzungspfad.md`](docs/getting-started/30-60-90-minuten-nutzungspfad.md).
+For the first robust walkthrough, there is a 30/60/90-minute path: [`01-orientation/getting-started/30-60-90-minuten-nutzungspfad.md`](01-orientation/getting-started/30-60-90-minuten-nutzungspfad.md).
 
 For direct entry situations, there are also five user paths and four artifact packages:
 
-- [`docs/getting-started/anwenderpfade.md`](docs/getting-started/anwenderpfade.md)
-- [`docs/getting-started/artefaktpakete.md`](docs/getting-started/artefaktpakete.md)
+- [`01-orientation/getting-started/anwenderpfade.md`](01-orientation/getting-started/anwenderpfade.md)
+- [`01-orientation/getting-started/artefaktpakete.md`](01-orientation/getting-started/artefaktpakete.md)
 
-For ISMS, there is a compact fictional example: [`examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md`](examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md).
+For ISMS, there is a compact fictional example: [`09-implementation-roadmaps/examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md`](09-implementation-roadmaps/examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md).
 
-For the NIS2 preliminary applicability check, there is a legally bounded questionnaire: [`templates/nis2-vorab-betroffenheitspruefung-fragebogen.md`](templates/nis2-vorab-betroffenheitspruefung-fragebogen.md). The result is always only a working assumption and must be reviewed by a lawyer/legal.
+For the NIS2 preliminary applicability check, there is a legally bounded questionnaire: [`templates/nis2-vorab-betroffenheitspruefung-fragebogen.md`](./03-nis2-readiness/templates/nis2-vorab-betroffenheitspruefung-fragebogen.md). The result is always only a working assumption and must be reviewed by a lawyer/legal.
 
-For NIS2 readiness in operations, [`playbooks/nis2-incident-melde-triage.md`](playbooks/nis2-incident-melde-triage.md) and [`playbooks/nis2-management-schulung-und-review.md`](playbooks/nis2-management-schulung-und-review.md) add notification/incident capability and management decisions.
+For NIS2 readiness in operations, [`playbooks/nis2-incident-melde-triage.md`](./03-nis2-readiness/playbooks/nis2-incident-melde-triage.md) and [`playbooks/nis2-management-schulung-und-review.md`](./03-nis2-readiness/playbooks/nis2-management-schulung-und-review.md) add notification/incident capability and management decisions.
 
 ## Consulting connection without blunt advertising
 

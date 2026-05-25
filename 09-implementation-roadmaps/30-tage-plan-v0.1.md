@@ -54,7 +54,7 @@ Goal: Publish a usable v0.1 repo in 30 days that does not feel like a document c
 - Create incident escalation playbook
 - Create management review playbook
 - Create evidence pack review playbook
-- Create a fictional example project in examples/
+- Create a fictional example project in 09-implementation-roadmaps/examples/
 - Add repo governance and contribution rules
 - Perform quality review against v0.1 rules
 - Prepare release notes v0.1

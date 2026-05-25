@@ -32,18 +32,18 @@
 /CODEOWNERS @KRKerstan
 
 # Agentic operating logic
-/agents/ @KRKerstan
-/skills/ @KRKerstan
+/07-ai-governance-agents/agents/ @KRKerstan
+/07-ai-governance-agents/skills/ @KRKerstan
 /workflows/ @KRKerstan
-/adapters/ @KRKerstan
-/prompts/ @KRKerstan
+/07-ai-governance-agents/adapters/ @KRKerstan
+/07-ai-governance-agents/prompts/ @KRKerstan
 
 # Compliance and knowledge structures
-/knowledge/ @KRKerstan
-/compliance-register/ @KRKerstan
+/01-orientation/knowledge-sources/ @KRKerstan
+/02-governance-operating-model/compliance-register/ @KRKerstan
 /templates/ @KRKerstan
 /playbooks/ @KRKerstan
-/implementierungsleitfaeden/ @KRKerstan
+/04-isms-basics/implementation-guides/ @KRKerstan
 
 # Examples must stay fictional and public-safe
-/examples/ @KRKerstan
+/09-implementation-roadmaps/examples/ @KRKerstan

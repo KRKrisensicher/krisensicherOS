@@ -12,9 +12,9 @@ This module describes a minimum viable ISMS as operable routines rather than a d
 
 **Operating logic:** Connects scope, risks, controls, reviews, and improvements into an ongoing operating model.
 
-For practical setup, the [`ISMS implementation guide`](../implementierungsleitfaeden/isms/) is also available. It translates ISO/IEC 27001-oriented work into roles, routines, evidence, and reviews without adopting standard texts.
+For practical setup, the [`ISMS implementation guide`](../04-isms-basics/implementation-guides/isms/) is also available. It translates ISO/IEC 27001-oriented work into roles, routines, evidence, and reviews without adopting standard texts.
 
 ## Artifacts
 
 - [`risikomanagement-methodik.md`](risikomanagement-methodik.md) — ISMS risk process with measure inventory, gross and net/residual risk assessment, strategy decision, measure derivation, control/SoA mapping, and reporting.
-- [`../skills/isms-risk-analysis/SKILL.md`](../skills/isms-risk-analysis/SKILL.md) — dialog-based skill that guides users through the risk process with questions.
+- [`../07-ai-governance-agents/skills/isms-risk-analysis/SKILL.md`](../07-ai-governance-agents/skills/isms-risk-analysis/SKILL.md) — dialog-based skill that guides users through the risk process with questions.

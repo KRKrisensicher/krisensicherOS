@@ -62,13 +62,13 @@ Before contributing, please check:
 
 ## Structure
 
-- Agent profiles: `agents/`
-- Public target-repo agents: `agents/public/`
-- Skills: `skills/`
+- Agent profiles: `07-ai-governance-agents/agents/`
+- Public target-repo agents: `07-ai-governance-agents/agents/public/`
+- Skills: `07-ai-governance-agents/skills/`
 - Templates: `templates/`
 - Playbooks: `playbooks/`
 - Workflows: `workflows/`
-- Quality gates: `evals/`
+- Quality gates: `06-evidence-management-review/evals/`
 - Standards: `docs/standards/`
 
 ## Review expectation
