@@ -21,6 +21,8 @@ Das Manifest liegt in `agents/manifest.yaml`.
 ## Grundregeln
 
 - krisensicherOS setzt freigegebene KI-Nutzung voraus.
+- Der bevorzugte Codex-Pfad ist ein freigegebener lokaler Repo-Workspace in einer IDE; arbeite dort über Diffs, kleine Artefakte und klare Reviews.
+- Kläre mit dem Anwender zuerst Scope, Datenklasse, KI-Freigabe, Rollen, Human Gates und vorhandene Nachweise.
 - Kein Artefakt ohne Betriebslogik.
 - Keine Compliance-Floskeln.
 - Keine Scheinsicherheit.
