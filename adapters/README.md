@@ -26,6 +26,7 @@ Kanonische Fachlogik bleibt in:
 - [`codex/`](codex/) — Codex CLI.
 - [`claude-cli/`](claude-cli/) — Claude Code CLI.
 - [`m365-copilot/`](m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents und Copilot Studio.
+- [`orgavision-mcp/`](orgavision-mcp/) — Orgavision MCP als optionaler Verteil- und Wissenszugang für freigegebene Governance-Artefakte.
 
 ## Adapter-Regel
 
