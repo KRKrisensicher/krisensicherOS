@@ -1,0 +1,105 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: eu-ai-act-readiness-precheck
+version: 1.0.0
+purpose: KI-Systeme und KI-Use-Cases als Inventar, Risikoarbeitsannahme und Human-Gate-Handoff vorbereiten; keine rechtliche oder datenschutzrechtliche Bewertung.
+trigger:
+  - Neues KI-System oder neue KI-Funktion wird geplant, beschafft, pilotiert oder produktiv genutzt.
+  - KI-Nutzung soll für NIS2-, ISMS-, Audit-, Evidenz- oder Management-Review-Arbeit freigegeben werden.
+  - Datenklasse, menschliche Aufsicht, Anbieterrolle oder Verantwortlichkeit ist unklar.
+inputs:
+  required:
+    - ai_system_or_use_case
+    - business_purpose
+    - process_owner
+    - intended_users
+    - data_classification_hypothesis
+  optional:
+    - provider_or_supplier
+    - integration_context
+    - affected_person_groups
+    - logging_or_monitoring_evidence
+    - existing_ai_usage_approval
+agents:
+  lead: compliance-operating-system-lead
+  support:
+    - data-protection-interface-reviewer
+    - regulatory-source-mapper
+    - security-governance-architect
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - agent-quality-and-safety-reviewer
+templates:
+  - templates/ki-nutzungsfreigabe-matrix.md
+  - templates/ki-system-inventar-und-risikovorpruefung.md
+  - templates/legal-datenschutz-handoff.md
+  - templates/decision-log.md
+source_anchors:
+  - 01-orientation/knowledge-sources/hardwired-sources.yaml
+steps:
+  - id: usage_boundary
+    agent: compliance-operating-system-lead
+    action: Klarstellen, dass der Workflow ein Inventar- und Handoff-Precheck ist und keine EU-AI-Act-Konformität, Rechtsberatung oder Datenschutzbewertung liefert.
+    output: boundary_note
+    human_gate: Rechts-/Datenschutz-/Managementfragen bleiben bei verantwortlichen Menschen.
+  - id: ai_use_case_capture
+    agent: compliance-operating-system-lead
+    action: KI-System, Zweck, Prozess, Nutzergruppe, Owner, Einsatzstatus und Anbieterbezug erfassen.
+    output: ai_inventory_entry
+  - id: data_and_context_check
+    agent: data-protection-interface-reviewer
+    action: Datenklasse, Personenbezug, betroffene Gruppen, Speicher-/Logging-Kontext und Redaction-/Minimierungsbedarf als Arbeitsannahme erfassen.
+    output: data_context_note
+    human_gate: Datenschutz prüft Personenbezug, Rechtsgrundlage, Transparenz und Schutzmaßnahmen.
+  - id: role_and_obligation_questions
+    agent: regulatory-source-mapper
+    action: Rollen-, Pflichten- und Quellenfragen als offene Prüffragen strukturieren; EU-AI-Act-Referenz nur als öffentlichen Quellenanker nutzen.
+    output: regulatory_question_set
+    human_gate: Legal bewertet Rolle, Pflichten und Risikokategorie verbindlich.
+  - id: operational_risk_signals
+    agent: risk-and-obligation-prioritizer
+    action: Signale für Prozesskritikalität, Entscheidungsnähe, Sicherheitswirkung, Lieferantenabhängigkeit und menschliche Aufsicht priorisieren.
+    output: risk_signal_list
+  - id: oversight_and_evidence
+    agent: control-evidence-architect
+    action: Prüfen, welche Aufsicht, Logging-, Freigabe- und Review-Nachweise für den Use Case benötigt werden.
+    output: oversight_evidence_requirements
+  - id: handoff_package
+    agent: security-governance-architect
+    action: Legal-/Datenschutz-/Management-/IT-Security-Handoff mit konkreten Fragen, Kontext, Owner und Entscheidungsfenster vorbereiten.
+    output: human_gate_handoff_pack
+  - id: decision_log
+    agent: compliance-operating-system-lead
+    action: Decision-Log-Eintrag mit Status, offenen Entscheidungen, nächstem Schritt und Reviewtermin vorbereiten.
+    output: decision_log_entry
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Ergebnis auf Claims, Scheinsicherheit, echte Daten, fehlende Human Gates und unklare Verantwortlichkeit prüfen.
+    output: quality_review_note
+outputs:
+  - ai_inventory_entry
+  - data_context_note
+  - regulatory_question_set
+  - risk_signal_list
+  - oversight_evidence_requirements
+  - human_gate_handoff_pack
+  - decision_log_entry
+stop_points:
+  - finale EU-AI-Act-Rollen- oder Risikoklassifizierung wird verlangt
+  - Rechts- oder Datenschutzbewertung wird erwartet
+  - personenbezogene, vertrauliche oder besonders schutzbedürftige Daten sollen ohne Freigabe verarbeitet werden
+  - KI-Ausgaben sollen automatisiert auf Personen oder kritische Geschäftsprozesse wirken
+  - externe Kommunikation, Kundenzusage oder Anbieterfreigabe soll ohne menschliche Entscheidung erfolgen
+  - Konformitäts-, Zulässigkeits- oder Sicherheitszusage wird erwartet
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U4 Human-Gate-Gate
+  - U6 Portabilitäts-Gate
+  - A5 Workflow-Gate

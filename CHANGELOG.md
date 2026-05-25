@@ -21,7 +21,7 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 
 ### Added
 
-- Adapter-Navigation unter `adapters/` ergänzt.
+- Adapter-Navigation unter `07-ai-governance-agents/adapters/` ergänzt.
 - Claude-CLI-Adapter mit Source-of-Truth-Regeln, Claude-CLI-Kommandonutzung, Projektkonfigurationsgrenzen und QS-Gate ergänzt.
 - Microsoft-365-Copilot-Adapter für SharePoint Agents und Copilot Studio ergänzt, inklusive Knowledge-Source-Grenzen, Human Gates und SharePoint-Agent-Instructions.
 - NIS2-Primärquellenanker, Erwägungsgründe-Auswertung, Vorab-Betroffenheitsfragebogen, Workflow und Agent `nis2-scope-precheck-analyst` ergänzt; Ergebnis erzwingt Rechtsanwalt-/Legal-Prüfung.
@@ -29,6 +29,7 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 
 ### Changed
 
+- Produktstruktur aufgeräumt: fachliche Artefakte aus losen Root-Sammelordnern in die nummerierten Bereiche `01` bis `09` verschoben; Root-Ebene bleibt schlank, Kataloge und Quality Gate wurden angepasst.
 - Produktpositionierung geschärft: krisensicherOS ist ein Repo für KI-unterstützte Security Governance und setzt eine freigegebene KI-Nutzung voraus.
 - Setup-Dokumentation auf freigegebene KI-Umgebungen fokussiert: ChatGPT, Microsoft 365 Copilot, Claude Code und lokale KI.
 - Freigabepfad als Randnotiz geklärt: Wenn noch keine KI-Freigabe vorliegt, dient die Freigabematrix nur zur Vorbereitung; produktive Nutzung stoppt.
@@ -52,20 +53,20 @@ Dieses Projekt orientiert sich an einem einfachen, menschenlesbaren Changelog. V
 - 5-Artefakte-Schnellstart für den kleinsten sinnvollen NIS2-Durchstich.
 - 30/60/90-Minuten-Nutzungspfad für den ersten krisensicherOS-Durchstich.
 - Setup-Anleitungen für freigegebene KI-Arbeitsumgebungen.
-- Öffentliche Agentenprofile unter `agents/public/`.
+- Öffentliche Agentenprofile unter `07-ai-governance-agents/agents/public/`.
 - Agenten-Rollenmodell und Manifest für Compliance- und Security-Governance-Arbeit.
 - Skills für Governance Operating Model, NIS2-Gap-Assessment, ISMS, Audit, Evidence Requests, Corrective Actions, Management Reviews und Tabletop-Übungen.
 - Templates für Register, Gaps, Evidenz, Entscheidungen, Risiken, Findings, Maßnahmen, Reviews und KI-Freigabe.
 - Workflows für Governance Operating Model, NIS2-Readiness, ISMS, Evidence Management und Audit-/Remediation-Ketten.
-- Feste öffentliche Referenzquellenstruktur unter `knowledge/`.
-- Compliance-Register-Struktur unter `compliance-register/`.
+- Feste öffentliche Referenzquellenstruktur unter `01-orientation/knowledge-sources/`.
+- Compliance-Register-Struktur unter `02-governance-operating-model/compliance-register/`.
 - Hinweis zur lizenzkonformen Nutzung von ISO-Normen und vergleichbaren Standards.
 - Empowerment-first Prompt-Bibliothek.
 
 ### Changed
 
 - README auf v1.0-Navigation, Produktgrenzen und KI-unterstützten Einstieg geschärft.
-- Produkt-Guardrail `docs/product/was-wir-bewusst-nicht-bauen.md` ergänzt: keine Scheinkonformität, keine Normtext-Nachbildung, keine Template-Masse und keine KI-Magie ohne Human Gates.
+- Produkt-Guardrail `01-orientation/product-positioning/was-wir-bewusst-nicht-bauen.md` ergänzt: keine Scheinkonformität, keine Normtext-Nachbildung, keine Template-Masse und keine KI-Magie ohne Human Gates.
 - Normen-/KI-Lizenzgrenzen in README und Legal-Doku geschärft: keine Normdokumente in Repo, Prompts, RAG, Embeddings oder KI-Systeme ohne passende Lizenz.
 - Mittelstands-Fallstudie zur durchgängigen Kette von Gap über Evidence Request, Corrective Action, Wirksamkeitsprüfung und Managemententscheidung geschärft.
 

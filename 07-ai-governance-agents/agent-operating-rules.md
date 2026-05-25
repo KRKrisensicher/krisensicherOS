@@ -100,18 +100,18 @@ Jeder relevante Output wird gegen passende Gates geprüft:
 - Empowerment,
 - Workload,
 - Portabilität,
-- artefaktspezifisches Gate aus `evals/quality-gates.md`.
+- artefaktspezifisches Gate aus `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`.
 
 ## 6. Arbeitsweise in Tools
 
 Die Fachlogik bleibt kanonisch in:
 
-- `agents/public/`,
-- `skills/`,
+- `07-ai-governance-agents/agents/public/`,
+- `07-ai-governance-agents/skills/`,
 - `templates/`,
 - `playbooks/`,
 - `workflows/`,
-- `evals/`.
+- `06-evidence-management-review/evals/`.
 
 Tooladapter für Claude, Codex, OpenClaw, Hermes oder andere Systeme sollen diese Fachlogik nur umsetzen, nicht verändern.
 

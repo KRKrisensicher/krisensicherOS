@@ -35,8 +35,8 @@ Gerade Managementsystemverantwortliche sollten KI produktiv nutzen: erstens, um 
 1. Gib dieses Repository einer freigegebenen KI-Umgebung oder öffne es in einem freigegebenen KI-fähigen Arbeitskontext.
 2. Sage der KI, welches Managementsystem-Thema du angehen willst, z. B. NIS2, ISMS, Evidence Review, Incident Readiness oder EU-AI-Act-Readiness.
 3. Lass die KI die offenen Fragen mit dir klären: Scope, Datenklasse, KI-Freigabe, Rollen, Human Gates, vorhandene Nachweise und nächster sinnvoller Arbeitsschritt.
-4. Wenn du manuell starten willst, öffne [`docs/getting-started/README.md`](docs/getting-started/README.md) und wähle einen Anwenderpfad.
-5. Für den kleinsten NIS2-Start nutze den [`5-Artefakte-Schnellstart`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
+4. Wenn du manuell starten willst, öffne [`01-orientation/getting-started/README.md`](01-orientation/getting-started/README.md) und wähle einen Anwenderpfad.
+5. Für den kleinsten NIS2-Start nutze den [`5-Artefakte-Schnellstart`](01-orientation/getting-started/minimaler-nis2-start-in-5-artefakten.md).
 
 ## Fünf schnelle Anwenderpfade
 
@@ -46,21 +46,21 @@ Gerade Managementsystemverantwortliche sollten KI produktiv nutzen: erstens, um 
 - **Incident-/Melde-Readiness üben:** Eskalation, Triage und Human Gates trainieren.
 - **EU-AI-Act-Readiness starten:** KI-Systeme inventarisieren, Rollenfragen markieren und Legal-/Datenschutz-/Management-Handoffs vorbereiten.
 
-Details stehen in [`docs/getting-started/anwenderpfade.md`](docs/getting-started/anwenderpfade.md).
+Details stehen in [`01-orientation/getting-started/anwenderpfade.md`](01-orientation/getting-started/anwenderpfade.md).
 
 ## Minimaler Startablauf
 
-1. Wähle einen Pfad oder ein Paket aus [`docs/getting-started/`](docs/getting-started/README.md).
-2. Prüfe die KI-Freigabe mit [`templates/ki-nutzungsfreigabe-matrix.md`](templates/ki-nutzungsfreigabe-matrix.md).
-3. Wähle genau eine freigegebene KI-Umgebung aus [`docs/setup/README.md`](docs/setup/README.md).
-4. Nutze höchstens ein Artefaktpaket aus [`docs/getting-started/artefaktpakete.md`](docs/getting-started/artefaktpakete.md).
+1. Wähle einen Pfad oder ein Paket aus [`01-orientation/getting-started/`](01-orientation/getting-started/README.md).
+2. Prüfe die KI-Freigabe mit [`07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md`](./07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md).
+3. Wähle genau eine freigegebene KI-Umgebung aus [`01-orientation/setup/README.md`](01-orientation/setup/README.md).
+4. Nutze höchstens ein Artefaktpaket aus [`01-orientation/getting-started/artefaktpakete.md`](01-orientation/getting-started/artefaktpakete.md).
 5. Markiere Human Gates für Management, Risikoakzeptanz, Recht, Datenschutz und externe Kommunikation.
 
 ## Mission
 
 krisensicherOS hilft, Compliance-Arbeit in Rollen, Routinen, Nachweise und Managemententscheidungen zu übersetzen.
 
-Produkt-Guardrail: krisensicherOS baut nur Bausteine, die Entscheidungsfähigkeit, Evidenzfluss oder Betriebsroutine erhöhen. Was nur Dokumentenmenge, Berateroptik oder Scheinkonformität erzeugt, bleibt draußen. Siehe [`docs/product/was-wir-bewusst-nicht-bauen.md`](docs/product/was-wir-bewusst-nicht-bauen.md).
+Produkt-Guardrail: krisensicherOS baut nur Bausteine, die Entscheidungsfähigkeit, Evidenzfluss oder Betriebsroutine erhöhen. Was nur Dokumentenmenge, Berateroptik oder Scheinkonformität erzeugt, bleibt draußen. Siehe [`01-orientation/product-positioning/was-wir-bewusst-nicht-bauen.md`](01-orientation/product-positioning/was-wir-bewusst-nicht-bauen.md).
 
 ## Kernthese
 
@@ -113,7 +113,7 @@ krisensicherOS arbeitet mit zwei Ebenen:
 1. **Fest verdrahtete öffentliche Referenzquellen** wie NIS2-Richtlinie, BSIG, EnWG, DSGVO, BDSG und BSI-KritisV.
 2. **Nutzereigene Compliance-Register** für Normen, Kundenverträge, interne Policies, Auditfeststellungen und branchenspezifische Vorgaben.
 
-Wichtig: Lizenzpflichtige Normen wie ISO/IEC 27001 werden nicht als Normtext ins Repo übernommen. Das Repo stellt nur Metadaten-, Mapping- und Arbeitsstrukturen bereit. Siehe [`docs/legal/iso-normen-lizenzkonform-nutzen.md`](docs/legal/iso-normen-lizenzkonform-nutzen.md).
+Wichtig: Lizenzpflichtige Normen wie ISO/IEC 27001 werden nicht als Normtext ins Repo übernommen. Das Repo stellt nur Metadaten-, Mapping- und Arbeitsstrukturen bereit. Siehe [`01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md`](01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md).
 
 Gekaufte ISO-, DIN-, EVS-, BSI- oder sonstige Normdokumente dürfen nicht ohne passende Lizenz in dieses Repo, in Prompts, Agenten, RAG-Systeme, Embeddings, Vektordatenbanken oder sonstige KI-Systeme übernommen werden. Für krisensicherOS gilt: Normen extern lizenzkonform beschaffen und lesen, aber im Repo nur eigene Zusammenfassungen, IDs, Mappings, Entscheidungsfelder und public-safe Arbeitsstrukturen führen.
 
@@ -151,79 +151,72 @@ Alle Ergebnisse müssen durch fachlich verantwortliche Personen geprüft, angepa
 
 ## Repo-Struktur v1.0
 
+Die nummerierten Ordner sind die primäre Produktstruktur. Fachliche Inhalte, Vorlagen, Playbooks, Workflows, Beispiele und Agentenbausteine liegen dort, wo sie im Betrieb gebraucht werden. Die Root-Ebene bleibt bewusst schlank und enthält nur Einstieg, Lizenz, Sicherheits-/Beitragsregeln sowie technische Infrastruktur.
+
 ```text
-01-orientation/
-02-governance-operating-model/
-03-nis2-readiness/
-04-isms-basics/
-05-incident-crisis-readiness/
-06-evidence-management-review/
-07-ai-governance-agents/
-08-templates-playbooks/
-09-implementation-roadmaps/
-agents/public/
-skills/
-templates/
-playbooks/
-implementierungsleitfaeden/
-examples/
-docs/
-governance/
-knowledge/
-compliance-register/
-workflows/
-prompts/
+01-orientation/                    # Einstieg, Setup, Grenzen, Quellen
+02-governance-operating-model/     # Rollen, Register, Entscheidungen, Governance-Regeln
+03-nis2-readiness/                 # NIS2-Vorabcheck, Gap, Management- und Melde-Readiness
+04-isms-basics/                    # ISMS-Aufbau, Risiko, Maßnahmen, Umsetzungshilfen
+05-incident-crisis-readiness/      # Incident, BCMS, Eskalation, Übungen
+06-evidence-management-review/     # Evidenz, Audit, Remediation, Management Review
+07-ai-governance-agents/           # Agenten, Skills, Adapter, Prompts, KI-Governance
+08-templates-playbooks/            # Querschnittskataloge und wiederverwendbare Bausteine
+09-implementation-roadmaps/        # Beispiele, Roadmaps und Umsetzungsdurchstiche
+.github/                           # GitHub Quality Gate und Dependabot
+scripts/                           # lokale QS- und Build-Hilfen
+i18n/                              # Sprach-/Glossarunterstützung
 ```
 
 ## Öffentliche Agenten
 
-Die öffentlichen Agentenprofile liegen unter [`agents/public/`](agents/public/). Sie beschreiben Rollen, Grenzen, Inputs, Outputs, Human Gates und Handoffs für KI-unterstützte Governance-Arbeit.
+Die öffentlichen Agentenprofile liegen unter [`07-ai-governance-agents/agents/public/`](07-ai-governance-agents/agents/public/). Sie beschreiben Rollen, Grenzen, Inputs, Outputs, Human Gates und Handoffs für KI-unterstützte Governance-Arbeit.
 
-Starte nicht mit allen Agenten gleichzeitig. Nutze zunächst [`agents/public/anwender-routing.md`](agents/public/anwender-routing.md) und wähle genau die Rolle, die für den nächsten Arbeitsschritt nötig ist.
+Starte nicht mit allen Agenten gleichzeitig. Nutze zunächst [`07-ai-governance-agents/agents/public/anwender-routing.md`](07-ai-governance-agents/agents/public/anwender-routing.md) und wähle genau die Rolle, die für den nächsten Arbeitsschritt nötig ist.
 
 ## Skills, Templates, Workflows und Playbooks
 
-- [`skills/`](skills/) — wiederholbare AgentSkills mit Ablauf, Output und Qualitätskriterien.
-- [`templates/`](templates/) — Arbeitsvorlagen für Register, Gaps, Evidenz, Entscheidungen, Risiken und Reviews.
-- [`workflows/`](workflows/) — Ablaufmodelle für agentische Governance-Routinen.
-- [`playbooks/`](playbooks/) — konkrete Betriebs- und Übungsabläufe.
-- [`implementierungsleitfaeden/`](implementierungsleitfaeden/) — praxisnahe Umsetzungshilfen, u. a. für ISMS-Rollen, Routinen, Evidenz und Reviews.
+- [`07-ai-governance-agents/skills/`](07-ai-governance-agents/skills/) — wiederholbare AgentSkills mit Ablauf, Output und Qualitätskriterien.
+- [`08-templates-playbooks/catalogs/templates.md`](./08-templates-playbooks/catalogs/templates.md) — Arbeitsvorlagen für Register, Gaps, Evidenz, Entscheidungen, Risiken und Reviews.
+- [`workflows/`](./08-templates-playbooks/catalogs/workflows.md) — Ablaufmodelle für agentische Governance-Routinen.
+- [`playbooks/`](./08-templates-playbooks/catalogs/playbooks.md) — konkrete Betriebs- und Übungsabläufe.
+- [`04-isms-basics/implementation-guides/`](04-isms-basics/implementation-guides/) — praxisnahe Umsetzungshilfen, u. a. für ISMS-Rollen, Routinen, Evidenz und Reviews.
 
 ## Setup
 
 krisensicherOS setzt eine freigegebene KI-Nutzung voraus. Die Setup-Dokumente helfen, eine geeignete Umgebung kontrolliert zu nutzen:
 
-- [`docs/setup/README.md`](docs/setup/README.md) — Setup-Auswahl und Einstieg,
-- [`docs/setup/chatgpt-lokale-ide.md`](docs/setup/chatgpt-lokale-ide.md) — ChatGPT mit lokaler IDE,
-- [`docs/setup/m365-copilot.md`](docs/setup/m365-copilot.md) — Microsoft 365 Copilot,
-- [`docs/setup/claude-code.md`](docs/setup/claude-code.md) — Claude Code App, VS Code und CLI,
-- [`docs/setup/lokale-ki.md`](docs/setup/lokale-ki.md) — lokale KI ohne Cloud.
+- [`01-orientation/setup/README.md`](01-orientation/setup/README.md) — Setup-Auswahl und Einstieg,
+- [`01-orientation/setup/chatgpt-lokale-ide.md`](01-orientation/setup/chatgpt-lokale-ide.md) — ChatGPT mit lokaler IDE,
+- [`01-orientation/setup/m365-copilot.md`](01-orientation/setup/m365-copilot.md) — Microsoft 365 Copilot,
+- [`01-orientation/setup/claude-code.md`](01-orientation/setup/claude-code.md) — Claude Code App, VS Code und CLI,
+- [`01-orientation/setup/lokale-ki.md`](01-orientation/setup/lokale-ki.md) — lokale KI ohne Cloud.
 
-Wenn keine KI-Freigabe vorliegt, nutze nur die Freigabematrix als Vorbereitung: [`templates/ki-nutzungsfreigabe-matrix.md`](templates/ki-nutzungsfreigabe-matrix.md).
+Wenn keine KI-Freigabe vorliegt, nutze nur die Freigabematrix als Vorbereitung: [`07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md`](./07-ai-governance-agents/templates/ki-nutzungsfreigabe-matrix.md).
 
 ## Adapter
 
-Tool-spezifische Adapter liegen unter [`adapters/`](adapters/). Sie erklären, wie krisensicherOS in konkreten KI-Oberflächen genutzt wird, ohne die fachliche Source-of-Truth zu duplizieren:
+Tool-spezifische Adapter liegen unter [`07-ai-governance-agents/adapters/`](07-ai-governance-agents/adapters/). Sie erklären, wie krisensicherOS in konkreten KI-Oberflächen genutzt wird, ohne die fachliche Source-of-Truth zu duplizieren:
 
-- [`adapters/codex/`](adapters/codex/) — Codex CLI,
-- [`adapters/claude-cli/`](adapters/claude-cli/) — Claude Code CLI,
-- [`adapters/m365-copilot/`](adapters/m365-copilot/) — Microsoft 365 Copilot, SharePoint Agents und Copilot Studio,
-- [`adapters/orgavision-mcp/`](adapters/orgavision-mcp/) — Orgavision MCP als optionaler Verteil- und Wissenszugang für freigegebene Governance-Artefakte.
+- [`07-ai-governance-agents/adapters/codex/`](./07-ai-governance-agents/adapters/codex) — Codex CLI,
+- [`07-ai-governance-agents/adapters/claude-cli/`](./07-ai-governance-agents/adapters/claude-cli) — Claude Code CLI,
+- [`07-ai-governance-agents/adapters/m365-copilot/`](./07-ai-governance-agents/adapters/m365-copilot) — Microsoft 365 Copilot, SharePoint Agents und Copilot Studio,
+- [`07-ai-governance-agents/adapters/orgavision-mcp/`](./07-ai-governance-agents/adapters/orgavision-mcp) — Orgavision MCP als optionaler Verteil- und Wissenszugang für freigegebene Governance-Artefakte.
 
 ## Schneller Nutzungspfad
 
-Für den ersten belastbaren Durchstich gibt es einen 30/60/90-Minuten-Pfad: [`docs/getting-started/30-60-90-minuten-nutzungspfad.md`](docs/getting-started/30-60-90-minuten-nutzungspfad.md).
+Für den ersten belastbaren Durchstich gibt es einen 30/60/90-Minuten-Pfad: [`01-orientation/getting-started/30-60-90-minuten-nutzungspfad.md`](01-orientation/getting-started/30-60-90-minuten-nutzungspfad.md).
 
 Für direkte Einstiegssituationen gibt es zusätzlich vier Anwenderpfade und drei Artefaktpakete:
 
-- [`docs/getting-started/anwenderpfade.md`](docs/getting-started/anwenderpfade.md)
-- [`docs/getting-started/artefaktpakete.md`](docs/getting-started/artefaktpakete.md)
+- [`01-orientation/getting-started/anwenderpfade.md`](01-orientation/getting-started/anwenderpfade.md)
+- [`01-orientation/getting-started/artefaktpakete.md`](01-orientation/getting-started/artefaktpakete.md)
 
-Für ISMS gibt es ein kompaktes fiktives Beispiel: [`examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md`](examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md).
+Für ISMS gibt es ein kompaktes fiktives Beispiel: [`09-implementation-roadmaps/examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md`](09-implementation-roadmaps/examples/fiktiver-mittelstand/isms-90-minuten-durchstich.md).
 
-Für die NIS2-Vorab-Betroffenheitsprüfung gibt es einen rechtlich begrenzten Fragebogen: [`templates/nis2-vorab-betroffenheitspruefung-fragebogen.md`](templates/nis2-vorab-betroffenheitspruefung-fragebogen.md). Das Ergebnis ist immer nur eine Arbeitsannahme und muss durch Rechtsanwalt/Legal geprüft werden.
+Für die NIS2-Vorab-Betroffenheitsprüfung gibt es einen rechtlich begrenzten Fragebogen: [`templates/nis2-vorab-betroffenheitspruefung-fragebogen.md`](./03-nis2-readiness/templates/nis2-vorab-betroffenheitspruefung-fragebogen.md). Das Ergebnis ist immer nur eine Arbeitsannahme und muss durch Rechtsanwalt/Legal geprüft werden.
 
-Für NIS2-Readiness im Betrieb ergänzen [`playbooks/nis2-incident-melde-triage.md`](playbooks/nis2-incident-melde-triage.md) und [`playbooks/nis2-management-schulung-und-review.md`](playbooks/nis2-management-schulung-und-review.md) die Melde-/Incident-Fähigkeit und Managemententscheidungen.
+Für NIS2-Readiness im Betrieb ergänzen [`playbooks/nis2-incident-melde-triage.md`](./03-nis2-readiness/playbooks/nis2-incident-melde-triage.md) und [`playbooks/nis2-management-schulung-und-review.md`](./03-nis2-readiness/playbooks/nis2-management-schulung-und-review.md) die Melde-/Incident-Fähigkeit und Managemententscheidungen.
 
 ## Beratungsanschluss ohne platte Werbung
 

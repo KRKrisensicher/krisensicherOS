@@ -54,7 +54,7 @@ Ziel: In 30 Tagen ein nutzbares v0.1-Repo veröffentlichen, das nicht wie eine D
 - Incident-Eskalationsplaybook erstellen
 - Management-Review-Playbook erstellen
 - Evidence-Pack-Review-Playbook erstellen
-- ein fiktives Beispielprojekt in examples/ anlegen
+- ein fiktives Beispielprojekt in 09-implementation-roadmaps/examples/ anlegen
 - Repo-Governance und Beitragsregeln ergänzen
 - Qualitätsreview gegen v0.1-Regeln durchführen
 - Release Notes v0.1 vorbereiten

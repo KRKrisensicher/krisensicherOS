@@ -17,9 +17,9 @@ Agenten sind keine Ersatzverantwortlichen. Sie strukturieren Arbeit, bereiten En
 - [`human-in-the-loop.md`](human-in-the-loop.md) — menschliche Freigabepunkte, Entscheidungen und Stop-Punkte.
 - [`agent-operating-rules.md`](agent-operating-rules.md) — Betriebsregeln für Aufträge, Daten, Quellen, Handoffs und Reviews.
 - [`risk-and-limits.md`](risk-and-limits.md) — typische Risiken agentischer Governance-Arbeit und Gegenmaßnahmen.
-- [`../docs/getting-started/eu-ai-act-readiness-start.md`](../docs/getting-started/eu-ai-act-readiness-start.md) — KI-Systeme als Inventar-, Vorprüfungs- und Handoff-Routine starten.
-- [`../agents/public/role-model.md`](../agents/public/role-model.md) — öffentliches Rollenmodell der Zielrepo-Agenten.
-- [`../agents/manifest.yaml`](../agents/manifest.yaml) — Manifest für Agentenfamilien, Handoffs und Adapter.
+- [`../01-orientation/getting-started/eu-ai-act-readiness-start.md`](../01-orientation/getting-started/eu-ai-act-readiness-start.md) — KI-Systeme als Inventar-, Vorprüfungs- und Handoff-Routine starten.
+- [`./agents/public/role-model.md`](./agents/public/role-model.md) — öffentliches Rollenmodell der Zielrepo-Agenten.
+- [`./agents/manifest.yaml`](./agents/manifest.yaml) — Manifest für Agentenfamilien, Handoffs und Adapter.
 
 ## Empfohlener Einstieg
 
