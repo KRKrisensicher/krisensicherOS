@@ -1,0 +1,49 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: product-governance
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; release-readiness; security-gate
+
+# CODEOWNERS for krisensicherOS
+#
+# Purpose: make product-critical and security-relevant changes visible to the
+# accountable repository owner before publication or release.
+#
+# Keep this file public-safe. Do not add private team names, internal incident
+# channels, secrets, or customer-specific owners.
+
+* @KRKerstan
+
+# Root governance and publication files
+/README.md @KRKerstan
+/AGENTS.md @KRKerstan
+/CLAUDE.md @KRKerstan
+/SECURITY.md @KRKerstan
+/CONTRIBUTING.md @KRKerstan
+/CHANGELOG.md @KRKerstan
+/LICENSE @KRKerstan
+
+# Product governance, release, and safety gates
+/governance/ @KRKerstan
+/docs/product/ @KRKerstan
+/docs/release/ @KRKerstan
+/.github/ @KRKerstan
+/CODEOWNERS @KRKerstan
+
+# Agentic operating logic
+/agents/ @KRKerstan
+/skills/ @KRKerstan
+/workflows/ @KRKerstan
+/adapters/ @KRKerstan
+/prompts/ @KRKerstan
+
+# Compliance and knowledge structures
+/knowledge/ @KRKerstan
+/compliance-register/ @KRKerstan
+/templates/ @KRKerstan
+/playbooks/ @KRKerstan
+/implementierungsleitfaeden/ @KRKerstan
+
+# Examples must stay fictional and public-safe
+/examples/ @KRKerstan
