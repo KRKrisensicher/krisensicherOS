@@ -21,6 +21,8 @@ The manifest is located in `agents/manifest.yaml`.
 ## Basic Rules
 
 - krisensicherOS requires approved AI usage.
+- The preferred Codex path is an approved local repository workspace in an IDE; work through diffs, small artifacts, and clear reviews.
+- First clarify scope, data class, AI usage approval, roles, human gates, and existing evidence with the user.
 - No artifact without operating logic.
 - No compliance clichés.
 - No false assurance.
