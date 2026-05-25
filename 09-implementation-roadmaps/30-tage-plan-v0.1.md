@@ -3,19 +3,23 @@ repo-scope: product
 classification: product-module
 decision: keep
 review-required-on-change: true
-criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-guidance; human-gate-aware; claim-safe
+criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-guidance; claim-safe
 -->
 
-# 30-Day Implementation Plan v0.1
+# 30-Day Product and Release Roadmap v0.1
 
-Goal: Publish a usable v0.1 repo in 30 days that does not feel like a document collection, but like a first agentic operating system for CISO/information security officer work.
+This plan is **not a user implementation guide**. It documents how krisensicherOS was built as an open product repository in an early v0.1 phase. For user walkthroughs, use the examples under [`examples/`](examples/) and the entry point in [`01-orientation/getting-started/`](../01-orientation/getting-started/README.md).
+
+## Purpose
+
+The plan remains in the repository so the product logic behind the first structure stays visible: not a document graveyard, but an agentically usable operating system for CISO/information-security work.
 
 ## Week 1 — Foundation and Positioning
 
 **Goal:** Clear framework, initial structure, no empty phrases.
 
 - Finalize README
-- Create repo structure
+- Create repository structure
 - Document governance quality rules
 - Formulate disclaimer and non-goals
 - Create module descriptions for all main folders
@@ -30,7 +34,7 @@ Goal: Publish a usable v0.1 repo in 30 days that does not feel like a document c
 - Create Governance Operating Model Canvas
 - Create roles/RACI template
 - Create NIS2 gap assessment worksheet
-- Create measures prioritization matrix
+- Create measure prioritization matrix
 - Add decision log and evidence logic
 
 **Result:** An organization can structurally capture its governance start and NIS2 readiness status.
@@ -39,8 +43,8 @@ Goal: Publish a usable v0.1 repo in 30 days that does not feel like a document c
 
 **Goal:** Describe the agentic support team as operationally usable.
 
-- Develop 7 starter agents as role profiles
-- Develop 10 starter skills in minimum format
+- Develop starter agents as role profiles
+- Develop starter skills in minimum format
 - Document human-in-the-loop rules
 - Add quality criteria for each skill
 - Create example workflows for NIS2 gap, evidence review, and management review
@@ -54,10 +58,10 @@ Goal: Publish a usable v0.1 repo in 30 days that does not feel like a document c
 - Create incident escalation playbook
 - Create management review playbook
 - Create evidence pack review playbook
-- Create a fictional example project in 09-implementation-roadmaps/examples/
-- Add repo governance and contribution rules
+- Create fictional examples under [`examples/`](examples/)
+- Add repository governance and contribution rules
 - Perform quality review against v0.1 rules
-- Prepare release notes v0.1
+- Prepare release notes
 
 **Result:** v0.1 is usable as an open starting system and can connect to consulting, community, and further development.
 
