@@ -1,0 +1,35 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: product-governance
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; release-readiness; security-gate
+
+name: krisensicherOS quality gate
+
+on:
+  pull_request:
+    branches:
+      - de/main
+      - en/main
+  push:
+    branches:
+      - de/main
+      - en/main
+
+permissions:
+  contents: read
+
+jobs:
+  quality-check:
+    name: quality-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run product quality checks
+        run: ./scripts/quality-check.sh
+
+      - name: Check whitespace and patch hygiene
+        run: git diff --check
