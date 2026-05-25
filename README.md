@@ -60,6 +60,14 @@ Der Nutzen entsteht, wenn Governance im Betrieb sichtbar wird:
 
 Agenten bereiten vor. Menschen prüfen, entscheiden und verantworten.
 
+## Vibe Governance
+
+So wie **Vibe Coding** beschreibt, wie Menschen mit KI schneller von einer Idee zu lauffähigem Code kommen, beschreibt **Vibe Governance** den nächsten Schritt für Organisationen: Governance nicht mehr als statisches Dokumentenprojekt zu behandeln, sondern als KI-unterstützten Arbeitsfluss aus Fragen, Rollen, Evidenz, Entscheidungen und Reviews.
+
+Vibe Governance heißt bei krisensicherOS nicht: Verantwortung wegautomatisieren oder Compliance aus Prompts behaupten. Es heißt: mit KI schneller zu brauchbaren Entwürfen, besseren Prüffragen, sichtbaren Lücken und entscheidungsreifen Handoffs kommen — während Human Gates, fachliche Verantwortung und organisationsspezifische Freigaben klar erhalten bleiben.
+
+Der „Vibe“ ist nicht Beliebigkeit. Er ist die Arbeitsgeschwindigkeit und Klarheit, die entsteht, wenn Agenten die Vorarbeit leisten und Menschen Governance bewusst betreiben.
+
 ## Für wen ist krisensicherOS?
 
 krisensicherOS richtet sich an:
