@@ -1,0 +1,80 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: evidence-management-review
+version: 1.0.0
+purpose: Review evidence packs, identify gaps, and prepare management review with decision questions.
+trigger:
+  - upcoming management review
+  - completion or review of measures
+  - audit or internal review preparation
+  - incident follow-up or gap closure
+inputs:
+  required:
+    - review_scope
+    - evidence_pack_or_index
+    - open_findings_or_actions
+  optional:
+    - risk_register
+    - decision_log
+    - control_routine_map
+agents:
+  lead: evidence-pack-reviewer
+  support:
+    - control-evidence-architect
+    - management-review-facilitator
+    - risk-and-obligation-prioritizer
+    - agent-quality-and-safety-reviewer
+skills: []
+templates:
+  - templates/evidence-pack-index.md
+  - templates/governance-operating-model-canvas.md
+steps:
+  - id: review_scope
+    agent: evidence-pack-reviewer
+    action: Clarify review objective, scope, control/routine reference, and decision context.
+    output: review_scope_note
+  - id: evidence_quality
+    agent: evidence-pack-reviewer
+    action: Review evidence for currency, traceability, sufficient decision basis, assumptions, and gaps.
+    output: evidence_quality_notes
+    stop_if:
+      - real confidential evidence is to be copied publicly
+      - personal data is to be processed without approval
+  - id: evidence_flow
+    agent: control-evidence-architect
+    action: Describe gaps in evidence flows, owners, storage locations, and review cadence.
+    output: evidence_gap_list
+  - id: risk_prioritization
+    agent: risk-and-obligation-prioritizer
+    action: Prioritize evidence gaps and open measures by decision relevance.
+    output: prioritized_review_backlog
+  - id: quality_gate
+    agent: agent-quality-and-safety-reviewer
+    action: Review public safety, claim safety, and workload.
+    output: quality_gate_note
+  - id: management_review_prep
+    agent: management-review-facilitator
+    action: Prepare agenda, decision questions, options, risks of inaction, and follow-up.
+    output: management_review_brief
+    human_gate: Management decides acceptance, priorities, resources, and external communication.
+outputs:
+  - evidence_quality_notes
+  - evidence_gap_list
+  - prioritized_review_backlog
+  - management_review_brief
+stop_points:
+  - confidential or personal content would be disclosed
+  - external assurance on effectiveness or fulfillment is planned
+  - management decision is to be automated
+  - legal or data protection assessment is required
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U5 Workload Gate
+  - A5 Workflow Gate

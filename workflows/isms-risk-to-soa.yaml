@@ -1,0 +1,134 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: isms-risk-to-soa
+version: 1.1.0
+purpose: Describe ISMS risks, collect current measures with AI assistance, assess gross risk, select strategy, plan measures, and report net/residual risk with control/SoA mapping.
+trigger:
+  - new or changed information security risk
+  - quarterly risk workshop
+  - control/SoA review
+  - measure or management review preparation
+  - incident, audit finding, material change, or new vulnerability
+inputs:
+  required:
+    - isms_scope
+    - asset_or_process
+    - vulnerability
+    - threat
+  optional:
+    - current_measures_questionnaire
+    - existing_controls
+    - planned_controls
+    - evidence_sources
+    - soa_entries
+    - incidents_or_findings
+    - iso27001_soa_available
+    - internal_control_taxonomy
+agents:
+  lead: risk-and-obligation-prioritizer
+  support:
+    - isms-operating-model-designer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - isms-risk-analysis
+  - risk-prioritization
+templates:
+  - templates/risikoanalyse-fragebogen.md
+  - templates/risikoanalyse-session-state.md
+  - templates/risikoanalyse-register.md
+  - templates/soa-risk-control-map.md
+  - templates/risikoreport.md
+  - templates/risikoreport-html.html
+  - templates/decision-log.md
+  - templates/evidence-pack-index.md
+playbooks:
+  - playbooks/isms-risikoworkshop.md
+method:
+  - 04-isms-basics/risikomanagement-methodik.md
+steps:
+  - id: soa_boundary
+    skill: isms-risk-analysis
+    action: Clarify whether a dedicated ISO 27001 SoA or a license-compliant standard basis is available; if not, use only the internal risk-control map and mark SoA as a later extension.
+    output: control_taxonomy_or_soa_boundary
+    quality_gate: Do not derive ISO 27001 controls or standard texts from krisensicherOS.
+  - id: session_start
+    skill: isms-risk-analysis
+    action: Start a dialog-based risk analysis or continue based on the session state; determine the next open phase and required questions.
+    output: risk_analysis_session_state
+  - id: scenario_definition
+    skill: isms-risk-analysis
+    agent: risk-and-obligation-prioritizer
+    action: Formulate the risk as vulnerability + asset + threat and describe the impact.
+    output: risk_scenario
+    quality_gate: Do not assess any risk without all three elements.
+  - id: current_measures_questionnaire
+    agent: control-evidence-architect
+    action: Collect current organizational, technical, process-related, and crisis management/BCMS measures via questionnaire; AI may cluster and mark gaps.
+    output: current_measures_snapshot
+    human_gate: Asset owner or information security officer confirms the measures status from a subject-matter perspective.
+  - id: gross_risk_assessment
+    agent: risk-and-obligation-prioritizer
+    action: Assess gross risk using likelihood and impact; current measures are context but do not automatically reduce the gross value.
+    output: gross_risk_score
+  - id: strategy_selection
+    agent: risk-and-obligation-prioritizer
+    action: Prepare the strategy of acceptance, avoidance, transfer, or mitigation; transfer may include insurance, outsourcing, or handing over certain response portions to crisis management / BCMS.
+    output: treatment_strategy
+    human_gate: Management or responsible owners decide on acceptance, transfer, resources, or avoidance.
+  - id: measure_planning
+    agent: control-evidence-architect
+    action: Derive measures from vulnerability, asset, threat, and desired effect; define owner, evidence, due date, control/SoA reference, and effectiveness review.
+    output: measure_backlog
+  - id: soa_mapping
+    agent: control-evidence-architect
+    action: Map current and planned measures to control/SoA entries; maintain status, rationale, and evidence quality.
+    output: soa_risk_control_map
+  - id: net_residual_risk_assessment
+    agent: risk-and-obligation-prioritizer
+    action: Assess net/residual risk after strategy and measure planning using the same criteria for likelihood and impact; mark as planned value as long as measures have not been effectiveness-tested.
+    output: net_residual_risk_score
+    quality_gate: Report confirmed net risk only after implementation and effectiveness review.
+  - id: reporting
+    agent: management-review-facilitator
+    action: Prepare the risk report as Markdown or HTML; present top risks, strategies, residual risks, acceptances, transfers, control/SoA gaps, overdue measures, and open decisions.
+    output: risk_report
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Review public safety, claim safety, assessment sequence, control/SoA mapping, human gates, reporting, and workload.
+    output: quality_review_note
+    stop_if:
+      - Risk acceptance is decided by agents
+      - current measures status is presented as assured without owner confirmation
+      - confirmed net risk is reported without effectiveness review
+      - licensed standard texts or confidential content are adopted
+      - measures have no owners, evidence, or effectiveness review
+outputs:
+  - control_taxonomy_or_soa_boundary
+  - risk_analysis_session_state
+  - risk_scenario
+  - current_measures_snapshot
+  - gross_risk_score
+  - treatment_strategy
+  - measure_backlog
+  - soa_risk_control_map
+  - net_residual_risk_score
+  - risk_report
+stop_points:
+  - legal or data protection assessment required
+  - risk acceptance, resource decision, transfer, or risk avoidance required
+  - real customer data or confidential evidence would be included in public artifacts
+  - standard texts from licensed standards are to be reproduced
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U4 Empowerment-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

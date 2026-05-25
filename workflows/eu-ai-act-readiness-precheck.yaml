@@ -1,0 +1,105 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: eu-ai-act-readiness-precheck
+version: 1.0.0
+purpose: Prepare AI systems and AI use cases as an inventory, risk working assumption, and human-gate handoff; no legal or data protection assessment.
+trigger:
+  - A new AI system or new AI function is being planned, procured, piloted, or used in production.
+  - AI usage is to be approved for NIS2, ISMS, audit, evidence, or management review work.
+  - Data class, human oversight, provider role, or responsibility is unclear.
+inputs:
+  required:
+    - ai_system_or_use_case
+    - business_purpose
+    - process_owner
+    - intended_users
+    - data_classification_hypothesis
+  optional:
+    - provider_or_supplier
+    - integration_context
+    - affected_person_groups
+    - logging_or_monitoring_evidence
+    - existing_ai_usage_approval
+agents:
+  lead: compliance-operating-system-lead
+  support:
+    - data-protection-interface-reviewer
+    - regulatory-source-mapper
+    - security-governance-architect
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - agent-quality-and-safety-reviewer
+templates:
+  - templates/ki-nutzungsfreigabe-matrix.md
+  - templates/ki-system-inventar-und-risikovorpruefung.md
+  - templates/legal-datenschutz-handoff.md
+  - templates/decision-log.md
+source_anchors:
+  - knowledge/hardwired-sources.yaml
+steps:
+  - id: usage_boundary
+    agent: compliance-operating-system-lead
+    action: Clarify that the workflow is an inventory and handoff precheck and does not provide EU AI Act compliance, legal advice, or a data protection assessment.
+    output: boundary_note
+    human_gate: Legal, data protection, and management questions remain with accountable humans.
+  - id: ai_use_case_capture
+    agent: compliance-operating-system-lead
+    action: Capture AI system, purpose, process, user group, owner, deployment status, and provider relationship.
+    output: ai_inventory_entry
+  - id: data_and_context_check
+    agent: data-protection-interface-reviewer
+    action: Capture data class, personal data reference, affected groups, storage/logging context, and redaction/minimization needs as a working assumption.
+    output: data_context_note
+    human_gate: Data protection reviews personal data reference, legal basis, transparency, and protective measures.
+  - id: role_and_obligation_questions
+    agent: regulatory-source-mapper
+    action: Structure role, obligation, and source questions as open review questions; use the EU AI Act reference only as a public source anchor.
+    output: regulatory_question_set
+    human_gate: Legal provides the binding assessment of role, obligations, and risk category.
+  - id: operational_risk_signals
+    agent: risk-and-obligation-prioritizer
+    action: Prioritize signals for process criticality, decision proximity, security impact, supplier dependency, and human oversight.
+    output: risk_signal_list
+  - id: oversight_and_evidence
+    agent: control-evidence-architect
+    action: Check which oversight, logging, approval, and review evidence is needed for the use case.
+    output: oversight_evidence_requirements
+  - id: handoff_package
+    agent: security-governance-architect
+    action: Prepare legal/data protection/management/IT security handoff with specific questions, context, owner, and decision window.
+    output: human_gate_handoff_pack
+  - id: decision_log
+    agent: compliance-operating-system-lead
+    action: Prepare decision log entry with status, open decisions, next step, and review date.
+    output: decision_log_entry
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Review the result for claims, false assurance, real data, missing human gates, and unclear responsibility.
+    output: quality_review_note
+outputs:
+  - ai_inventory_entry
+  - data_context_note
+  - regulatory_question_set
+  - risk_signal_list
+  - oversight_evidence_requirements
+  - human_gate_handoff_pack
+  - decision_log_entry
+stop_points:
+  - final EU AI Act role or risk classification is requested
+  - legal or data protection assessment is expected
+  - personal, confidential, or especially sensitive data is to be processed without approval
+  - AI outputs are intended to have automated effects on persons or critical business processes
+  - external communication, customer assurance, or provider approval is to occur without human decision
+  - compliance, permissibility, or security assurance is expected
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U4 Human-Gate Gate
+  - U6 Portability Gate
+  - A5 Workflow Gate

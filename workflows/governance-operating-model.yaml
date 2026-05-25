@@ -1,0 +1,79 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: workflow
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; reusable-operating-asset; claim-safe
+
+id: governance-operating-model
+version: 1.0.0
+purpose: Translate requirements into roles, routines, evidence flows, escalations, and management decisions.
+trigger:
+  - new or changed security/compliance requirements
+  - unclear roles, routines, or evidence flows
+  - preparation of a management review
+inputs:
+  required:
+    - scope
+    - requirements_or_register_references
+    - existing_roles
+  optional:
+    - existing_routines
+    - evidence_sources
+    - risk_or_action_register
+agents:
+  lead: security-governance-architect
+  support:
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - governance-operating-model
+templates:
+  - templates/governance-operating-model-canvas.md
+  - templates/rollenmatrix.md
+steps:
+  - id: scope
+    agent: security-governance-architect
+    action: Define scope, non-scope, and objective of the governance routine.
+    output: scope_note
+    human_gate: Scope confirmation by the responsible role.
+  - id: sources
+    agent: regulatory-source-mapper
+    action: Collect sources and register entries as reference anchors without adopting confidential or licensed full texts.
+    output: source_reference_list
+    stop_if:
+      - legal interpretation is required
+      - confidential or licensed content would have to be reproduced
+  - id: operating_model
+    skill: governance-operating-model
+    action: Derive roles, routines, triggers, outputs, evidence, and escalations.
+    output: governance_operating_model_canvas
+  - id: workload_review
+    agent: agent-quality-and-safety-reviewer
+    action: Review bureaucracy, claim safety, public safety, and portability.
+    output: quality_notes
+  - id: decision_prep
+    agent: management-review-facilitator
+    action: Prepare open management decisions, options, and the next review routine.
+    output: management_decision_brief
+    human_gate: Management decides roles, resources, risk acceptance, and priorities.
+outputs:
+  - governance_operating_model_canvas
+  - role_matrix
+  - evidence_flow_notes
+  - management_decision_brief
+stop_points:
+  - legal advice or data protection advice required
+  - compliance or certification statement would be created
+  - real customer, personal, or confidential organizational data enters public artifacts
+  - management decision is to be automated
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U5 Workload Gate
+  - A5 Workflow Gate
