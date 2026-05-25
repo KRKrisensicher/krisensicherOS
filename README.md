@@ -12,13 +12,31 @@ krisensicherOS is an open English-language product branch of the German source r
 
 The repository contains public agent profiles, skills, templates, workflows, and playbooks. It is intended for organizations that have approved AI or want to prepare AI usage approval in a targeted way.
 
+## Vibe Governance
+
+Just as **vibe coding** describes how people use AI to move faster from an idea to working code, **Vibe Governance** describes the next step for organizations: treating governance not as a static documentation project, but as an AI-assisted workflow of questions, roles, evidence, decisions, and reviews.
+
+In krisensicherOS, Vibe Governance does not mean automating away responsibility or claiming compliance from prompts. It means using AI to reach useful drafts, sharper review questions, visible gaps, and decision-ready handoffs faster — while human gates, professional accountability, and organization-specific approvals remain explicit.
+
+The “vibe” is not arbitrariness. It is the working speed and clarity that emerge when agents do the preparation and humans operate governance deliberately.
+
+## Why this repository exists
+
+krisensicherOS is based on a simple conviction: organizations should be able to operate management systems meaningfully themselves. Good governance is not created by consultants writing documents that add no value inside the organization. It is created when management system owners prioritize the important topics, speak with people across the organization, prepare decisions, and operate routines.
+
+Many software tools distract from what matters most: management. krisensicherOS therefore does not start with tool screens, but with roles, conversations, evidence, reviews, escalations, and management decisions.
+
+Management system owners in particular should use AI productively: first, so they can advise their organization on AI governance from practical experience; second, so efficiency gains become possible where management systems otherwise create mainly cost but too little output.
+
 **Clarification:** Without an approved AI environment, krisensicherOS is not a meaningful operating mode. Organizations can read individual templates or prepare AI usage approval, but the product value comes from AI-assisted work with human gates.
 
 ## Start in 15 minutes
 
-1. Open [`docs/getting-started/README.md`](docs/getting-started/README.md) and choose a user path.
-2. For the smallest NIS2 start, use the [`5-artifact quick start`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
-3. If you already know what you need, go directly to the [`user paths`](docs/getting-started/anwenderpfade.md) or [`artifact packages`](docs/getting-started/artefaktpakete.md).
+1. Give this repository to an approved AI environment or open it in an approved AI-enabled work context.
+2. Tell the AI which management-system topic you want to work on, such as NIS2, ISMS, evidence review, incident readiness, or EU AI Act readiness.
+3. Let the AI clarify the open questions with you: scope, data class, AI usage approval, roles, human gates, existing evidence, and the next useful work step.
+4. If you want to start manually, open [`docs/getting-started/README.md`](docs/getting-started/README.md) and choose a user path.
+5. For the smallest NIS2 start, use the [`5-artifact quick start`](docs/getting-started/minimaler-nis2-start-in-5-artefakten.md).
 
 ## Five quick user paths
 
@@ -59,14 +77,6 @@ Value emerges when governance becomes visible in operations:
 - operate security routines sustainably.
 
 Agents prepare. Humans review, decide, and remain accountable.
-
-## Vibe Governance
-
-Just as **vibe coding** describes how people use AI to move faster from an idea to working code, **Vibe Governance** describes the next step for organizations: treating governance not as a static documentation project, but as an AI-assisted workflow of questions, roles, evidence, decisions, and reviews.
-
-In krisensicherOS, Vibe Governance does not mean automating away responsibility or claiming compliance from prompts. It means using AI to reach useful drafts, sharper review questions, visible gaps, and decision-ready handoffs faster — while human gates, professional accountability, and organization-specific approvals remain explicit.
-
-The “vibe” is not arbitrariness. It is the working speed and clarity that emerge when agents do the preparation and humans operate governance deliberately.
 
 ## Who is krisensicherOS for?
 
