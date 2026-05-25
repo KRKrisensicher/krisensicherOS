@@ -1,0 +1,16 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: product-governance
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; release-readiness; security-gate
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
