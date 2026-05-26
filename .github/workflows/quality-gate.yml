@@ -56,7 +56,7 @@ jobs:
           import re, sys
           root = Path('.').resolve()
           missing = []
-          link_re = re.compile(r'(?<!\)!?\[[^\]]*\]\(([^)]+)\)')
+          link_re = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
           for p in root.rglob('*.md'):
               if '.git' in p.parts:
                   continue
@@ -76,8 +76,7 @@ jobs:
                   if not resolved.exists():
                       missing.append(f"{p.relative_to(root)}: missing link target {target}")
           if missing:
-              print('
-'.join(missing))
+              print('\\n'.join(missing))
               sys.exit(1)
           print('ok: local markdown links resolve')
           PY
@@ -86,7 +85,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RIn --exclude-dir=.git -E 'governance:constraints:start|Active Governance Constraints|OPENCLAW_CACHE_BOUNDARY|sourceSession=agent:|OpenClaw runtime context' .; then
+          if grep -RIn --exclude-dir=.git --exclude='quality-gate.yml' -E 'governance:constraints:start|Active Governance Constraints|OPENCLAW_CACHE_BOUNDARY|sourceSession=agent:|OpenClaw runtime context' .; then
             echo 'Runtime/session marker found in product repository.' >&2
             exit 1
           fi
