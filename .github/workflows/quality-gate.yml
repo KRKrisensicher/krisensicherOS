@@ -89,7 +89,7 @@ jobs:
             echo 'Runtime/session marker found in product repository.' >&2
             exit 1
           fi
-          if grep -RIn --exclude-dir=.git -E '(BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{20,})' .; then
+          if grep -RIn --exclude-dir=.git --exclude='quality-gate.yml' -E '(BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{20,})' .; then
             echo 'Secret-looking value found in product repository.' >&2
             exit 1
           fi
