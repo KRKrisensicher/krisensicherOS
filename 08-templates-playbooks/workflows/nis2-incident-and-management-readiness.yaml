@@ -1,0 +1,84 @@
+id: nis2-incident-and-management-readiness
+version: 1.0.0
+purpose: NIS2-Melde-/Incident-Triage und Geschäftsleitungs-Review als betreibbare Routine vorbereiten.
+trigger:
+  - mögliche NIS2-Betroffenheit oder unklare Betroffenheit
+  - Incident-Readiness-Aufbau
+  - Management Review zu NIS2-Risiken, Maßnahmen oder Ressourcen
+inputs:
+  required:
+    - preliminary_scope_or_affectedness_note
+    - critical_services_or_processes
+    - incident_roles_or_escalation_contacts
+    - risk_and_measure_backlog
+  optional:
+    - legal_review_status
+    - data_protection_review_status
+    - supplier_or_msp_context
+    - evidence_pack_index
+agents:
+  lead: management-review-facilitator
+  support:
+    - incident-readiness-coach
+    - nis2-scope-precheck-analyst
+    - nis2-readiness-analyst
+    - control-evidence-architect
+    - risk-and-obligation-prioritizer
+    - agent-quality-and-safety-reviewer
+skills:
+  - incident-escalation-playbook
+templates:
+  - templates/nis2-incident-melde-triage.md
+  - templates/nis2-management-review-und-schulung.md
+  - templates/decision-log.md
+playbooks:
+  - playbooks/nis2-incident-melde-triage.md
+  - playbooks/nis2-management-schulung-und-review.md
+steps:
+  - id: readiness_scope
+    agent: nis2-scope-precheck-analyst
+    action: Vorab-Betroffenheitsstatus, offene Rechtsfragen und Spezialregime als Arbeitsannahme zusammenfassen.
+    output: readiness_scope_note
+    human_gate: Betroffenheit und Pflichten durch Rechtsanwalt/Legal prüfen.
+  - id: incident_triage_design
+    agent: incident-readiness-coach
+    action: Incident-/Melde-Triage mit 24h-/72h-/Abschlusslogik, Rollen, Evidence Pack und Stop-Punkten vorbereiten.
+    output: incident_triage_playbook_instance
+    human_gate: Meldepflicht, Datenschutzmeldung und externe Kommunikation menschlich freigeben.
+  - id: management_training
+    agent: management-review-facilitator
+    action: Geschäftsleitungs-Schulung mit Modulen, Nachweisen, offenen Fragen und Follow-up vorbereiten.
+    output: management_training_note
+    human_gate: Geschäftsleitung bestätigt Teilnahme, offene Fragen und Folgeentscheidungen.
+  - id: management_review
+    agent: management-review-facilitator
+    action: Entscheidungsagenda, Optionen, Ressourcenbedarf, Risikoakzeptanzfragen und Follow-up in Review-Format überführen.
+    output: management_review_pack
+    human_gate: Management entscheidet; Agenten entscheiden nicht.
+  - id: evidence_alignment
+    agent: control-evidence-architect
+    action: Evidence Pack für Incident-Triage, Schulung, Review und Decision Log strukturieren.
+    output: evidence_pack_update
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Claim-Safety, Public-Safety, Human Gates, Workload und Betriebslogik prüfen.
+    output: quality_review_note
+outputs:
+  - incident_triage_playbook_instance
+  - management_training_note
+  - management_review_pack
+  - decision_log_updates
+  - evidence_pack_update
+stop_points:
+  - Live-Incident-Response oder Krisenleitung wird verlangt
+  - Meldepflicht soll ohne Rechtsprüfung festgestellt werden
+  - Datenschutzmeldung oder externe Kommunikation soll ohne Freigabe erfolgen
+  - Risikoakzeptanz oder Budgetentscheidung soll automatisiert werden
+  - vertrauliche Incident-, Kunden-, Personen- oder Systemdaten würden in öffentliche Artefakte übernommen
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U4 Empowerment-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

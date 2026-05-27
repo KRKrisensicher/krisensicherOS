@@ -1,0 +1,528 @@
+# krisensicherOS public agent manifest
+version: 1
+language: de
+status: draft
+profile_standard: docs/standards/public-agent-profile-standard-v1.0.md
+canonical_source: agents/
+families:
+  orchestration:
+    - compliance-operating-system-lead
+    - agent-quality-and-safety-reviewer
+  sources_and_register:
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - third-party-requirements-analyst
+    - data-protection-interface-reviewer
+  management_systems:
+    - security-governance-architect
+    - isms-operating-model-designer
+    - bcms-readiness-designer
+    - risk-and-obligation-prioritizer
+  evidence_and_reviews:
+    - control-evidence-architect
+    - evidence-pack-reviewer
+    - policy-and-controls-drafter
+    - management-review-facilitator
+    - internal-audit-planner
+    - audit-finding-reviewer
+    - document-gap-analyst
+    - governance-document-drafter
+  readiness_and_exercises:
+    - nis2-scope-precheck-analyst
+    - nis2-readiness-analyst
+    - incident-readiness-coach
+agents:
+  - name: agent-quality-and-safety-reviewer
+    path: agents/public/agent-quality-and-safety-reviewer.md
+    family: orchestration
+    purpose: "checking outputs for overclaims, source misuse, missing review, and workload risks"
+    use_when:
+      - "checking outputs for overclaims, source misuse, missing review, and workload risks"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - compliance-register-curator
+      - management-review-facilitator
+      - security-governance-architect
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: bcms-readiness-designer
+    path: agents/public/bcms-readiness-designer.md
+    family: management_systems
+    purpose: "structuring BCMS readiness, critical processes, exercises, and lessons learned"
+    use_when:
+      - "structuring BCMS readiness, critical processes, exercises, and lessons learned"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - incident-readiness-coach
+      - management-review-facilitator
+      - evidence-pack-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: compliance-operating-system-lead
+    path: agents/public/compliance-operating-system-lead.md
+    family: orchestration
+    purpose: "initial setup and orchestration of the user organization compliance operating system"
+    use_when:
+      - "initial setup and orchestration of the user organization compliance operating system"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - regulatory-source-mapper
+      - compliance-register-curator
+      - security-governance-architect
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: compliance-register-curator
+    path: agents/public/compliance-register-curator.md
+    family: sources_and_register
+    purpose: "structuring organization-specific norms, contracts, policies, audit findings, and requirements"
+    use_when:
+      - "structuring organization-specific norms, contracts, policies, audit findings, and requirements"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - regulatory-source-mapper
+      - third-party-requirements-analyst
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: control-evidence-architect
+    path: agents/public/control-evidence-architect.md
+    family: evidence_and_reviews
+    purpose: "designing mappings between obligations, controls, routines, evidence, and owners"
+    use_when:
+      - "designing mappings between obligations, controls, routines, evidence, and owners"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - evidence-pack-reviewer
+      - security-governance-architect
+      - compliance-register-curator
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: data-protection-interface-reviewer
+    path: agents/public/data-protection-interface-reviewer.md
+    family: sources_and_register
+    purpose: "identifying privacy interfaces and handoffs to DPO/legal review"
+    use_when:
+      - "identifying privacy interfaces and handoffs to DPO/legal review"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - regulatory-source-mapper
+      - compliance-register-curator
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: evidence-pack-reviewer
+    path: agents/public/evidence-pack-reviewer.md
+    family: evidence_and_reviews
+    purpose: "reviewing evidence packs for gaps, assumptions, traceability, and decision readiness"
+    use_when:
+      - "reviewing evidence packs for gaps, assumptions, traceability, and decision readiness"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - control-evidence-architect
+      - management-review-facilitator
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: incident-readiness-coach
+    path: agents/public/incident-readiness-coach.md
+    family: readiness_and_exercises
+    purpose: "preparing incident readiness, escalation cards, tabletop exercises, and lessons learned"
+    use_when:
+      - "preparing incident readiness, escalation cards, tabletop exercises, and lessons learned"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - bcms-readiness-designer
+      - management-review-facilitator
+      - evidence-pack-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: isms-operating-model-designer
+    path: agents/public/isms-operating-model-designer.md
+    family: management_systems
+    purpose: "designing a minimum viable ISMS as operating routines"
+    use_when:
+      - "designing a minimum viable ISMS as operating routines"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - compliance-register-curator
+      - control-evidence-architect
+      - management-review-facilitator
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: management-review-facilitator
+    path: agents/public/management-review-facilitator.md
+    family: evidence_and_reviews
+    purpose: "preparing management reviews, decisions, escalations, and follow-up logs"
+    use_when:
+      - "preparing management reviews, decisions, escalations, and follow-up logs"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - risk-and-obligation-prioritizer
+      - evidence-pack-reviewer
+      - security-governance-architect
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: nis2-scope-precheck-analyst
+    path: agents/public/nis2-scope-precheck-analyst.md
+    family: readiness_and_exercises
+    purpose: "structuring preliminary NIS2 affectedness indicators with mandatory legal-review handoff"
+    use_when:
+      - "structuring preliminary NIS2 affectedness indicators with mandatory legal-review handoff"
+    do_not_use_when:
+      - "legal advice, final affectedness decisions, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - regulatory-source-mapper
+      - compliance-register-curator
+      - nis2-readiness-analyst
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal affectedness assessment
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: nis2-readiness-analyst
+    path: agents/public/nis2-readiness-analyst.md
+    family: readiness_and_exercises
+    purpose: "preparing NIS2 readiness, gap analysis, evidence needs, and measures without conformity claims"
+    use_when:
+      - "preparing NIS2 readiness, gap analysis, evidence needs, and measures without conformity claims"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - regulatory-source-mapper
+      - security-governance-architect
+      - evidence-pack-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: policy-and-controls-drafter
+    path: agents/public/policy-and-controls-drafter.md
+    family: evidence_and_reviews
+    purpose: "drafting policies and controls only from approved routines and evidence needs"
+    use_when:
+      - "drafting policies and controls only from approved routines and evidence needs"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - security-governance-architect
+      - compliance-register-curator
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: regulatory-source-mapper
+    path: agents/public/regulatory-source-mapper.md
+    family: sources_and_register
+    purpose: "mapping public regulatory sources into review questions and obligation areas"
+    use_when:
+      - "mapping public regulatory sources into review questions and obligation areas"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - compliance-register-curator
+      - nis2-readiness-analyst
+      - data-protection-interface-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: risk-and-obligation-prioritizer
+    path: agents/public/risk-and-obligation-prioritizer.md
+    family: management_systems
+    purpose: "prioritizing risks, obligations, gaps, controls, actions, and management decisions"
+    use_when:
+      - "prioritizing risks, obligations, gaps, controls, actions, and management decisions"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - management-review-facilitator
+      - security-governance-architect
+      - evidence-pack-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: security-governance-architect
+    path: agents/public/security-governance-architect.md
+    family: management_systems
+    purpose: "turning requirements into roles, routines, decisions, escalations, and evidence flows"
+    use_when:
+      - "turning requirements into roles, routines, decisions, escalations, and evidence flows"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - control-evidence-architect
+      - management-review-facilitator
+      - risk-and-obligation-prioritizer
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: third-party-requirements-analyst
+    path: agents/public/third-party-requirements-analyst.md
+    family: sources_and_register
+    purpose: "structuring customer, supplier, insurer, and partner requirements"
+    use_when:
+      - "structuring customer, supplier, insurer, and partner requirements"
+    do_not_use_when:
+      - "legal advice, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills: []
+    handoffs_to:
+      - compliance-register-curator
+      - control-evidence-architect
+      - management-review-facilitator
+    human_review_required_for:
+      - legal interpretation
+      - certification or conformity claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: internal-audit-planner
+    path: agents/public/internal-audit-planner.md
+    family: evidence_and_reviews
+    purpose: "planning audit questionnaires, test programs, methods, samples, and evidence requests"
+    use_when:
+      - "internal audits, self-assessments, requirement-to-questionnaire mapping, or audit program design are needed"
+    do_not_use_when:
+      - "legal advice, audit assurance, certification guarantees, management decisions, or reproduction of confidential/licensed content are required"
+    primary_skills:
+      - audit-questionnaire-builder
+      - audit-test-procedure-mapper
+    handoffs_to:
+      - control-evidence-architect
+      - evidence-pack-reviewer
+      - audit-finding-reviewer
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - audit conclusions or assurance claims
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: audit-finding-reviewer
+    path: agents/public/audit-finding-reviewer.md
+    family: evidence_and_reviews
+    purpose: "writing and reviewing audit findings, deviations, observations, and corrective action handoffs"
+    use_when:
+      - "findings, deviations, observations, improvement opportunities, or corrective actions must be drafted from evidence"
+    do_not_use_when:
+      - "legal advice, audit assurance, certification guarantees, management decisions, or blame assignment are required"
+    primary_skills:
+      - audit-finding-writer
+    handoffs_to:
+      - evidence-pack-reviewer
+      - management-review-facilitator
+      - risk-and-obligation-prioritizer
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - final audit rating or deviation classification
+      - corrective action approval
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: document-gap-analyst
+    path: agents/public/document-gap-analyst.md
+    family: evidence_and_reviews
+    purpose: "comparing documents against requirements, new obligations, controls, and register entries"
+    use_when:
+      - "document gaps, update needs, new requirements, or policy/control mismatches must be identified"
+    do_not_use_when:
+      - "legal advice, final approval, certification guarantees, or publication of confidential document contents are required"
+    primary_skills:
+      - document-gap-analysis
+    handoffs_to:
+      - governance-document-drafter
+      - control-evidence-architect
+      - management-review-facilitator
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - document approval
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills
+  - name: governance-document-drafter
+    path: agents/public/governance-document-drafter.md
+    family: evidence_and_reviews
+    purpose: "drafting governance documents from interviews, notes, raw material, structures, and review criteria"
+    use_when:
+      - "interviews, notes, or raw material must be turned into consistent governance documents"
+    do_not_use_when:
+      - "legal advice, final approval, certification guarantees, or invention of missing facts are required"
+    primary_skills:
+      - interview-to-document-drafter
+    handoffs_to:
+      - document-gap-analyst
+      - policy-and-controls-drafter
+      - management-review-facilitator
+      - agent-quality-and-safety-reviewer
+    human_review_required_for:
+      - legal interpretation
+      - document approval
+      - use of confidential or licensed source material
+      - risk acceptance and management decisions
+    adapters:
+      claude: true
+      codex: true
+      openclaw: true
+      hermes: via_agentskills

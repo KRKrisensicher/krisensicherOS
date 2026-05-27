@@ -1,0 +1,127 @@
+id: isms-risk-to-soa
+version: 1.1.0
+purpose: ISMS-Risiken beschreiben, aktuelle Maßnahmen KI-gestützt erheben, Bruttorisiko bewerten, Strategie wählen, Maßnahmen planen und Netto-/Restrisiko mit Control-/SoA-Mapping berichten.
+trigger:
+  - neues oder geändertes Informationssicherheitsrisiko
+  - quartalsweiser Risikoworkshop
+  - Control-/SoA-Review
+  - Maßnahmen- oder Management-Review-Vorbereitung
+  - Incident, Auditfinding, wesentliche Änderung oder neue Schwachstelle
+inputs:
+  required:
+    - isms_scope
+    - asset_or_process
+    - vulnerability
+    - threat
+  optional:
+    - current_measures_questionnaire
+    - existing_controls
+    - planned_controls
+    - evidence_sources
+    - soa_entries
+    - incidents_or_findings
+    - iso27001_soa_available
+    - internal_control_taxonomy
+agents:
+  lead: risk-and-obligation-prioritizer
+  support:
+    - isms-operating-model-designer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - isms-risk-analysis
+  - risk-prioritization
+templates:
+  - templates/risikoanalyse-fragebogen.md
+  - templates/risikoanalyse-session-state.md
+  - templates/risikoanalyse-register.md
+  - templates/soa-risk-control-map.md
+  - templates/risikoreport.md
+  - templates/risikoreport-html.html
+  - templates/decision-log.md
+  - templates/evidence-pack-index.md
+playbooks:
+  - playbooks/isms-risikoworkshop.md
+method:
+  - 04-isms-basics/risikomanagement-methodik.md
+steps:
+  - id: soa_boundary
+    skill: isms-risk-analysis
+    action: Klären, ob eine eigene ISO-27001-SoA bzw. lizenzkonforme Normgrundlage vorhanden ist; falls nicht, nur interne Risk-Control Map nutzen und SoA als spätere Erweiterung markieren.
+    output: control_taxonomy_or_soa_boundary
+    quality_gate: Keine ISO-27001-Controls oder Normtexte aus krisensicherOS ableiten.
+  - id: session_start
+    skill: isms-risk-analysis
+    action: Dialogische Risikoanalyse starten oder anhand des Session-State fortsetzen; nächste offene Phase und Pflichtfragen bestimmen.
+    output: risk_analysis_session_state
+  - id: scenario_definition
+    skill: isms-risk-analysis
+    agent: risk-and-obligation-prioritizer
+    action: Risiko als Schwachstelle + Asset + Bedrohung formulieren und Auswirkung beschreiben.
+    output: risk_scenario
+    quality_gate: Kein Risiko ohne alle drei Elemente bewerten.
+  - id: current_measures_questionnaire
+    agent: control-evidence-architect
+    action: Aktuelle organisatorische, technische, prozessuale und Krisenmanagement-/BCMS-Maßnahmen per Fragebogen erheben; KI darf clustern und Lücken markieren.
+    output: current_measures_snapshot
+    human_gate: Asset Owner oder ISB bestätigt die Maßnahmenlage fachlich.
+  - id: gross_risk_assessment
+    agent: risk-and-obligation-prioritizer
+    action: Bruttorisiko mit Eintrittswahrscheinlichkeit und Schadensausmaß bewerten; aktuelle Maßnahmen sind Kontext, reduzieren den Bruttowert aber nicht automatisch.
+    output: gross_risk_score
+  - id: strategy_selection
+    agent: risk-and-obligation-prioritizer
+    action: Strategie Akzeptanz, Vermeidung, Transfer oder Minimierung vorbereiten; Transfer kann Versicherung, Outsourcing oder Übergabe bestimmter Bewältigungsanteile ins Krisenmanagement / BCMS umfassen.
+    output: treatment_strategy
+    human_gate: Management oder zuständige Owner entscheiden Akzeptanz, Transfer, Ressourcen oder Vermeidung.
+  - id: measure_planning
+    agent: control-evidence-architect
+    action: Maßnahmen aus Schwachstelle, Asset, Bedrohung und gewünschter Wirkung ableiten; Owner, Evidenz, Fälligkeit, Control-/SoA-Bezug und Wirksamkeitsprüfung festlegen.
+    output: measure_backlog
+  - id: soa_mapping
+    agent: control-evidence-architect
+    action: Aktuelle und geplante Maßnahmen mit Control-/SoA-Einträgen mappen; Status, Begründung und Evidenzqualität pflegen.
+    output: soa_risk_control_map
+  - id: net_residual_risk_assessment
+    agent: risk-and-obligation-prioritizer
+    action: Netto-/Restrisiko nach Strategie und Maßnahmenplanung mit denselben Kriterien für Eintrittswahrscheinlichkeit und Schadensausmaß bewerten; Planwert markieren, solange Maßnahmen nicht wirksamkeitsgeprüft sind.
+    output: net_residual_risk_score
+    quality_gate: Bestätigtes Nettorisiko erst nach Umsetzung und Wirksamkeitsprüfung ausweisen.
+  - id: reporting
+    agent: management-review-facilitator
+    action: Risikoreport als Markdown oder HTML vorbereiten; Top-Risiken, Strategien, Restrisiken, Akzeptanzen, Transfers, Control-/SoA-Lücken, überfällige Maßnahmen und offene Entscheidungen darstellen.
+    output: risk_report
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Public-Safety, Claim-Safety, Bewertungsreihenfolge, Control-/SoA-Mapping, Human Gates, Reporting und Workload prüfen.
+    output: quality_review_note
+    stop_if:
+      - Risikoakzeptanz wird durch Agenten getroffen
+      - aktuelle Maßnahmenlage wird ohne Owner-Bestätigung als gesichert dargestellt
+      - bestätigtes Nettorisiko wird ohne Wirksamkeitsprüfung ausgewiesen
+      - lizenzpflichtige Normtexte oder vertrauliche Inhalte werden übernommen
+      - Maßnahmen haben keine Owner, Evidenz oder Wirksamkeitsprüfung
+outputs:
+  - control_taxonomy_or_soa_boundary
+  - risk_analysis_session_state
+  - risk_scenario
+  - current_measures_snapshot
+  - gross_risk_score
+  - treatment_strategy
+  - measure_backlog
+  - soa_risk_control_map
+  - net_residual_risk_score
+  - risk_report
+stop_points:
+  - rechtliche oder datenschutzrechtliche Bewertung erforderlich
+  - Risikoakzeptanz, Ressourcenentscheidung, Transfer oder Risikovermeidung erforderlich
+  - echte Kundendaten oder vertrauliche Nachweise würden in öffentliche Artefakte übernommen
+  - Normtexte aus lizenzpflichtigen Standards sollen reproduziert werden
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U4 Empowerment-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

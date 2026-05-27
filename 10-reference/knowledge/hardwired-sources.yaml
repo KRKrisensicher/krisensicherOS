@@ -1,0 +1,157 @@
+# krisensicherOS hardwired reference sources
+#
+# Zweck:
+# Diese Datei definiert feste öffentliche Referenzanker für Agentenarbeit.
+# Sie ersetzt keine Rechtsprüfung und enthält keine vollständigen Gesetzes- oder Normtexte.
+# Agenten sollen diese Quellen als Orientierung und Fundstellen nutzen, nicht als verbindliche Auslegung.
+
+version: "0.1"
+language: "de"
+status: "draft"
+
+rules:
+  no_legal_advice: true
+  no_full_norm_texts: true
+  use_official_sources_when_possible: true
+  require_human_review_for_interpretation: true
+
+sources:
+  - id: "eu-nis2-directive-2022-2555"
+    title: "Richtlinie (EU) 2022/2555 — NIS2"
+    type: "eu-directive"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+    use_for:
+      - "NIS2-Readiness"
+      - "Governance-Anforderungen"
+      - "Risikomanagementmaßnahmen"
+      - "Melde- und Aufsichtskontext"
+    agent_note: "Primärquelle für NIS2. Nationale Umsetzung und branchenspezifische Anforderungen separat prüfen. Keine Rechtsberatung ableiten."
+
+  - id: "de-bsig"
+    title: "BSI-Gesetz (BSIG)"
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsig_2025/"
+    use_for:
+      - "BSI-Kontext"
+      - "NIS2-Vorab-Betroffenheitsprüfung"
+      - "KRITIS-nahe Anforderungen"
+      - "Sicherheitsanforderungen und Nachweislogik"
+    agent_note: "Als deutscher Rechtsrahmen für BSI-/KRITIS-/NIS2-Bezüge verwenden. § 28 sowie Anlagen 1 und 2 für Vorab-Betroffenheitslogik auswerten. Keine verbindliche Rechtsauslegung; Anwendbarkeit menschlich/rechtlich prüfen."
+
+  - id: "de-bsig-section-28-and-annexes"
+    title: "BSIG § 28 sowie Anlage 1 und Anlage 2"
+    type: "law-section"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsig_2025/__28.html"
+    related_urls:
+      - "https://www.gesetze-im-internet.de/bsig_2025/anlage_1.html"
+      - "https://www.gesetze-im-internet.de/bsig_2025/anlage_2.html"
+    use_for:
+      - "NIS2-Vorab-Betroffenheitsprüfung"
+      - "wichtige Einrichtungen"
+      - "besonders wichtige Einrichtungen"
+      - "Sektor- und Einrichtungsarten-Mapping"
+    agent_note: "Nur als strukturierte Vorprüfung nutzen. Ergebnis immer mit Pflicht-Hinweis ausgeben und durch Rechtsanwalt/Legal prüfen lassen."
+
+  - id: "de-enwg-5c-ff"
+    title: "Energiewirtschaftsgesetz (EnWG), insbesondere § 5c ff."
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/enwg_2005/"
+    use_for:
+      - "Energie-Sektor"
+      - "KRITIS-nahe Organisationen"
+      - "sektorspezifische Governance- und Sicherheitsanforderungen"
+    agent_note: "Für Energie-/Versorgerkontexte als Referenzanker nutzen. Paragraphenstand und Anwendbarkeit immer prüfen lassen."
+
+  - id: "eu-gdpr-2016-679"
+    title: "Verordnung (EU) 2016/679 — Datenschutz-Grundverordnung (DSGVO)"
+    type: "eu-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    use_for:
+      - "Datenschutzbezug"
+      - "technische und organisatorische Maßnahmen"
+      - "Schnittstelle Security Governance / Datenschutz"
+    agent_note: "Nur Datenschutz-Schnittstellen markieren. Keine datenschutzrechtliche Beratung oder verbindliche TOM-Auslegung behaupten."
+
+  - id: "de-bdsg-2018"
+    title: "Bundesdatenschutzgesetz (BDSG)"
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bdsg_2018/"
+    use_for:
+      - "deutscher Datenschutzkontext"
+      - "Schnittstelle Security Governance / Datenschutz"
+    agent_note: "Ergänzend zur DSGVO nutzen. Keine Rechtsberatung."
+
+  - id: "de-bsi-kritisv"
+    title: "BSI-Kritisverordnung (BSI-KritisV)"
+    type: "regulation"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsi-kritisv/"
+    use_for:
+      - "KRITIS-Schwellenwerte"
+      - "Sektorenbezug"
+      - "Einordnung KRITIS-naher Organisationen"
+    agent_note: "Für KRITIS-Bezug als Fundstelle nutzen. Einstufung muss durch verantwortliche Personen geprüft werden."
+
+  - id: "eu-nis2-implementing-regulation-2024-2690"
+    title: "Durchführungsverordnung (EU) 2024/2690 zur NIS2-Richtlinie"
+    type: "eu-implementing-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj?locale=de"
+    use_for:
+      - "digitale Infrastruktur"
+      - "digitale Dienste"
+      - "technische und methodische Risikomanagementanforderungen"
+      - "erhebliche Sicherheitsvorfälle"
+    agent_note: "Für DNS, TLD, Cloud, Rechenzentrum, CDN, MSP, MSSP, Online-Marktplätze, Online-Suchmaschinen, soziale Netzwerke und Vertrauensdiensteanbieter zusätzlich auswerten. Keine Konformitätszusage ableiten."
+
+  - id: "de-bsi-nis2-faq"
+    title: "BSI NIS-2 FAQ und Betroffenheitsprüfung"
+    type: "authority-guidance"
+    jurisdiction: "DE"
+    official_url: "https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/NIS-2-Betroffenheitspruefung/nis-2-betroffenheitspruefung_node.html"
+    related_urls:
+      - "https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/NIS-2-FAQ/NIS-2-FAQ-sektorspezifisch/NIS-2-Sektorspezifische-FAQ_node.html"
+    use_for:
+      - "Plausibilisierung nach strukturierter Vorprüfung"
+      - "Sektorhinweise"
+      - "offene Auslegungsfragen"
+    agent_note: "BSI-FAQ erst nach BSIG-/Anlagen-/Spezialregime-Vorprüfung nutzen; nicht als alleinige Rechtsgrundlage."
+
+  - id: "de-it-sicherheitsgesetz-context"
+    title: "IT-Sicherheitsgesetzgebung Deutschland — Kontextanker"
+    type: "context"
+    jurisdiction: "DE"
+    official_url: "https://www.bsi.bund.de/"
+    use_for:
+      - "Kontext BSI"
+      - "nationale Cybersecurity-Regulierung"
+    agent_note: "Nur als Kontextanker nutzen; konkrete Pflichten immer auf geltende Gesetze/Verordnungen zurückführen."
+
+
+  - id: "eu-ai-act-2024-1689"
+    title: "Verordnung (EU) 2024/1689 — EU AI Act"
+    type: "eu-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    use_for:
+      - "AI-Governance"
+      - "KI-System-Inventar"
+      - "Rollen- und Handoff-Fragen"
+      - "menschliche Aufsicht und Nachweislogik"
+    agent_note: "Nur als öffentlicher Referenzanker für Inventar, Vorprüfung und Handoff nutzen. Keine verbindliche Rollen-, Risiko- oder Konformitätsbewertung ableiten; Legal/Datenschutz/Management prüfen."
+
+  - id: "iso-iec-27001-metadata-only"
+    title: "ISO/IEC 27001 — nur als lizenzpflichtige Normreferenz"
+    type: "standard-reference"
+    jurisdiction: "international"
+    official_url: "https://www.iso.org/standard/27001"
+    use_for:
+      - "ISMS-Mapping"
+      - "Control- und Managementsystem-Bezug"
+    agent_note: "Keine Normtexte, Kontrolltexte oder urheberrechtlich geschützten Inhalte ins Repo übernehmen. Nur Metadaten, eigene Notizen, Verweise und Mapping-Strukturen. Siehe docs/legal/iso-normen-lizenzkonform-nutzen.md."

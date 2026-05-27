@@ -1,0 +1,73 @@
+id: evidence-management-review
+version: 1.0.0
+purpose: Evidence Packs prüfen, Lücken benennen und Management Review mit Entscheidungsfragen vorbereiten.
+trigger:
+  - bevorstehender Management Review
+  - Abschluss oder Review von Maßnahmen
+  - Audit- oder interne Review-Vorbereitung
+  - Incident-Nachbereitung oder Gap-Schließung
+inputs:
+  required:
+    - review_scope
+    - evidence_pack_or_index
+    - open_findings_or_actions
+  optional:
+    - risk_register
+    - decision_log
+    - control_routine_map
+agents:
+  lead: evidence-pack-reviewer
+  support:
+    - control-evidence-architect
+    - management-review-facilitator
+    - risk-and-obligation-prioritizer
+    - agent-quality-and-safety-reviewer
+skills: []
+templates:
+  - templates/evidence-pack-index.md
+  - templates/governance-operating-model-canvas.md
+steps:
+  - id: review_scope
+    agent: evidence-pack-reviewer
+    action: Reviewziel, Scope, Kontroll-/Routinenbezug und Entscheidungskontext klären.
+    output: review_scope_note
+  - id: evidence_quality
+    agent: evidence-pack-reviewer
+    action: Nachweise auf Aktualität, Nachvollziehbarkeit, ausreichende Entscheidungsgrundlage, Annahmen und Lücken prüfen.
+    output: evidence_quality_notes
+    stop_if:
+      - echte vertrauliche Nachweise sollen öffentlich kopiert werden
+      - personenbezogene Daten ohne Freigabe verarbeitet werden sollen
+  - id: evidence_flow
+    agent: control-evidence-architect
+    action: Lücken in Evidence-Flows, Ownern, Ablageorten und Review-Kadenz beschreiben.
+    output: evidence_gap_list
+  - id: risk_prioritization
+    agent: risk-and-obligation-prioritizer
+    action: Evidenzlücken und offene Maßnahmen nach Entscheidungsrelevanz priorisieren.
+    output: prioritized_review_backlog
+  - id: quality_gate
+    agent: agent-quality-and-safety-reviewer
+    action: Public-Safety, Claim-Safety und Workload prüfen.
+    output: quality_gate_note
+  - id: management_review_prep
+    agent: management-review-facilitator
+    action: Agenda, Entscheidungsfragen, Optionen, Risiken bei Nicht-Handeln und Follow-up vorbereiten.
+    output: management_review_brief
+    human_gate: Management entscheidet Akzeptanz, Prioritäten, Ressourcen und externe Kommunikation.
+outputs:
+  - evidence_quality_notes
+  - evidence_gap_list
+  - prioritized_review_backlog
+  - management_review_brief
+stop_points:
+  - vertrauliche oder personenbezogene Inhalte würden offengelegt
+  - externe Zusicherung zur Wirksamkeit oder Erfüllung geplant
+  - Managemententscheidung soll automatisiert werden
+  - rechtliche oder Datenschutzbewertung erforderlich
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U5 Workload-Gate
+  - A5 Workflow-Gate

@@ -1,0 +1,86 @@
+id: nis2-vorab-betroffenheitspruefung
+version: 1.0.0
+purpose: Vorab strukturieren, ob NIS2-Betroffenheitsindikatoren vorliegen könnten; finale Prüfung bleibt zwingend rechtlich/menschlich.
+trigger:
+  - Erstscreening NIS2-Betroffenheit
+  - Vorbereitung Legal-Handoff
+  - Vorbereitung NIS2-Readiness-Gap-Arbeit
+inputs:
+  required:
+    - legal_entity_or_scope
+    - activities_goods_services
+    - employee_count
+    - revenue_and_balance_sheet_indicators
+    - sector_or_service_hypothesis
+  optional:
+    - group_or_partner_company_context
+    - critical_facility_indicators
+    - energy_tk_finance_telematics_public_sector_context
+    - digital_service_or_infrastructure_context
+agents:
+  lead: nis2-scope-precheck-analyst
+  support:
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - nis2-readiness-analyst
+    - risk-and-obligation-prioritizer
+    - agent-quality-and-safety-reviewer
+templates:
+  - templates/nis2-vorab-betroffenheitspruefung-fragebogen.md
+  - templates/legal-datenschutz-handoff.md
+source_anchors:
+  - knowledge/nis2-primary-sources.md
+  - knowledge/hardwired-sources.yaml
+steps:
+  - id: mandatory_disclaimer
+    agent: nis2-scope-precheck-analyst
+    action: Pflicht-Hinweis ausgeben, dass keine Rechtsberatung und keine verbindliche Betroffenheitsfeststellung erfolgt.
+    output: disclaimer_note
+    human_gate: Rechtsanwalt oder Legal muss das Ergebnis prüfen.
+  - id: source_anchor_mapping
+    agent: regulatory-source-mapper
+    action: NIS2, BSIG, BSIG § 28, Anlagen 1/2, EnWG § 5c-5e und Durchführungsverordnung 2024/2690 als Quellenanker erfassen.
+    output: source_map
+  - id: bsig_precheck
+    agent: nis2-scope-precheck-analyst
+    action: Größen-, Tätigkeits-, Sonderkategorien- und Ausschlusslogik nach BSIG § 28 sowie Anlagen 1/2 strukturiert vorprüfen.
+    output: bsig_precheck_matrix
+    human_gate: Einrichtungsart und Größen-/Konzernlogik rechtlich prüfen.
+  - id: sector_specific_paths
+    agent: nis2-scope-precheck-analyst
+    action: Energie, TK, Finanz/DORA, Telematik, öffentliche Verwaltung und digitale Dienste/Infrastruktur als Spezialpfade markieren.
+    output: special_regime_note
+  - id: implementing_regulation_check
+    agent: nis2-scope-precheck-analyst
+    action: Bei DNS, TLD, Cloud, Rechenzentrum, CDN, MSP, MSSP, Online-Marktplatz, Suchmaschine, sozialem Netzwerk oder Vertrauensdiensten Durchführungsverordnung (EU) 2024/2690 als Auswertungspfad aktivieren.
+    output: eu_2024_2690_relevance_note
+  - id: bsi_faq_plausibility
+    agent: nis2-scope-precheck-analyst
+    action: BSI-Betroffenheitsprüfung und sektorspezifische FAQ erst nach der strukturierten Vorprüfung zur Plausibilisierung nutzen.
+    output: bsi_faq_plausibility_note
+  - id: legal_handoff
+    agent: nis2-scope-precheck-analyst
+    action: Offene Rechtsfragen, Quellen, Annahmen und Vorab-Ergebnis an Rechtsanwalt/Legal übergeben.
+    output: legal_handoff
+    human_gate: Finale Betroffenheit und Pflichten werden menschlich/rechtlich geprüft.
+  - id: readiness_handoff
+    agent: nis2-readiness-analyst
+    action: Wenn mögliche Betroffenheit oder Unklarheit besteht, Gap-Assessment und Evidence-Plan vorbereiten.
+    output: nis2_readiness_start_note
+outputs:
+  - preliminary_scope_questionnaire
+  - source_anchor_map
+  - bsi_faq_plausibility_note
+  - legal_review_handoff
+  - readiness_handoff
+stop_points:
+  - finale rechtliche Betroffenheitsentscheidung wird verlangt
+  - echte vertrauliche Organisationsdaten sollen in öffentliche Artefakte übernommen werden
+  - externe Kommunikation oder Behördenmeldung soll ohne Freigabe erfolgen
+  - Konformitäts- oder Nicht-Betroffenheitszusage wird erwartet
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Betriebslogik-Gate
+  - U6 Portabilitäts-Gate
+  - A5 Workflow-Gate

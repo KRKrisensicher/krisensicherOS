@@ -1,0 +1,49 @@
+
+# Dokumentation
+
+## Zweck
+
+Dieser Ordner enthält die öffentlichen Nutzerpfade, Setup-Hinweise, Standards und Produktgrenzen für krisensicherOS.
+
+krisensicherOS ist ein Produktrepo für KI-unterstützte Security Governance. Interne Arbeitsnotizen, Review-Spuren, Briefings, Roadmaps und Release-Technik gehören nicht in dieses Produktrepo.
+
+## Einstieg für v1.0
+
+Beginne hier:
+
+1. [`../README.md`](../../README.md) — Produktüberblick und Grenzen.
+2. [`getting-started/README.md`](../../00-start-here/docs/getting-started/README.md) — Navigation durch die Einstiegspfade.
+3. [`getting-started/anwenderpfade.md`](../../00-start-here/docs/getting-started/anwenderpfade.md) — NIS2, ISMS, Evidence/Management Review und Incident-/Melde-Readiness.
+4. [`getting-started/artefaktpakete.md`](../../00-start-here/docs/getting-started/artefaktpakete.md) — wiederverwendbare Pakete aus Templates, Workflows, Playbooks und Leitfäden.
+5. [`setup/README.md`](../../00-start-here/docs/setup/README.md) — Auswahl einer freigegebenen KI-Umgebung.
+6. [`getting-started/30-60-90-minuten-nutzungspfad.md`](../../00-start-here/docs/getting-started/30-60-90-minuten-nutzungspfad.md) — erster Durchstich.
+7. [`product/was-wir-bewusst-nicht-bauen.md`](../../00-start-here/docs/product/was-wir-bewusst-nicht-bauen.md) — Produkt-Guardrail gegen Feature-Creep, Scheinkonformität und Template-Masse.
+
+## Setup
+
+Setup-Dokumente erklären freigegebene KI-Arbeitsweisen:
+
+- [`setup/chatgpt-lokale-ide.md`](../../00-start-here/docs/setup/chatgpt-lokale-ide.md)
+- [`setup/m365-copilot.md`](../../00-start-here/docs/setup/m365-copilot.md)
+- [`setup/claude-code.md`](../../00-start-here/docs/setup/claude-code.md)
+- [`setup/lokale-ki.md`](../../00-start-here/docs/setup/lokale-ki.md)
+- [`setup/ki-setups-bedienungsanleitung.md`](../../00-start-here/docs/setup/ki-setups-bedienungsanleitung.md)
+
+Wenn noch keine KI-Freigabe vorliegt, ist krisensicherOS noch nicht betriebsbereit. Nutze dann nur [`../templates/ki-nutzungsfreigabe-matrix.md`](../../08-templates-playbooks/templates/ki-nutzungsfreigabe-matrix.md), um die Freigabe vorzubereiten.
+
+## Readiness
+
+NIS2-Readiness-Artefakte:
+
+- [`readiness/nis2-erwaegungsgruende-implementierungslogik.md`](../../03-nis2-readiness/docs/readiness/nis2-erwaegungsgruende-implementierungslogik.md) — Erwägungsgründe der NIS2-Richtlinie als Implementierungslogik.
+
+## Standards
+
+Aktuelle Standards:
+
+- [`standards/public-agent-profile-standard-v1.0.md`](standards/public-agent-profile-standard-v1.0.md)
+- [`standards/skill-standard-v1.0.md`](standards/skill-standard-v1.0.md)
+
+## Grenzen
+
+Diese Dokumentation ersetzt keine Rechtsberatung, keine Datenschutzberatung, keine Zertifizierungsberatung und keine Managemententscheidung. Sie stellt Arbeitsmittel und Reviewlogik für KI-unterstützte Governance-Arbeit bereit.
