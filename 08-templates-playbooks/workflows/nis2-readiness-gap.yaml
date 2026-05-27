@@ -1,0 +1,85 @@
+id: nis2-readiness-gap
+version: 1.0.0
+purpose: Capture, prioritize, and prepare NIS2 readiness gaps as management decisions in a structured way.
+trigger:
+  - NIS2 readiness review
+  - Findings from workshop, review, or audit preparation
+  - Setup of a security governance measures backlog
+inputs:
+  required:
+    - scope
+    - public_source_references_or_register_entries
+    - existing_routines_or_controls
+  optional:
+    - evidence_inventory
+    - risk_register
+    - management_priorities
+agents:
+  lead: nis2-readiness-analyst
+  support:
+    - nis2-scope-precheck-analyst
+    - regulatory-source-mapper
+    - compliance-register-curator
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - nis2-gap-assessment
+templates:
+  - templates/nis2-vorab-betroffenheitspruefung-fragebogen.md
+  - templates/nis2-gap-worksheet.md
+  - templates/nis2-incident-melde-triage.md
+  - templates/nis2-management-review-und-schulung.md
+  - templates/evidence-pack-index.md
+steps:
+  - id: scope_check
+    agent: nis2-scope-precheck-analyst
+    action: Capture the scope under review, out-of-scope areas, and preliminary applicability indicators; mark applicability questions as requiring mandatory legal review.
+    output: scope_precheck_note
+    human_gate: Legal applicability is not decided by the agent; review by a lawyer/legal is required.
+  - id: reference_mapping
+    agent: regulatory-source-mapper
+    action: Capture sources as reference anchors and metadata.
+    output: reference_map
+    stop_if:
+      - Full texts of standards or laws are to be copied
+      - confidential contractual content is introduced
+  - id: gap_assessment
+    skill: nis2-gap-assessment
+    action: Capture work areas, existing routines, evidence, gaps, and measures.
+    output: nis2_gap_worksheet
+  - id: prioritization
+    agent: risk-and-obligation-prioritizer
+    action: Prioritize gaps by risk, urgency, evidence needs, effort, and management relevance.
+    output: prioritized_gap_backlog
+  - id: evidence_plan
+    agent: control-evidence-architect
+    action: Describe required evidence and evidence pack gaps.
+    output: evidence_needs_list
+  - id: incident_and_management_readiness
+    agent: incident-readiness-coach
+    action: In case of possible applicability or unclear status, prepare notification/incident triage and executive management training as a readiness work item.
+    output: incident_and_management_readiness_note
+    human_gate: Notification obligations, external communication, and training/review obligations must be reviewed legally and by management.
+  - id: management_review
+    agent: management-review-facilitator
+    action: Prepare decision questions, options, executive management training, and next measures for management review.
+    output: management_decision_brief
+    human_gate: Management decides risk acceptance, budget, owner, and dates.
+outputs:
+  - nis2_gap_worksheet
+  - prioritized_gap_backlog
+  - evidence_needs_list
+  - management_decision_brief
+stop_points:
+  - binding legal interpretation required
+  - data protection assessment required
+  - external statement on regulatory fulfillment planned
+  - management decision is to be automated
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U4 Empowerment Gate
+  - A5 Workflow Gate

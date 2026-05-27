@@ -1,0 +1,84 @@
+id: nis2-incident-and-management-readiness
+version: 1.0.0
+purpose: Prepare NIS2 notification/incident triage and executive management review as an operable routine.
+trigger:
+  - possible NIS2 applicability or unclear applicability
+  - incident readiness build-up
+  - management review on NIS2 risks, measures, or resources
+inputs:
+  required:
+    - preliminary_scope_or_affectedness_note
+    - critical_services_or_processes
+    - incident_roles_or_escalation_contacts
+    - risk_and_measure_backlog
+  optional:
+    - legal_review_status
+    - data_protection_review_status
+    - supplier_or_msp_context
+    - evidence_pack_index
+agents:
+  lead: management-review-facilitator
+  support:
+    - incident-readiness-coach
+    - nis2-scope-precheck-analyst
+    - nis2-readiness-analyst
+    - control-evidence-architect
+    - risk-and-obligation-prioritizer
+    - agent-quality-and-safety-reviewer
+skills:
+  - incident-escalation-playbook
+templates:
+  - templates/nis2-incident-melde-triage.md
+  - templates/nis2-management-review-und-schulung.md
+  - templates/decision-log.md
+playbooks:
+  - playbooks/nis2-incident-melde-triage.md
+  - playbooks/nis2-management-schulung-und-review.md
+steps:
+  - id: readiness_scope
+    agent: nis2-scope-precheck-analyst
+    action: Summarize preliminary applicability status, open legal questions, and special regimes as a working assumption.
+    output: readiness_scope_note
+    human_gate: Have applicability and obligations reviewed by a lawyer/legal.
+  - id: incident_triage_design
+    agent: incident-readiness-coach
+    action: Prepare incident/notification triage with 24h/72h/final logic, roles, evidence pack, and stop points.
+    output: incident_triage_playbook_instance
+    human_gate: Human approval is required for notification obligation, data protection notification, and external communication.
+  - id: management_training
+    agent: management-review-facilitator
+    action: Prepare executive management training with modules, evidence, open questions, and follow-up.
+    output: management_training_note
+    human_gate: Executive management confirms participation, open questions, and follow-up decisions.
+  - id: management_review
+    agent: management-review-facilitator
+    action: Convert decision agenda, options, resource needs, risk acceptance questions, and follow-up into a review format.
+    output: management_review_pack
+    human_gate: Management decides; agents do not decide.
+  - id: evidence_alignment
+    agent: control-evidence-architect
+    action: Structure the evidence pack for incident triage, training, review, and decision log.
+    output: evidence_pack_update
+  - id: quality_review
+    agent: agent-quality-and-safety-reviewer
+    action: Review claim safety, public safety, human gates, workload, and operating logic.
+    output: quality_review_note
+outputs:
+  - incident_triage_playbook_instance
+  - management_training_note
+  - management_review_pack
+  - decision_log_updates
+  - evidence_pack_update
+stop_points:
+  - Live incident response or crisis management is requested
+  - Notification obligation is to be determined without legal review
+  - Data protection notification or external communication is to occur without approval
+  - Risk acceptance or budget decision is to be automated
+  - confidential incident, customer, personal, or system data would be transferred into public artifacts
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U4 Empowerment Gate
+  - U5 Workload Gate
+  - A5 Workflow Gate

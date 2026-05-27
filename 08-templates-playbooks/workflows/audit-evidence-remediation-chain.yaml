@@ -1,0 +1,169 @@
+id: audit-evidence-remediation-chain
+version: 1.0.0
+name: Audit Evidence Remediation Chain
+purpose: >
+  Connects requirement, audit question, audit program, evidence request, finding,
+  corrective action, effectiveness review, and management review into an
+  operable end-to-end workflow.
+
+scope:
+  includes:
+    - internal audits
+    - self-assessments
+    - NIS2/ISMS/BCMS gap spot checks
+    - evidence pack and management review preparation
+  excludes:
+    - legal advice
+    - data protection advice
+    - external audit or certification assurance
+    - management decision
+    - processing licensed standard texts as full text
+
+triggers:
+  - new or changed requirement
+  - planned internal audit
+  - missing evidence in the evidence pack
+  - recurring nonconformity
+  - management review needs a decision-ready basis
+
+inputs:
+  - scope
+  - compliance-register-entry-or-source-reference
+  - control-or-requirement-summary
+  - existing-documents-or-evidence
+  - owner-and-role-information
+  - risk-or-priority-context
+
+agents:
+  lead: compliance-operating-system-lead
+  support:
+    - internal-audit-planner
+    - control-evidence-architect
+    - evidence-pack-reviewer
+    - audit-finding-reviewer
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+
+skills:
+  - audit-questionnaire-builder
+  - audit-test-procedure-mapper
+  - evidence-request-list-builder
+  - control-test-designer
+  - audit-finding-writer
+  - corrective-action-planner
+  - remediation-effectiveness-review
+  - evidence-pack-review
+  - management-review-prep
+
+templates:
+  - templates/compliance-source-register.md
+  - templates/audit-questionnaire.md
+  - templates/audit-test-program.md
+  - templates/evidence-request-list.md
+  - templates/control-test-plan.md
+  - templates/audit-finding-report.md
+  - templates/corrective-action-plan.md
+  - templates/remediation-effectiveness-review.md
+  - templates/evidence-pack-index.md
+  - templates/management-review-agenda.md
+  - templates/decision-log.md
+  - templates/legal-datenschutz-handoff.md
+
+steps:
+  - id: requirement-capture
+    name: Capture requirement
+    action: Capture source or register entry as a reference, metadata, or own summary.
+    output: reviewed criteria and scope entry
+    stop_if:
+      - licensed standard text is to be reproduced
+      - confidential source is not approved
+      - legal interpretation is requested
+
+  - id: audit-questionnaire
+    name: Derive audit questions
+    skill: audit-questionnaire-builder
+    output: audit-questionnaire
+    human_gate: Audit owners review guiding questions and scope.
+
+  - id: test-program
+    name: Design audit program and control tests
+    skills:
+      - audit-test-procedure-mapper
+      - control-test-designer
+    output: audit-test-program and control-test-plan
+    human_gate: Audit owners review method, sample, and robustness.
+
+  - id: evidence-request
+    name: Create evidence requests
+    skill: evidence-request-list-builder
+    output: evidence-request-list
+    workload_rule: Maximum of a few requests per owner in the first spot check; reuse existing evidence first.
+    human_gate: Owners confirm availability, confidentiality, and deadlines.
+
+  - id: legal-datenschutz-handoff
+    name: Legal/data protection handoff at stop points
+    template: templates/legal-datenschutz-handoff.md
+    action: Create structured handoff when legal, data protection, contractual, confidentiality, or AI usage approval questions arise.
+    output: legal-datenschutz-handoff
+    human_gate: Legal, data protection, or management review and decide.
+
+  - id: evidence-review
+    name: Review evidence
+    skill: evidence-pack-review
+    output: evidence-pack-index with gaps and assumptions
+    stop_if:
+      - evidence is missing and is to be invented or smoothed over
+      - personal data or confidential content would be publicly visible
+
+  - id: finding
+    name: Formulate finding or nonconformity
+    skill: audit-finding-writer
+    output: audit-finding-report
+    human_gate: Final finding classification remains with accountable humans.
+
+  - id: corrective-action
+    name: Plan corrective action
+    skill: corrective-action-planner
+    output: corrective-action-plan
+    human_gate: Owner, deadline, resources, and risk decision are approved by humans.
+
+  - id: effectiveness-review
+    name: Review effectiveness
+    skill: remediation-effectiveness-review
+    output: remediation-effectiveness-review
+    human_gate: Closure, reopening, or risk acceptance remains a human decision.
+
+  - id: management-review
+    name: Prepare management review
+    skill: management-review-prep
+    output: management-review-agenda and decision-log
+    human_gate: Management decides, prioritizes, and accepts risks.
+
+quality_gates:
+  - Public Safety
+  - Claim Safety
+  - Source/Register Gate
+  - Evidence Reference
+  - Operating Logic
+  - Workload
+  - Human Review
+  - Handoff
+
+outputs:
+  - audit-questionnaire
+  - audit-test-program
+  - evidence-request-list
+  - control-test-plan
+  - audit-finding-report
+  - corrective-action-plan
+  - remediation-effectiveness-review
+  - evidence-pack-index
+  - management-review-agenda
+  - decision-log
+
+hard_stops:
+  - legal or data protection advice is requested
+  - compliance, certification, or security assurance is to be created
+  - real confidential content or personal data is to be processed publicly
+  - licensed standard texts are to be reproduced
+  - management decision or risk acceptance is to be automated

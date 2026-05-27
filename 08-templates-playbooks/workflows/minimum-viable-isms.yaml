@@ -1,0 +1,85 @@
+id: minimum-viable-isms
+version: 1.0.0
+purpose: Design an ISMS start mode with scope, risk logic, control routines, evidence, and review cadence.
+trigger:
+  - Building an initial ISMS operating mode
+  - ISMS work becomes too document-heavy or too broad
+  - Scope, risk, or control logic is unclear
+inputs:
+  required:
+    - scope_candidates
+    - risk_topics
+    - governance_roles
+  optional:
+    - existing_controls
+    - evidence_sources
+    - compliance_register_entries
+agents:
+  lead: isms-operating-model-designer
+  support:
+    - security-governance-architect
+    - risk-and-obligation-prioritizer
+    - control-evidence-architect
+    - evidence-pack-reviewer
+    - management-review-facilitator
+    - agent-quality-and-safety-reviewer
+skills:
+  - minimum-viable-isms
+  - governance-operating-model
+  - isms-risk-analysis
+templates:
+  - templates/isms-scope-canvas.md
+  - templates/rollenmatrix.md
+  - templates/risikoanalyse-fragebogen.md
+  - templates/risikoanalyse-session-state.md
+  - templates/risikoanalyse-register.md
+  - templates/soa-risk-control-map.md
+  - templates/risikoreport.md
+  - templates/evidence-pack-index.md
+steps:
+  - id: purpose_and_scope
+    agent: isms-operating-model-designer
+    action: Formulate ISMS purpose, starting scope, non-scope, and expansion criteria.
+    output: isms_scope_canvas
+    human_gate: Management or ISMS owner confirms scope.
+  - id: risk_logic
+    agent: risk-and-obligation-prioritizer
+    action: Capture key risks, impacts, treatment ideas, and open decisions.
+    output: risk_control_candidates
+  - id: control_routines
+    skill: minimum-viable-isms
+    action: Describe controls as routines with owner, trigger, output, evidence, and review.
+    output: risk_control_routine_map
+  - id: evidence_plan
+    agent: control-evidence-architect
+    action: Prepare evidence pack index and review cadence.
+    output: evidence_and_review_plan
+  - id: workload_gate
+    agent: agent-quality-and-safety-reviewer
+    action: Review documentation load, claim safety, human gates, and portability.
+    output: quality_review_note
+    stop_if:
+      - Template creates a form graveyard without decision value
+      - Certification or security promises arise
+  - id: management_decision
+    agent: management-review-facilitator
+    action: Prepare scope options, top risks, resource needs, and next review routine.
+    output: management_decision_brief
+    human_gate: Management decides resources, risk acceptance, and priorities.
+outputs:
+  - isms_scope_canvas
+  - risk_control_routine_map
+  - evidence_and_review_plan
+  - minimum_viable_isms_backlog
+  - management_decision_brief
+stop_points:
+  - Normative or legal interpretation required
+  - Data protection assessment required
+  - Certification assurance or external audit claim planned
+  - Real or confidential data would be documented publicly
+quality_gates:
+  - U1 Public-Safe Gate
+  - U2 Claim-Safety Gate
+  - U3 Operating Logic Gate
+  - U5 Workload Gate
+  - A5 Workflow Gate

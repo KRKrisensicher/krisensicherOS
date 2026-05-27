@@ -1,0 +1,25 @@
+# OpenClaw private workspace/bootstrap files — not public repo content
+.openclaw/
+.learnings/
+BOOTSTRAP.md
+SOUL.md
+USER.md
+IDENTITY.md
+TOOLS.md
+HEARTBEAT.md
+MEMORY.md
+memory/
+CONSTRAINTS.yaml
+DREAMS.md
+projects/
+
+# Local/editor noise
+.DS_Store
+*.tmp
+*.bak
+tmp_*
+
+exports/
+
+# Generated binary preview exports (not product source)
+examples/fiktiver-mittelstand/media/

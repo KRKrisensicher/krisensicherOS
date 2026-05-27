@@ -1,0 +1,157 @@
+# krisensicherOS hardwired reference sources
+#
+# Purpose:
+# This file defines fixed public reference anchors for agent work.
+# It does not replace legal review and does not contain complete legal or standard texts.
+# Agents should use these sources as orientation and reference points, not as binding interpretation.
+
+version: "0.1"
+language: "en"
+status: "draft"
+
+rules:
+  no_legal_advice: true
+  no_full_norm_texts: true
+  use_official_sources_when_possible: true
+  require_human_review_for_interpretation: true
+
+sources:
+  - id: "eu-nis2-directive-2022-2555"
+    title: "Directive (EU) 2022/2555 — NIS2"
+    type: "eu-directive"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+    use_for:
+      - "NIS2 readiness"
+      - "governance requirements"
+      - "risk management measures"
+      - "notification and supervisory context"
+    agent_note: "Primary source for NIS2. Review national implementation and sector-specific requirements separately. Do not derive legal advice."
+
+  - id: "de-bsig"
+    title: "BSI Act (BSIG)"
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsig_2025/"
+    use_for:
+      - "BSI context"
+      - "NIS2 preliminary applicability check"
+      - "KRITIS-related requirements"
+      - "security requirements and evidence logic"
+    agent_note: "Use as the German legal framework for BSI/KRITIS/NIS2 references. Evaluate § 28 and Annexes 1 and 2 for preliminary applicability logic. No binding legal interpretation; applicability must be reviewed by humans/legal."
+
+  - id: "de-bsig-section-28-and-annexes"
+    title: "BSIG § 28 and Annex 1 and Annex 2"
+    type: "law-section"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsig_2025/__28.html"
+    related_urls:
+      - "https://www.gesetze-im-internet.de/bsig_2025/anlage_1.html"
+      - "https://www.gesetze-im-internet.de/bsig_2025/anlage_2.html"
+    use_for:
+      - "NIS2 preliminary applicability check"
+      - "important entities"
+      - "particularly important entities"
+      - "sector and entity type mapping"
+    agent_note: "Use only as a structured preliminary check. Always output the result with the mandatory notice and have it reviewed by a lawyer/legal."
+
+  - id: "de-enwg-5c-ff"
+    title: "Energy Industry Act (EnWG), especially § 5c et seq."
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/enwg_2005/"
+    use_for:
+      - "energy sector"
+      - "KRITIS-related organizations"
+      - "sector-specific governance and security requirements"
+    agent_note: "Use as a reference anchor for energy/utility contexts. Always have the paragraph status and applicability reviewed."
+
+  - id: "eu-gdpr-2016-679"
+    title: "Regulation (EU) 2016/679 — General Data Protection Regulation (GDPR)"
+    type: "eu-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    use_for:
+      - "data protection reference"
+      - "technical and organizational measures"
+      - "interface between security governance and data protection"
+    agent_note: "Only mark data protection interfaces. Do not claim to provide data protection advice or binding interpretation of TOMs."
+
+  - id: "de-bdsg-2018"
+    title: "Federal Data Protection Act (BDSG)"
+    type: "law"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bdsg_2018/"
+    use_for:
+      - "German data protection context"
+      - "interface between security governance and data protection"
+    agent_note: "Use as a supplement to the GDPR. Does not provide legal advice."
+
+  - id: "de-bsi-kritisv"
+    title: "BSI Critical Infrastructure Ordinance (BSI-KritisV)"
+    type: "regulation"
+    jurisdiction: "DE"
+    official_url: "https://www.gesetze-im-internet.de/bsi-kritisv/"
+    use_for:
+      - "KRITIS thresholds"
+      - "sector reference"
+      - "classification of KRITIS-related organizations"
+    agent_note: "Use as a reference point for KRITIS references. Classification must be reviewed by responsible persons."
+
+  - id: "eu-nis2-implementing-regulation-2024-2690"
+    title: "Implementing Regulation (EU) 2024/2690 on the NIS2 Directive"
+    type: "eu-implementing-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj?locale=de"
+    use_for:
+      - "digital infrastructure"
+      - "digital services"
+      - "technical and methodological risk management requirements"
+      - "significant security incidents"
+    agent_note: "Additionally evaluate for DNS, TLD, cloud, data center, CDN, MSP, MSSP, online marketplaces, online search engines, social networks, and trust service providers. Do not derive compliance assurance."
+
+  - id: "de-bsi-nis2-faq"
+    title: "BSI NIS-2 FAQ and applicability assessment"
+    type: "authority-guidance"
+    jurisdiction: "DE"
+    official_url: "https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/NIS-2-Betroffenheitspruefung/nis-2-betroffenheitspruefung_node.html"
+    related_urls:
+      - "https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/NIS-2-FAQ/NIS-2-FAQ-sektorspezifisch/NIS-2-Sektorspezifische-FAQ_node.html"
+    use_for:
+      - "plausibility check after structured preliminary check"
+      - "sector notes"
+      - "open interpretation questions"
+    agent_note: "Use the BSI FAQ only after BSIG/annex/special-regime preliminary checks; not as the sole legal basis."
+
+  - id: "de-it-sicherheitsgesetz-context"
+    title: "IT security legislation Germany — context anchor"
+    type: "context"
+    jurisdiction: "DE"
+    official_url: "https://www.bsi.bund.de/"
+    use_for:
+      - "BSI context"
+      - "national cybersecurity regulation"
+    agent_note: "Use only as a context anchor; always trace specific obligations back to applicable laws/regulations."
+
+
+  - id: "eu-ai-act-2024-1689"
+    title: "Regulation (EU) 2024/1689 — EU AI Act"
+    type: "eu-regulation"
+    jurisdiction: "EU"
+    official_url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    use_for:
+      - "AI governance"
+      - "AI system inventory"
+      - "role and handoff questions"
+      - "human oversight and evidence logic"
+    agent_note: "Use only as a public reference anchor for inventory, preliminary check, and handoff. Do not derive a binding role, risk, or conformity assessment; legal/data protection/management must review."
+
+  - id: "iso-iec-27001-metadata-only"
+    title: "ISO/IEC 27001 — only as a licensed standard reference"
+    type: "standard-reference"
+    jurisdiction: "international"
+    official_url: "https://www.iso.org/standard/27001"
+    use_for:
+      - "ISMS mapping"
+      - "control and management system reference"
+    agent_note: "Do not include standard texts, control texts, or copyrighted content in the repo. Only metadata, own notes, references, and mapping structures. See 01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md."

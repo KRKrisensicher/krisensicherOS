@@ -1,0 +1,34 @@
+# Fictional example for a compliance register.
+# No real contracts, no real standard texts, no confidential information.
+
+version: "0.1"
+status: "example"
+
+sources:
+  - id: "example-iso27001-reference"
+    title: "ISO/IEC 27001 — licensed standard reference"
+    type: "standard-reference"
+    owner: "Information security officer"
+    source_location: "Internal licensed standards library / official standards access"
+    license_or_confidentiality: "Licensed; do not copy standard texts into the repo"
+    applicability: "ISMS setup and management system context"
+    obligations_summary: "Use only your own summary and mapping fields; access the standard text separately in line with the license."
+    mapping_status: "not_started"
+    review_frequency: "annually or when the standard/scope changes"
+    human_owner: "ISB/CISO"
+    agent_usage_allowed: "metadata_only"
+    notes: "See 01-orientation/legal-boundaries/iso-normen-lizenzkonform-nutzen.md"
+
+  - id: "example-customer-security-annex"
+    title: "Fictional customer contract — Security Annex"
+    type: "customer-contract"
+    owner: "Contract management"
+    source_location: "Organization’s private contract repository"
+    license_or_confidentiality: "Confidential; do not copy into public repos"
+    applicability: "Customer requirements for incident notification and evidence"
+    obligations_summary: "Fictional example: review notification deadlines, evidence, contacts, and audit rights."
+    mapping_status: "draft"
+    review_frequency: "when the contract changes and at least annually"
+    human_owner: "Legal / CISO / Account Owner"
+    agent_usage_allowed: "summary_only_after_human_redaction"
+    notes: "Use only redacted summaries for agents."

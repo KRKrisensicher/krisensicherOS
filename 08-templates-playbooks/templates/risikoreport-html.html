@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISMS-Risk Report</title>
+  <style>
+    :root { --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --line:#cbd5e1; --low:#16a34a; --mid:#ca8a04; --high:#ea580c; --critical:#dc2626; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:18px; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+    h1 { margin:0 0 8px; font-size: 1.8rem; }
+    h2 { margin:0 0 14px; font-size: 1.2rem; }
+    p { color:var(--muted); }
+    table { width:100%; border-collapse: collapse; font-size:.94rem; }
+    th, td { text-align:left; border-bottom:1px solid var(--line); padding:10px 8px; vertical-align:top; }
+    th { background:#f1f5f9; color:#334155; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+    .kpi { border:1px solid var(--line); border-radius:12px; padding:14px; background:#f8fafc; }
+    .kpi strong { display:block; font-size:1.6rem; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-weight:700; font-size:.82rem; color:white; }
+    .sehr-gering, .gering { background:var(--low); }
+    .medium { background:var(--mid); }
+    .high { background:var(--high); }
+    .sehr-high { background:var(--critical); }
+    .decision { border-left:5px solid var(--critical); background:#fff7ed; padding:12px; border-radius:8px; }
+    .muted { color:var(--muted); }
+    @media print { body { background:white; } main { max-width:none; padding:0; } section, header { box-shadow:none; break-inside:avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ISMS-Risk Report</h1>
+    <p><strong>Organization:</strong> [Name] · <strong>Scope:</strong> [ISMS-Scope] · <strong>Reporting period:</strong> [period] · <strong>Status:</strong> [date]</p>
+    <p class="muted">Working report for management review, risk workshop, or remediation steering. No certification or compliance assurance.</p>
+  </header>
+
+  <section>
+    <h2>1. Management Summary</h2>
+    <div class="grid">
+      <div class="kpi"><span class="muted">Total risks</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">High / very high net</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">Open decisions</span><strong>[n]</strong></div>
+      <div class="kpi"><span class="muted">Overdue actions</span><strong>[n]</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Top risks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Risk scenario</th><th>Strategy</th><th>Gross</th><th>Net / residual risk</th><th>Status</th><th>Decision</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R-001</td>
+          <td>If [threat] exploits [weakness] on asset [asset], [impact] may occur.</td>
+          <td>Reduction</td>
+          <td><span class="badge high">16 high</span></td>
+          <td><span class="badge medium">9 medium</span><br><span class="muted">planned value / confirmed?</span></td>
+          <td>actions planned</td>
+          <td>resource approval required</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Strategy and action overview</h2>
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Strategy</th><th>Action</th><th>Owner</th><th>Due</th><th>Control / SoA reference</th><th>Evidence / effectiveness</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>R-001</td><td>Reduction</td><td>[Action]</td><td>[Owner]</td><td>[date]</td><td>[Control-ID]</td><td>[evidence / test method]</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Open management decisions</h2>
+    <div class="decision">
+      <strong>[decision title]</strong>
+      <p>Decision on risk [ID]: acceptance, avoidance, transfer, or resource approval for reduction. Summarize rationale, options, and consequences here.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Control/SoA and evidence status</h2>
+    <table>
+      <thead><tr><th>Control / SoA</th><th>Status</th><th>Risks</th><th>Evidence quality</th><th>Gap / next step</th></tr></thead>
+      <tbody><tr><td>[Control-ID]</td><td>planned</td><td>R-001</td><td>partial</td><td>[gap]</td></tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. Changes since last review</h2>
+    <ul>
+      <li>[New risks]</li>
+      <li>[Changed assessments]</li>
+      <li>[Closed or overdue actions]</li>
+      <li>[New acceptances, transfers, or escalations]</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
