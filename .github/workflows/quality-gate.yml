@@ -1,0 +1,134 @@
+# kso:product-relevance
+# repo-scope: product
+# classification: product-governance
+# decision: keep
+# review-required-on-change: true
+# criteria: public-safe; ai-assisted-governance; human-gate-aware; release-readiness; security-gate
+
+name: krisensicherOS quality gate
+
+on:
+  pull_request:
+    branches:
+      - de/main
+      - en/main
+  push:
+    branches:
+      - de/main
+      - en/main
+
+permissions:
+  contents: read
+
+jobs:
+  quality-check:
+    name: quality-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check whitespace and patch hygiene
+        run: git diff --check
+
+      - name: Check product repository structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f LICENSE
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f AGENTS.md
+          test -f CLAUDE.md
+          for path in \
+            00-start-here/docs/getting-started/README.md \
+            01-orientation/README.md \
+            02-governance-operating-model/README.md \
+            03-nis2-readiness/README.md \
+            04-isms-basics/README.md \
+            05-incident-crisis-readiness/README.md \
+            06-evidence-management-review/README.md \
+            07-ai-governance-agents/README.md \
+            07-ai-governance-agents/agents/manifest.yaml \
+            07-ai-governance-agents/agents/public/role-model.md \
+            07-ai-governance-agents/skills/README.md \
+            08-templates-playbooks/README.md \
+            08-templates-playbooks/templates/ki-nutzungsfreigabe-matrix.md \
+            08-templates-playbooks/workflows/governance-operating-model.yaml \
+            09-implementation-roadmaps/README.md \
+            10-reference/compliance-register/README.md; do
+            test -e "$path"
+          done
+
+      - name: Check local markdown links
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          root = Path('.').resolve()
+          missing = []
+          link_re = re.compile(r'(?<!\\)!?\[[^\]]*\]\(([^)]+)\)')
+          for p in root.rglob('*.md'):
+              if '.git' in p.parts:
+                  continue
+              text = p.read_text(errors='ignore')
+              for raw in link_re.findall(text):
+                  target = raw.split()[0].strip('<>')
+                  if not target or target.startswith('#'):
+                      continue
+                  if re.match(r'^[a-z][a-z0-9+.-]*:', target, re.I):
+                      continue
+                  target_path = target.split('#', 1)[0]
+                  if not target_path:
+                      continue
+                  resolved = (p.parent / target_path).resolve()
+                  try:
+                      resolved.relative_to(root)
+                  except ValueError:
+                      continue
+                  if not resolved.exists():
+                      missing.append(f'{p.relative_to(root)}: missing link target {target}')
+          if missing:
+              print('\n'.join(missing))
+              sys.exit(1)
+          print('ok: local markdown links resolve')
+          PY
+
+      - name: Check agent manifest paths
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          root = Path('.')
+          manifest = root / '07-ai-governance-agents/agents/manifest.yaml'
+          paths = re.findall(r'^    path: (.+)$', manifest.read_text(), re.MULTILINE)
+          missing = []
+          for rel in paths:
+              path = root / '07-ai-governance-agents' / rel.strip()
+              if not path.exists():
+                  missing.append(rel)
+          if missing:
+              print('\n'.join(missing))
+              sys.exit(1)
+          print(f'ok: {len(paths)} agent manifest paths resolve')
+          PY
+
+      - name: Check runtime and leakage markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIn --exclude-dir=.git -E 'governance:constraints:start|Active Governance Constraints|OPENCLAW_CACHE_BOUNDARY|sourceSession=agent:|OpenClaw runtime context|chat_id|message_id' .; then
+            echo 'Runtime/session marker found in product repository.' >&2
+            exit 1
+          fi
+          if grep -RIn --exclude-dir=.git -E '(BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{20,})' .; then
+            echo 'Secret-looking value found in product repository.' >&2
+            exit 1
+          fi
