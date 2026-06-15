@@ -53,7 +53,7 @@ Nicht verwenden für:
 Pflicht:
 
 - **Scope:** betrachtete Organisationseinheit, Services, Standorte, Systeme oder Prozesse.
-- **Quellenreferenzen:** öffentliche Referenzanker aus `knowledge/` oder eigene Registereinträge ohne Volltextübernahme lizenzpflichtiger Inhalte.
+- **Quellenreferenzen:** öffentliche Referenzanker aus `10-reference/knowledge/` oder eigene Registereinträge ohne Volltextübernahme lizenzpflichtiger Inhalte.
 - **Bestehende Artefakte:** Rollenmodell, Policy-Entwürfe, Risiko-/Maßnahmenregister, Incident-Routinen, Lieferantenprozess oder Evidence Packs, sofern vorhanden.
 
 Optional:
@@ -74,14 +74,14 @@ Annahmen:
 
 Hilfreich sind:
 
-- `knowledge/hardwired-sources.yaml`,
-- `compliance-register/sources.example.yaml` oder ein eigenes Register,
-- `templates/nis2-gap-worksheet.md`, sobald vorhanden,
-- `templates/evidence-pack-index.md`, sobald vorhanden,
-- `agents/public/regulatory-source-mapper.md`,
-- `agents/public/risk-and-obligation-prioritizer.md`,
-- `agents/public/control-evidence-architect.md`,
-- `agents/public/management-review-facilitator.md`,
+- `10-reference/knowledge/hardwired-sources.yaml`,
+- `10-reference/compliance-register/sources.example.yaml` oder ein eigenes Register,
+- `08-templates-playbooks/templates/nis2-gap-worksheet.md`, sobald vorhanden,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, sobald vorhanden,
+- `07-ai-governance-agents/agents/public/regulatory-source-mapper.md`,
+- `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
 - `07-ai-governance-agents/evals/quality-gates.md`.
 
 ## Ablauf

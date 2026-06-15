@@ -71,12 +71,12 @@ Annahmen:
 
 Hilfreich sind:
 
-- `agents/public/evidence-pack-reviewer.md`,
-- `agents/public/control-evidence-architect.md`,
-- `agents/public/risk-and-obligation-prioritizer.md`,
-- `agents/public/management-review-facilitator.md`,
-- `agents/public/agent-quality-and-safety-reviewer.md`,
-- `templates/evidence-pack-index.md`, sobald vorhanden,
+- `07-ai-governance-agents/agents/public/evidence-pack-reviewer.md`,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
+- `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
+- `07-ai-governance-agents/agents/public/agent-quality-and-safety-reviewer.md`,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, sobald vorhanden,
 - `07-ai-governance-agents/evals/quality-gates.md`.
 
 ## Ablauf

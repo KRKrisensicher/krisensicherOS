@@ -75,14 +75,14 @@ Annahmen:
 
 Hilfreich sind:
 
-- `agents/public/internal-audit-planner.md`, sobald vorhanden,
-- `agents/public/control-evidence-architect.md`,
-- `agents/public/evidence-pack-reviewer.md`,
-- `agents/public/management-review-facilitator.md`,
-- `agents/public/agent-quality-and-safety-reviewer.md`,
-- `templates/audit-test-program.md`,
-- `templates/evidence-pack-index.md`,
-- `templates/decision-log.md`,
+- `07-ai-governance-agents/agents/public/internal-audit-planner.md`, sobald vorhanden,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `07-ai-governance-agents/agents/public/evidence-pack-reviewer.md`,
+- `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
+- `07-ai-governance-agents/agents/public/agent-quality-and-safety-reviewer.md`,
+- `08-templates-playbooks/templates/audit-test-program.md`,
+- `08-templates-playbooks/templates/evidence-pack-index.md`,
+- `08-templates-playbooks/templates/decision-log.md`,
 - `07-ai-governance-agents/evals/quality-gates.md`.
 
 ## Ablauf

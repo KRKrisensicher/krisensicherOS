@@ -77,12 +77,12 @@ Annahmen:
 
 Hilfreich sind:
 
-- `agents/public/security-governance-architect.md`,
-- `agents/public/risk-and-obligation-prioritizer.md`,
-- `agents/public/control-evidence-architect.md`,
-- `templates/governance-operating-model-canvas.md`, sobald vorhanden,
+- `07-ai-governance-agents/agents/public/security-governance-architect.md`,
+- `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `08-templates-playbooks/templates/governance-operating-model-canvas.md`, sobald vorhanden,
 - `07-ai-governance-agents/evals/quality-gates.md`,
-- relevante Einträge aus `knowledge/` und `compliance-register/`.
+- relevante Einträge aus `10-reference/knowledge/` und `10-reference/compliance-register/`.
 
 ## Ablauf
 

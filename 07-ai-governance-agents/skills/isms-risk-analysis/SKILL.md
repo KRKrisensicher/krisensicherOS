@@ -67,15 +67,15 @@ Nicht verwenden für:
 Primäre Artefakte im Repo:
 
 - `04-isms-basics/risikomanagement-methodik.md`
-- `templates/risikoanalyse-fragebogen.md`
-- `templates/risikoanalyse-session-state.md`
-- `templates/risikoanalyse-register.md`
-- `templates/soa-risk-control-map.md`
-- `templates/risikoreport.md`
-- `templates/risikoreport-html.html`
-- `templates/decision-log.md`
-- `playbooks/isms-risikoworkshop.md`
-- `workflows/isms-risk-to-soa.yaml`
+- `08-templates-playbooks/templates/risikoanalyse-fragebogen.md`
+- `08-templates-playbooks/templates/risikoanalyse-session-state.md`
+- `08-templates-playbooks/templates/risikoanalyse-register.md`
+- `08-templates-playbooks/templates/soa-risk-control-map.md`
+- `08-templates-playbooks/templates/risikoreport.md`
+- `08-templates-playbooks/templates/risikoreport-html.html`
+- `08-templates-playbooks/templates/decision-log.md`
+- `08-templates-playbooks/playbooks/isms-risikoworkshop.md`
+- `08-templates-playbooks/workflows/isms-risk-to-soa.yaml`
 
 ## Dialogischer Ablauf
 
@@ -89,7 +89,7 @@ Wenn ja:
 - mit der nächsten offenen Phase fortsetzen.
 
 Wenn nein:
-- neuen Session-State nach `templates/risikoanalyse-session-state.md` anlegen oder gedanklich führen.
+- neuen Session-State nach `08-templates-playbooks/templates/risikoanalyse-session-state.md` anlegen oder gedanklich führen.
 
 Output: `risk-analysis-session-state`.
 
@@ -242,8 +242,8 @@ Reporting-Inhalte:
 - nächste Reviews.
 
 Output:
-- `templates/risikoreport.md` befüllbar machen,
-- optional HTML-Darstellung nach `templates/risikoreport-html.html` vorbereiten.
+- `08-templates-playbooks/templates/risikoreport.md` befüllbar machen,
+- optional HTML-Darstellung nach `08-templates-playbooks/templates/risikoreport-html.html` vorbereiten.
 
 ## Gesprächssteuerung
 

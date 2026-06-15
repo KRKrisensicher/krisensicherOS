@@ -74,11 +74,11 @@ Annahmen:
 
 Hilfreiche Artefakte:
 
-- `templates/evidence-request-list.md`
-- `templates/evidence-pack-index.md`
-- `templates/decision-log.md`
+- `08-templates-playbooks/templates/evidence-request-list.md`
+- `08-templates-playbooks/templates/evidence-pack-index.md`
+- `08-templates-playbooks/templates/decision-log.md`
 - `07-ai-governance-agents/evals/quality-gates.md`
-- `governance/review-process.md`
+- `02-governance-operating-model/governance/review-process.md`
 
 Hilfreiche Rollen:
 

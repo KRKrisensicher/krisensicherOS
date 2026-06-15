@@ -48,8 +48,8 @@ Agenten dürfen nicht:
 
 ## Kanonische Agentenprofile
 
-- Öffentliche Nutzeragenten liegen unter `agents/public/`.
-- Das Routing- und Portabilitätsmanifest liegt in `agents/manifest.yaml`.
+- Öffentliche Nutzeragenten liegen unter `07-ai-governance-agents/agents/public/`.
+- Das Routing- und Portabilitätsmanifest liegt in `07-ai-governance-agents/agents/manifest.yaml`.
 - Adapter für Claude, Codex, OpenClaw, Hermes oder andere Systeme dürfen Fachlogik nicht duplizieren, sondern sollen aus den kanonischen Profilen ableiten.
 
 ## Qualitätsgates für Beiträge
