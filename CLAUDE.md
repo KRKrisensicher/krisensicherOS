@@ -26,10 +26,10 @@ The repo does not build governance for a specific organization. It provides buil
 - `07-ai-governance-agents/agents/` — canonical agent profiles and manifest
 - `07-ai-governance-agents/agents/public/` — public target-repo agents for user organizations
 - `07-ai-governance-agents/skills/` — reusable AgentSkills
-- `templates/` — usable work templates
-- `workflows/` — agentic workflow models
+- `08-templates-playbooks/templates/` — usable work templates
+- `08-templates-playbooks/workflows/` — agentic workflow models
 - `06-evidence-management-review/evals/` — quality and safety gates
-- `docs/standards/` — profile, skill, and artifact standards
+- `10-reference/docs/standards/` — profile, skill, and artifact standards
 
 ## Quality check before completion
 

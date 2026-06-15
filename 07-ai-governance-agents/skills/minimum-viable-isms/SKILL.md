@@ -75,8 +75,8 @@ Assumptions:
 
 Helpful are:
 
-- `templates/isms-scope-canvas.md`, once available,
-- `templates/evidence-pack-index.md`, once available,
+- `08-templates-playbooks/templates/isms-scope-canvas.md`, once available,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, once available,
 - `07-ai-governance-agents/skills/governance-operating-model/SKILL.md`,
 - `07-ai-governance-agents/skills/nis2-gap-assessment/SKILL.md`,
 - `07-ai-governance-agents/agents/public/isms-operating-model-designer.md`,

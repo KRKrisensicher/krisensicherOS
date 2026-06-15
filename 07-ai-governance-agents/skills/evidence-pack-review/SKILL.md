@@ -76,7 +76,7 @@ Helpful resources include:
 - `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
 - `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
 - `07-ai-governance-agents/agents/public/agent-quality-and-safety-reviewer.md`,
-- `templates/evidence-pack-index.md`, once available,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, once available,
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`.
 
 ## Workflow

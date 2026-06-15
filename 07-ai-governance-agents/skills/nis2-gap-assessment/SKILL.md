@@ -76,8 +76,8 @@ Helpful inputs are:
 
 - `01-orientation/knowledge-sources/hardwired-sources.yaml`,
 - `02-governance-operating-model/02-governance-operating-model/compliance-register/sources.example.yaml` or an own register,
-- `templates/nis2-gap-worksheet.md`, once available,
-- `templates/evidence-pack-index.md`, once available,
+- `08-templates-playbooks/templates/nis2-gap-worksheet.md`, once available,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, once available,
 - `07-ai-governance-agents/agents/public/regulatory-source-mapper.md`,
 - `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
 - `07-ai-governance-agents/agents/public/control-evidence-architect.md`,

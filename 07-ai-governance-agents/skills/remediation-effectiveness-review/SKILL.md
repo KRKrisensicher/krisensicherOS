@@ -74,9 +74,9 @@ Assumptions:
 
 Helpful artifacts:
 
-- `templates/remediation-effectiveness-review.md`
-- `templates/corrective-action-plan.md`
-- `templates/evidence-pack-index.md`
+- `08-templates-playbooks/templates/remediation-effectiveness-review.md`
+- `08-templates-playbooks/templates/corrective-action-plan.md`
+- `08-templates-playbooks/templates/evidence-pack-index.md`
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`
 - `02-governance-operating-model/governance/review-process.md`
 
