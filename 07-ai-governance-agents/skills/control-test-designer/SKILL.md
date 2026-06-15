@@ -74,9 +74,9 @@ Assumptions:
 
 Helpful artifacts:
 
-- `templates/control-test-plan.md`
-- `templates/audit-test-program.md`
-- `templates/control-evidence-map.md`
+- `08-templates-playbooks/templates/control-test-plan.md`
+- `08-templates-playbooks/templates/audit-test-program.md`
+- `08-templates-playbooks/templates/control-evidence-map.md`
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`
 - `02-governance-operating-model/governance/review-process.md`
 

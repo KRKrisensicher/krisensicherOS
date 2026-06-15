@@ -74,9 +74,9 @@ Assumptions:
 
 Helpful artifacts:
 
-- `templates/evidence-request-list.md`
-- `templates/evidence-pack-index.md`
-- `templates/decision-log.md`
+- `08-templates-playbooks/templates/evidence-request-list.md`
+- `08-templates-playbooks/templates/evidence-pack-index.md`
+- `08-templates-playbooks/templates/decision-log.md`
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`
 - `02-governance-operating-model/governance/review-process.md`
 

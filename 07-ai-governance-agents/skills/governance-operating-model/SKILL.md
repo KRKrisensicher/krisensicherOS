@@ -80,7 +80,7 @@ Helpful are:
 - `07-ai-governance-agents/agents/public/security-governance-architect.md`,
 - `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
 - `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
-- `templates/governance-operating-model-canvas.md`, once available,
+- `08-templates-playbooks/templates/governance-operating-model-canvas.md`, once available,
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`,
 - relevant entries from `01-orientation/knowledge-sources/` and `02-governance-operating-model/compliance-register/`.
 

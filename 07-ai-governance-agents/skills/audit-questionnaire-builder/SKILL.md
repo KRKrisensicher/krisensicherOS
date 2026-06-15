@@ -80,9 +80,9 @@ Helpful resources include:
 - `07-ai-governance-agents/agents/public/evidence-pack-reviewer.md`,
 - `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
 - `07-ai-governance-agents/agents/public/agent-quality-and-safety-reviewer.md`,
-- `templates/audit-questionnaire.md`,
-- `templates/evidence-pack-index.md`,
-- `templates/decision-log.md`,
+- `08-templates-playbooks/templates/audit-questionnaire.md`,
+- `08-templates-playbooks/templates/evidence-pack-index.md`,
+- `08-templates-playbooks/templates/decision-log.md`,
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`.
 
 ## Workflow

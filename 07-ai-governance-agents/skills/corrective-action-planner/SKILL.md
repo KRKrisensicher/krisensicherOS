@@ -74,9 +74,9 @@ Assumptions:
 
 Helpful artifacts:
 
-- `templates/corrective-action-plan.md`
-- `templates/decision-log.md`
-- `templates/audit-finding-report.md`
+- `08-templates-playbooks/templates/corrective-action-plan.md`
+- `08-templates-playbooks/templates/decision-log.md`
+- `08-templates-playbooks/templates/audit-finding-report.md`
 - `06-evidence-management-review/06-evidence-management-review/evals/quality-gates.md`
 - `02-governance-operating-model/governance/review-process.md`
 
