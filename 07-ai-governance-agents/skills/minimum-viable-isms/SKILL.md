@@ -75,15 +75,15 @@ Annahmen:
 
 Hilfreich sind:
 
-- `templates/isms-scope-canvas.md`, sobald vorhanden,
-- `templates/evidence-pack-index.md`, sobald vorhanden,
-- `skills/governance-operating-model/SKILL.md`,
-- `skills/nis2-gap-assessment/SKILL.md`,
-- `agents/public/isms-operating-model-designer.md`,
-- `agents/public/security-governance-architect.md`,
-- `agents/public/risk-and-obligation-prioritizer.md`,
-- `agents/public/control-evidence-architect.md`,
-- `agents/public/management-review-facilitator.md`,
+- `08-templates-playbooks/templates/isms-scope-canvas.md`, sobald vorhanden,
+- `08-templates-playbooks/templates/evidence-pack-index.md`, sobald vorhanden,
+- `07-ai-governance-agents/skills/governance-operating-model/SKILL.md`,
+- `07-ai-governance-agents/skills/nis2-gap-assessment/SKILL.md`,
+- `07-ai-governance-agents/agents/public/isms-operating-model-designer.md`,
+- `07-ai-governance-agents/agents/public/security-governance-architect.md`,
+- `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
 - `07-ai-governance-agents/evals/quality-gates.md`.
 
 ## Ablauf

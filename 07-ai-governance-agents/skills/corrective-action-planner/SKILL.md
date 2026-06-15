@@ -74,11 +74,11 @@ Annahmen:
 
 Hilfreiche Artefakte:
 
-- `templates/corrective-action-plan.md`
-- `templates/decision-log.md`
-- `templates/audit-finding-report.md`
+- `08-templates-playbooks/templates/corrective-action-plan.md`
+- `08-templates-playbooks/templates/decision-log.md`
+- `08-templates-playbooks/templates/audit-finding-report.md`
 - `07-ai-governance-agents/evals/quality-gates.md`
-- `governance/review-process.md`
+- `02-governance-operating-model/governance/review-process.md`
 
 Hilfreiche Rollen:
 

@@ -22,15 +22,15 @@ Das Repo baut keine Governance für eine konkrete Organisation. Es liefert Baust
 ## Wichtige Pfade
 
 - `README.md` — Produktpositionierung und Orientierung
-- `knowledge/` — feste öffentliche Referenzquellen
-- `compliance-register/` — Struktur für nutzereigene Vorgaben
-- `agents/` — kanonische Agentenprofile und Manifest
-- `agents/public/` — öffentliche Zielrepo-Agenten für Nutzerorganisationen
-- `skills/` — wiederverwendbare AgentSkills
-- `templates/` — nutzbare Arbeitsvorlagen
-- `workflows/` — agentische Ablaufmodelle
-- `evals/` — Qualitäts- und Sicherheitsgates
-- `docs/standards/` — Profil-, Skill- und Artefaktstandards
+- `10-reference/knowledge/` — feste öffentliche Referenzquellen
+- `10-reference/compliance-register/` — Struktur für nutzereigene Vorgaben
+- `07-ai-governance-agents/agents/` — kanonische Agentenprofile und Manifest
+- `07-ai-governance-agents/agents/public/` — öffentliche Zielrepo-Agenten für Nutzerorganisationen
+- `07-ai-governance-agents/skills/` — wiederverwendbare AgentSkills
+- `08-templates-playbooks/templates/` — nutzbare Arbeitsvorlagen
+- `08-templates-playbooks/workflows/` — agentische Ablaufmodelle
+- `07-ai-governance-agents/evals/` — Qualitäts- und Sicherheitsgates
+- `10-reference/docs/standards/` — Profil-, Skill- und Artefaktstandards
 
 ## Qualitätscheck vor Abschluss
 

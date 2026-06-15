@@ -74,11 +74,11 @@ Annahmen:
 
 Hilfreiche Artefakte:
 
-- `templates/remediation-effectiveness-review.md`
-- `templates/corrective-action-plan.md`
-- `templates/evidence-pack-index.md`
+- `08-templates-playbooks/templates/remediation-effectiveness-review.md`
+- `08-templates-playbooks/templates/corrective-action-plan.md`
+- `08-templates-playbooks/templates/evidence-pack-index.md`
 - `07-ai-governance-agents/evals/quality-gates.md`
-- `governance/review-process.md`
+- `02-governance-operating-model/governance/review-process.md`
 
 Hilfreiche Rollen:
 

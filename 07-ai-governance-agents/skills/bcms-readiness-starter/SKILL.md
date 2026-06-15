@@ -71,12 +71,12 @@ Annahmen:
 
 Hilfreich sind:
 
-- `agents/public/bcms-readiness-designer.md`,
-- `agents/public/control-evidence-architect.md`,
-- `agents/public/risk-and-obligation-prioritizer.md`,
-- `agents/public/management-review-facilitator.md`,
-- `agents/public/agent-quality-and-safety-reviewer.md`,
-- `templates/bcms-critical-process-canvas.md`, sobald vorhanden,
+- `07-ai-governance-agents/agents/public/bcms-readiness-designer.md`,
+- `07-ai-governance-agents/agents/public/control-evidence-architect.md`,
+- `07-ai-governance-agents/agents/public/risk-and-obligation-prioritizer.md`,
+- `07-ai-governance-agents/agents/public/management-review-facilitator.md`,
+- `07-ai-governance-agents/agents/public/agent-quality-and-safety-reviewer.md`,
+- `08-templates-playbooks/templates/bcms-critical-process-canvas.md`, sobald vorhanden,
 - `07-ai-governance-agents/evals/quality-gates.md`.
 
 ## Ablauf
